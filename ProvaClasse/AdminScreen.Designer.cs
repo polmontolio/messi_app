@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.buttonCloseAd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -71,7 +71,7 @@
             this.tb_Buttons.ColumnCount = 2;
             this.tb_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tb_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_Buttons.Location = new System.Drawing.Point(46, 174);
+            this.tb_Buttons.Location = new System.Drawing.Point(79, 174);
             this.tb_Buttons.Name = "tb_Buttons";
             this.tb_Buttons.RowCount = 2;
             this.tb_Buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -132,8 +132,8 @@
             // 
             // AdminScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::ProvaClasse.Properties.Resources.star_wars_BG2;
             this.ClientSize = new System.Drawing.Size(1074, 640);
             this.Controls.Add(this.txt_CodigoTemp);
             this.Controls.Add(this.panel3);
