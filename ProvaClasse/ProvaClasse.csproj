@@ -217,6 +217,10 @@
       <Project>{fb2668d3-ed33-41f6-a6bb-ec854fe2e2fb}</Project>
       <Name>ControlLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NetworkUtilities\NetworkUtilities.csproj">
+      <Project>{d07c8195-73ad-4e32-8c2f-42baf48f93ec}</Project>
+      <Name>NetworkUtilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

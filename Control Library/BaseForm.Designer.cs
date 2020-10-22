@@ -42,8 +42,9 @@
             this.panel1.Controls.Add(this.buttonClose1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1092, 38);
+            this.panel1.Size = new System.Drawing.Size(1228, 48);
             this.panel1.TabIndex = 12;
             // 
             // lbl_titulo
@@ -54,8 +55,8 @@
             this.lbl_titulo.ForeColor = System.Drawing.Color.Transparent;
             this.lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Padding = new System.Windows.Forms.Padding(6, 6, 0, 0);
-            this.lbl_titulo.Size = new System.Drawing.Size(76, 35);
+            this.lbl_titulo.Padding = new System.Windows.Forms.Padding(7, 8, 0, 0);
+            this.lbl_titulo.Size = new System.Drawing.Size(90, 43);
             this.lbl_titulo.TabIndex = 1;
             this.lbl_titulo.Text = "label1";
             this.lbl_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,23 +65,24 @@
             // 
             this.buttonClose1.BackColor = System.Drawing.Color.Transparent;
             this.buttonClose1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonClose1.Location = new System.Drawing.Point(1058, 0);
+            this.buttonClose1.Location = new System.Drawing.Point(1190, 0);
+            this.buttonClose1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonClose1.Name = "buttonClose1";
-            this.buttonClose1.Size = new System.Drawing.Size(34, 38);
+            this.buttonClose1.Size = new System.Drawing.Size(38, 48);
             this.buttonClose1.TabIndex = 0;
             this.buttonClose1.Click += new System.EventHandler(this.buttonClose1_Click);
             // 
             // BaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1092, 577);
+            this.ClientSize = new System.Drawing.Size(1228, 721);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BaseForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

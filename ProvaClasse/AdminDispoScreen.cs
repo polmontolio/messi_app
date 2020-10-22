@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Control_Library;
+using NetworkUtilities;
 
 namespace ProvaClasse
 {
@@ -20,7 +21,10 @@ namespace ProvaClasse
 
         private void AdminDispoScreen_Load(object sender, EventArgs e)
         {
+            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
 
+            txt_hostname.Text = machine.getHostname();
+            txt_mac.Text = machine.getMAC();
         }
     }
 }
