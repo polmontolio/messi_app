@@ -19,17 +19,28 @@ namespace NetworkUtilities
 
         public string getMAC()
         {
+            String digitos;
+            String digitosConcat;
+            int i = 0;
+
             String firstMacAddress = NetworkInterface
             .GetAllNetworkInterfaces()
             .Where(nic => nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
             .Select(nic => nic.GetPhysicalAddress().ToString())
             .FirstOrDefault();
 
-            for (int i = 0; i < firstMacAddress.Length; i++)
+            digitosConcat = firstMacAddress.Substring(0, 2);
+
+
+            for (i = 2; i < firstMacAddress.Length; i+=2)
             {
 
+                digitos = firstMacAddress.Substring(i, 2);
+                digitosConcat = digitosConcat + "-" + digitos;
+                
             }
-            
+
+            firstMacAddress = digitosConcat;
             return firstMacAddress;
         }
     }
