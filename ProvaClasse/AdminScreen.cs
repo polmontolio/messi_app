@@ -34,6 +34,15 @@ namespace ProvaClasse
 
         private void GenerateTableButtons(int columnCount, int rowCount)
         {
+            //Creem constructor per RANDOM
+            Random rand = new Random();
+
+            //Generar coordenada random
+            int random_number = rand.Next(1, 6);
+            char random_letter = (char)rand.Next('A', 'D');
+            String coordenada = random_letter.ToString() + random_number.ToString();
+            lbl_codigo.Text = coordenada;
+
             // ==================================================================
             var lista_numeros = new ArrayList();
             Queue<int> cola_Aleatorio = new Queue<int>();
@@ -46,7 +55,6 @@ namespace ProvaClasse
             while (lista_numeros.Count > 0)
             {
                 //Creem random del 0 al arlist.count(en aquest cas 9)
-                Random rand = new Random();
                 int RandomElement = rand.Next(0, lista_numeros.Count);
                 //Treiem de la array i posem a la cua
                 int aleatori = (int)lista_numeros[RandomElement];
