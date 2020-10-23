@@ -50,7 +50,6 @@
             // 
             // txtHostName
             // 
-            this.txtHostName.Enabled = false;
             this.txtHostName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHostName.Location = new System.Drawing.Point(233, 273);
             this.txtHostName.Name = "txtHostName";
@@ -147,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProvaClasse.Properties.Resources.estrellas_galaxia_espacio_ultraterrestre_cielo_universo_nocturno_negro_fondo_estrellado_starfield_brillante_146539_280;
-            this.ClientSize = new System.Drawing.Size(1082, 636);
+            this.ClientSize = new System.Drawing.Size(1061, 509);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnCheck);
@@ -160,7 +159,6 @@
             this.Name = "AdminGestionScreen";
             this.Text = "AdminGestionScreen";
             this.Texto = "Admin Gestion de usuarios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminGestionScreen_Load);
             this.Controls.SetChildIndex(this.txtMac, 0);
             this.Controls.SetChildIndex(this.txtHostName, 0);
