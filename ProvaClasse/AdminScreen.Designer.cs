@@ -31,7 +31,7 @@
             this.buttonCloseAd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_Buttons = new System.Windows.Forms.TableLayoutPanel();
-            this.Codigo = new System.Windows.Forms.Label();
+            this.lbl_codigo = new System.Windows.Forms.Label();
             this.tituloMessiAd = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.mtxt_password = new System.Windows.Forms.MaskedTextBox();
@@ -79,15 +79,15 @@
             this.tb_Buttons.Size = new System.Drawing.Size(342, 281);
             this.tb_Buttons.TabIndex = 2;
             // 
-            // Codigo
+            // lbl_codigo
             // 
-            this.Codigo.AutoSize = true;
-            this.Codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Codigo.Location = new System.Drawing.Point(176, 85);
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Size = new System.Drawing.Size(86, 58);
-            this.Codigo.TabIndex = 6;
-            this.Codigo.Text = "B3";
+            this.lbl_codigo.AutoSize = true;
+            this.lbl_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_codigo.Location = new System.Drawing.Point(176, 85);
+            this.lbl_codigo.Name = "lbl_codigo";
+            this.lbl_codigo.Size = new System.Drawing.Size(103, 69);
+            this.lbl_codigo.TabIndex = 6;
+            this.lbl_codigo.Text = "B3";
             // 
             // tituloMessiAd
             // 
@@ -107,7 +107,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.mtxt_password);
             this.panel3.Controls.Add(this.tituloMessiAd);
-            this.panel3.Controls.Add(this.Codigo);
+            this.panel3.Controls.Add(this.lbl_codigo);
             this.panel3.Controls.Add(this.tb_Buttons);
             this.panel3.Location = new System.Drawing.Point(47, 56);
             this.panel3.Name = "panel3";
@@ -116,18 +116,20 @@
             // 
             // mtxt_password
             // 
+            this.mtxt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxt_password.Location = new System.Drawing.Point(179, 478);
             this.mtxt_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxt_password.Name = "mtxt_password";
             this.mtxt_password.PasswordChar = '*';
-            this.mtxt_password.Size = new System.Drawing.Size(89, 22);
+            this.mtxt_password.Size = new System.Drawing.Size(89, 26);
             this.mtxt_password.TabIndex = 11;
+            this.mtxt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_CodigoTemp
             // 
             this.txt_CodigoTemp.Location = new System.Drawing.Point(722, 231);
             this.txt_CodigoTemp.Name = "txt_CodigoTemp";
-            this.txt_CodigoTemp.Size = new System.Drawing.Size(160, 22);
+            this.txt_CodigoTemp.Size = new System.Drawing.Size(160, 26);
             this.txt_CodigoTemp.TabIndex = 10;
             // 
             // AdminScreen
@@ -157,7 +159,7 @@
         private System.Windows.Forms.Button buttonCloseAd;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tb_Buttons;
-        private System.Windows.Forms.Label Codigo;
+        private System.Windows.Forms.Label lbl_codigo;
         private System.Windows.Forms.Label tituloMessiAd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txt_CodigoTemp;
