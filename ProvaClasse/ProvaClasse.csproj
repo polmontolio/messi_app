@@ -213,6 +213,10 @@
     <None Include="Resources\halconmilenario1.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConfigurationApp\ConfigurationApp.csproj">
+      <Project>{c5531b7b-93aa-4490-9a87-97adb2f0005d}</Project>
+      <Name>ConfigurationApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Control Library\ControlLibrary.csproj">
       <Project>{fb2668d3-ed33-41f6-a6bb-ec854fe2e2fb}</Project>
       <Name>ControlLibrary</Name>

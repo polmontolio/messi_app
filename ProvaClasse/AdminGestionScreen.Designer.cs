@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtMac = new System.Windows.Forms.TextBox();
-            this.txtHostName = new System.Windows.Forms.TextBox();
+            this.txt_mac = new System.Windows.Forms.TextBox();
+            this.txt_hostname = new System.Windows.Forms.TextBox();
             this.cmbUser = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,22 +39,22 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtMac
+            // txt_mac
             // 
-            this.txtMac.Enabled = false;
-            this.txtMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMac.Location = new System.Drawing.Point(233, 186);
-            this.txtMac.Name = "txtMac";
-            this.txtMac.Size = new System.Drawing.Size(200, 36);
-            this.txtMac.TabIndex = 13;
+            this.txt_mac.Enabled = false;
+            this.txt_mac.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_mac.Location = new System.Drawing.Point(233, 186);
+            this.txt_mac.Name = "txt_mac";
+            this.txt_mac.Size = new System.Drawing.Size(200, 36);
+            this.txt_mac.TabIndex = 13;
             // 
-            // txtHostName
+            // txt_hostname
             // 
-            this.txtHostName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHostName.Location = new System.Drawing.Point(233, 273);
-            this.txtHostName.Name = "txtHostName";
-            this.txtHostName.Size = new System.Drawing.Size(200, 36);
-            this.txtHostName.TabIndex = 14;
+            this.txt_hostname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_hostname.Location = new System.Drawing.Point(233, 273);
+            this.txt_hostname.Name = "txt_hostname";
+            this.txt_hostname.Size = new System.Drawing.Size(200, 36);
+            this.txt_hostname.TabIndex = 14;
             // 
             // cmbUser
             // 
@@ -127,6 +127,7 @@
             this.btnRegister.TabIndex = 20;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnDelete
             // 
@@ -154,14 +155,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbUser);
-            this.Controls.Add(this.txtHostName);
-            this.Controls.Add(this.txtMac);
+            this.Controls.Add(this.txt_hostname);
+            this.Controls.Add(this.txt_mac);
             this.Name = "AdminGestionScreen";
             this.Text = "AdminGestionScreen";
             this.Texto = "Admin Gestion de usuarios";
             this.Load += new System.EventHandler(this.AdminGestionScreen_Load);
-            this.Controls.SetChildIndex(this.txtMac, 0);
-            this.Controls.SetChildIndex(this.txtHostName, 0);
+            this.Controls.SetChildIndex(this.txt_mac, 0);
+            this.Controls.SetChildIndex(this.txt_hostname, 0);
             this.Controls.SetChildIndex(this.cmbUser, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -176,8 +177,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtMac;
-        private System.Windows.Forms.TextBox txtHostName;
+        private System.Windows.Forms.TextBox txt_mac;
+        private System.Windows.Forms.TextBox txt_hostname;
         private System.Windows.Forms.ComboBox cmbUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

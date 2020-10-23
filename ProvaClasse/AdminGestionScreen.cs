@@ -8,11 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Control_Library;
+using NetworkUtilities;
+using ConfigurationApp;
+using System.Configuration;
 
 namespace ProvaClasse
 {
+
     public partial class AdminGestionScreen : BaseForm
     {
+
+        string HostName;
+        string macPC;
 
         string userSelected;
         public AdminGestionScreen()
@@ -25,6 +32,10 @@ namespace ProvaClasse
 
         private void AdminGestionScreen_Load(object sender, EventArgs e)
         {
+            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+
+            txt_hostname.Text = machine.getHostname();
+            txt_mac.Text = machine.getMAC();
 
         }
 
@@ -38,10 +49,18 @@ namespace ProvaClasse
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            
+            
+        }
 
-            //Guardamos el usuario seleccionado
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
             userSelected = cmbUser.SelectedItem.ToString();
-            //txtMac.Text = userSelected;
+
+            configApp.AddUpdateAppSettings("TrustedUser", userSelected);
+
+
         }
     }
 }

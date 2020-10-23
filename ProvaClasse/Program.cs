@@ -17,7 +17,7 @@ namespace ProvaClasse
             //Application.EnableVisualStyles();
 
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminDispoScreen());
+            Application.Run(new AdminGestionScreen());
         }
     }
 }
