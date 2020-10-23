@@ -25,7 +25,9 @@ namespace NetworkUtilities
 
             String firstMacAddress = NetworkInterface
             .GetAllNetworkInterfaces()
-            .Where(nic => nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+            .Where(nic => nic.OperationalStatus == OperationalStatus.Up 
+                && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback
+                && !nic.Description.Contains("Virtual"))
             .Select(nic => nic.GetPhysicalAddress().ToString())
             .FirstOrDefault();
 

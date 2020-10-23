@@ -82,6 +82,7 @@
             // 
             // txt_mac
             // 
+            this.txt_mac.Enabled = false;
             this.txt_mac.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mac.Location = new System.Drawing.Point(263, 211);
             this.txt_mac.Name = "txt_mac";
@@ -90,6 +91,7 @@
             // 
             // txt_hostname
             // 
+            this.txt_hostname.Enabled = false;
             this.txt_hostname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_hostname.Location = new System.Drawing.Point(263, 288);
             this.txt_hostname.Name = "txt_hostname";
