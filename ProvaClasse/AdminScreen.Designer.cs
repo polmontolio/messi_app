@@ -85,9 +85,9 @@
             this.lbl_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.Location = new System.Drawing.Point(176, 85);
             this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(103, 69);
+            this.lbl_codigo.Size = new System.Drawing.Size(110, 69);
             this.lbl_codigo.TabIndex = 6;
-            this.lbl_codigo.Text = "B3";
+            this.lbl_codigo.Text = "XY";
             // 
             // tituloMessiAd
             // 
