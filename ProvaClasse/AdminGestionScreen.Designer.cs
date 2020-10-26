@@ -45,24 +45,25 @@
             this.txt_mac.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mac.Location = new System.Drawing.Point(233, 186);
             this.txt_mac.Name = "txt_mac";
-            this.txt_mac.Size = new System.Drawing.Size(200, 36);
+            this.txt_mac.Size = new System.Drawing.Size(279, 36);
             this.txt_mac.TabIndex = 13;
             // 
             // txt_hostname
             // 
+            this.txt_hostname.Enabled = false;
             this.txt_hostname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_hostname.Location = new System.Drawing.Point(233, 273);
             this.txt_hostname.Name = "txt_hostname";
-            this.txt_hostname.Size = new System.Drawing.Size(200, 36);
+            this.txt_hostname.Size = new System.Drawing.Size(279, 36);
             this.txt_hostname.TabIndex = 14;
             // 
             // cmbUser
             // 
             this.cmbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(738, 184);
+            this.cmbUser.Location = new System.Drawing.Point(706, 184);
             this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(200, 37);
+            this.cmbUser.Size = new System.Drawing.Size(279, 37);
             this.cmbUser.TabIndex = 15;
             // 
             // label1
@@ -95,7 +96,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Impact", 17F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.label3.Location = new System.Drawing.Point(623, 185);
+            this.label3.Location = new System.Drawing.Point(591, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 36);
             this.label3.TabIndex = 18;

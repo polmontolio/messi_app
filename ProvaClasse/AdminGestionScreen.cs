@@ -18,8 +18,6 @@ namespace ProvaClasse
     public partial class AdminGestionScreen : BaseForm
     {
 
-        string HostName;
-        string macPC;
 
         string userSelected;
         public AdminGestionScreen()
@@ -50,16 +48,16 @@ namespace ProvaClasse
         private void btnCheck_Click(object sender, EventArgs e)
         {
             
-            
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+
             ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
             userSelected = cmbUser.SelectedItem.ToString();
 
-            configApp.AddUpdateAppSettings("TrustedUser", userSelected);
-
+            ConfigurationApp.Configuration.AddUpdateAppSettings("TrustedUser", userSelected);
 
         }
     }
