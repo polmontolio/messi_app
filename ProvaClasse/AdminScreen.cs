@@ -162,5 +162,10 @@ namespace ProvaClasse
         {
 
         }
+
+        private void lbl_codigo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

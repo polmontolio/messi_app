@@ -85,9 +85,10 @@
             this.lbl_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_codigo.Location = new System.Drawing.Point(176, 85);
             this.lbl_codigo.Name = "lbl_codigo";
-            this.lbl_codigo.Size = new System.Drawing.Size(110, 69);
+            this.lbl_codigo.Size = new System.Drawing.Size(91, 58);
             this.lbl_codigo.TabIndex = 6;
             this.lbl_codigo.Text = "XY";
+            this.lbl_codigo.Click += new System.EventHandler(this.lbl_codigo_Click);
             // 
             // tituloMessiAd
             // 
@@ -121,7 +122,7 @@
             this.mtxt_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxt_password.Name = "mtxt_password";
             this.mtxt_password.PasswordChar = '*';
-            this.mtxt_password.Size = new System.Drawing.Size(89, 26);
+            this.mtxt_password.Size = new System.Drawing.Size(89, 23);
             this.mtxt_password.TabIndex = 11;
             this.mtxt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -129,7 +130,7 @@
             // 
             this.txt_CodigoTemp.Location = new System.Drawing.Point(722, 231);
             this.txt_CodigoTemp.Name = "txt_CodigoTemp";
-            this.txt_CodigoTemp.Size = new System.Drawing.Size(160, 26);
+            this.txt_CodigoTemp.Size = new System.Drawing.Size(160, 22);
             this.txt_CodigoTemp.TabIndex = 10;
             // 
             // AdminScreen
