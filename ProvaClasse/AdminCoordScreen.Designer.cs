@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_generar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Show = new System.Windows.Forms.Button();
             this.tbl_Coord = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
@@ -44,15 +44,16 @@
             this.btn_generar.UseVisualStyleBackColor = true;
             this.btn_generar.Click += new System.EventHandler(this.btn_generar_Click);
             // 
-            // button2
+            // btn_Show
             // 
-            this.button2.Location = new System.Drawing.Point(265, 106);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 32);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Show";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Show.Location = new System.Drawing.Point(265, 106);
+            this.btn_Show.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Show.Name = "btn_Show";
+            this.btn_Show.Size = new System.Drawing.Size(133, 32);
+            this.btn_Show.TabIndex = 14;
+            this.btn_Show.Text = "Show";
+            this.btn_Show.UseVisualStyleBackColor = true;
+            this.btn_Show.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbl_Coord
             // 
@@ -86,14 +87,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tbl_Coord);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.btn_generar);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AdminCoordScreen";
             this.Texto = "Admin Coordenadas";
             this.Load += new System.EventHandler(this.AdminCoordScreen_Load);
             this.Controls.SetChildIndex(this.btn_generar, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
+            this.Controls.SetChildIndex(this.btn_Show, 0);
             this.Controls.SetChildIndex(this.tbl_Coord, 0);
             this.ResumeLayout(false);
 
@@ -102,7 +103,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_generar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Show;
         private System.Windows.Forms.TableLayoutPanel tbl_Coord;
     }
 }

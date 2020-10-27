@@ -89,9 +89,7 @@ namespace ProvaClasse
 
         private void btn_generar_Click(object sender, EventArgs e)
         {
-            tbl_Coord.Controls.Clear();
-            FillLabels();
-            FillContent();
+            
         }
 
         private void FillContent()
@@ -106,7 +104,7 @@ namespace ProvaClasse
                     //Detalles para crear el Label
                     lbl.Font = new Font("Impact", 18);
                     lbl.ForeColor = Color.White;
-                    lbl.Text = ch.ToString() + i.ToString();
+                    lbl.Text = ch.ToString() + i.ToString(); //MODIFICAR CUANDO DICTIONARY ESTE HECHO
                     lbl.Name = "lbl_Content_" + ch.ToString() + i.ToString();
                     lbl.TextAlign = ContentAlignment.MiddleCenter;
                     lbl.Dock = DockStyle.Fill;
@@ -114,6 +112,13 @@ namespace ProvaClasse
                 }
                 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tbl_Coord.Controls.Clear();
+            FillLabels();
+            FillContent();
         }
     }
 }
