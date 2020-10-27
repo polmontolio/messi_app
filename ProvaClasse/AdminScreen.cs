@@ -167,5 +167,10 @@ namespace ProvaClasse
         {
 
         }
+
+        private void tb_Buttons_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

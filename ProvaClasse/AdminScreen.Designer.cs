@@ -78,6 +78,7 @@
             this.tb_Buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tb_Buttons.Size = new System.Drawing.Size(342, 281);
             this.tb_Buttons.TabIndex = 2;
+            this.tb_Buttons.Paint += new System.Windows.Forms.PaintEventHandler(this.tb_Buttons_Paint);
             // 
             // lbl_codigo
             // 

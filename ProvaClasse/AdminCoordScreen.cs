@@ -16,7 +16,7 @@ namespace ProvaClasse
         public AdminCoordScreen()
         {
             InitializeComponent();
-            FillLabels();
+            //FillLabels();
             
 
         }
@@ -49,7 +49,7 @@ namespace ProvaClasse
                 lbl.Dock = DockStyle.Fill;
                 tbl_Coord.Controls.Add(lbl, i, 0);
             }
-
+            
             //VERTICAl
             for (int i = 1; i < 5; i++)
             {
@@ -84,11 +84,13 @@ namespace ProvaClasse
                 tbl_Coord.Controls.Add(lbl, 0, i);
             }
 
-
+            
         }
 
         private void btn_generar_Click(object sender, EventArgs e)
         {
+            tbl_Coord.Controls.Clear();
+            FillLabels();
             FillContent();
         }
 
@@ -96,22 +98,7 @@ namespace ProvaClasse
         {
             for (int i = 1; i < 6; i++)
             {
-                /*
-                for (int j = 1; j < 5; j++)
-                {
-                    //Agregamos el Label
-                    Label lbl = new Label();
-                    //Detalles para crear el Label
-                    lbl.Font = new Font("Impact", 18);
-                    lbl.ForeColor = Color.White;
-                    lbl.Text = j.ToString() + "x" + i.ToString();
-                    lbl.Name = "lbl_Content" + j.ToString() + "x" + i.ToString();
-                    lbl.TextAlign = ContentAlignment.MiddleCenter;
-                    lbl.Dock = DockStyle.Fill;
-                    tbl_Coord.Controls.Add(lbl, i, j);
-                }
 
-                */
                 for (char ch = 'A'; ch <= 'D'; ++ch)
                 {
                     //Agregamos el Label
@@ -120,11 +107,12 @@ namespace ProvaClasse
                     lbl.Font = new Font("Impact", 18);
                     lbl.ForeColor = Color.White;
                     lbl.Text = ch.ToString() + i.ToString();
-                    lbl.Name = "lbl_Content" + ch.ToString() + i.ToString();
+                    lbl.Name = "lbl_Content_" + ch.ToString() + i.ToString();
                     lbl.TextAlign = ContentAlignment.MiddleCenter;
                     lbl.Dock = DockStyle.Fill;
-                    tbl_Coord.Controls.Add(lbl, i, ch);
+                    tbl_Coord.Controls.Add(lbl, i, ch-64);
                 }
+                
             }
         }
     }
