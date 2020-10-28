@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace DataManagement
 {
+    
     public class intData
     {
+        Random rdn = new Random();
         public int GenerateRandom(int min, int max){
             int number;
-            Random rdn = new Random();
+            
             number = rdn.Next(min, max + 1);
             return number;
         }

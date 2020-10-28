@@ -9,7 +9,7 @@ namespace DataManagement
     public class StringData
     {
 
-        public String FillIntZeros(int number, int digit, String fillChar)
+        public String FillIntChar(int number, int digit, String fillChar)
         {
             String numberS = number.ToString();
 
@@ -19,6 +19,18 @@ namespace DataManagement
             }
 
             return numberS;
+        }
+
+        public String FillStringChar(String cadena, int digit, String fillChar)
+        {
+            String cadenaS = cadena;
+
+            while (cadenaS.Length < digit)
+            {
+                cadenaS = fillChar + cadenaS;
+            }
+
+            return cadenaS;
         }
     }
 }

@@ -31,6 +31,7 @@
             this.btn_generar = new System.Windows.Forms.Button();
             this.btn_Show = new System.Windows.Forms.Button();
             this.tbl_Coord = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_generar
@@ -81,11 +82,22 @@
             this.tbl_Coord.TabIndex = 15;
             this.tbl_Coord.Paint += new System.Windows.Forms.PaintEventHandler(this.tbl_Coord_Paint);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(532, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AdminCoordScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tbl_Coord);
             this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.btn_generar);
@@ -96,6 +108,7 @@
             this.Controls.SetChildIndex(this.btn_generar, 0);
             this.Controls.SetChildIndex(this.btn_Show, 0);
             this.Controls.SetChildIndex(this.tbl_Coord, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
 
         }
@@ -105,5 +118,6 @@
         private System.Windows.Forms.Button btn_generar;
         private System.Windows.Forms.Button btn_Show;
         private System.Windows.Forms.TableLayoutPanel tbl_Coord;
+        private System.Windows.Forms.Button button1;
     }
 }

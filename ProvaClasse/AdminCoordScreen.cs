@@ -13,11 +13,25 @@ namespace ProvaClasse
 {
     public partial class AdminCoordScreen : BaseForm
     {
+
+        DataManagement.StringData StringData = new DataManagement.StringData();
+        DataManagement.intData intData = new DataManagement.intData();
+
+        IDictionary<string, string> coordenades = new Dictionary<string, string>();
+        
         public AdminCoordScreen()
         {
             InitializeComponent();
             //FillLabels();
+
+            coordenades = GenerateCoordenades(coordenades);
+            foreach (KeyValuePair<string, string> kvp in coordenades)
+                Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);
             
+
+
+
+
 
         }
 
@@ -119,6 +133,51 @@ namespace ProvaClasse
             tbl_Coord.Controls.Clear();
             FillLabels();
             FillContent();
+        }
+
+
+
+        private IDictionary<string, string> GenerateCoordenades(IDictionary<string, string> dic_coordenadas)
+        {
+
+            
+
+            int numberRandom;
+            String numberString;
+            Boolean repeatednumber = false;
+            int j = 10;
+
+            for (int i = 1; i < 6; i++)
+            {
+
+                for (char ch = 'A'; ch <= 'D'; ++ch)
+                {
+                    /*
+                    do
+                    {
+                        numberRandom = intData.GenerateRandom(0, 9999);
+                        numberString = StringData.FillIntChar(numberRandom, 4, "0");
+                        //repeatednumber = COMPROBAR SI ESTA DENTRO DEL DICTIONARY
+                    } while (!repeatednumber);
+                    */
+                    
+                    numberRandom = intData.GenerateRandom(0, 9999);
+                    numberString = StringData.FillIntChar(numberRandom, 4, "0");
+                    
+                    String _keytotal = ch.ToString() + i.ToString();
+                    dic_coordenadas.Add(_keytotal, numberString);
+
+                }
+
+            }
+
+
+            return dic_coordenadas;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
