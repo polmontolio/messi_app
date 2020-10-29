@@ -17,7 +17,7 @@ namespace ProvaClasse
         DataManagement.StringData StringData = new DataManagement.StringData();
         DataManagement.intData intData = new DataManagement.intData();
 
-        IDictionary<string, string> coordenades = new Dictionary<string, string>();
+        Dictionary<string, string> coordenades = new Dictionary<string, string>();
         
         public AdminCoordScreen()
         {
@@ -137,7 +137,7 @@ namespace ProvaClasse
 
 
 
-        private IDictionary<string, string> GenerateCoordenades(IDictionary<string, string> dic_coordenadas)
+        private Dictionary<string, string> GenerateCoordenades(Dictionary<string, string> dic_coordenadas)
         {
 
             
@@ -152,17 +152,14 @@ namespace ProvaClasse
 
                 for (char ch = 'A'; ch <= 'D'; ++ch)
                 {
-                    /*
+                    
                     do
                     {
-                        numberRandom = intData.GenerateRandom(0, 9999);
+                        numberRandom = intData.GenerateRandom(0, 20);
                         numberString = StringData.FillIntChar(numberRandom, 4, "0");
-                        //repeatednumber = COMPROBAR SI ESTA DENTRO DEL DICTIONARY
+                        repeatednumber = dic_coordenadas.ContainsValue(numberString);
+             
                     } while (!repeatednumber);
-                    */
-                    
-                    numberRandom = intData.GenerateRandom(0, 9999);
-                    numberString = StringData.FillIntChar(numberRandom, 4, "0");
                     
                     String _keytotal = ch.ToString() + i.ToString();
                     dic_coordenadas.Add(_keytotal, numberString);
