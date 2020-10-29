@@ -24,7 +24,7 @@ namespace ProvaClasse
             InitializeComponent();
             //FillLabels();
 
-            coordenades = GenerateCoordenades(coordenades);
+           
             foreach (KeyValuePair<string, string> kvp in coordenades)
                 Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);
             
@@ -103,11 +103,16 @@ namespace ProvaClasse
 
         private void btn_generar_Click(object sender, EventArgs e)
         {
-            
+            coordenades.Clear();
+            coordenades = GenerateCoordenades(coordenades);
+            tbl_Coord.Controls.Clear();
+
         }
 
-        private void FillContent()
+        private void FillContent(Dictionary <string, string > coordenades)
         {
+
+            int contador = 0;
             for (int i = 1; i < 6; i++)
             {
 
@@ -118,29 +123,32 @@ namespace ProvaClasse
                     //Detalles para crear el Label
                     lbl.Font = new Font("Impact", 18);
                     lbl.ForeColor = Color.White;
-                    lbl.Text = ch.ToString() + i.ToString(); //MODIFICAR CUANDO DICTIONARY ESTE HECHO
+                    lbl.Text = coordenades.ElementAt(contador).Value;
+                    lbl.BackColor = Color.FromArgb(100, 62, 62, 66);
                     lbl.Name = "lbl_Content_" + ch.ToString() + i.ToString();
                     lbl.TextAlign = ContentAlignment.MiddleCenter;
                     lbl.Dock = DockStyle.Fill;
                     tbl_Coord.Controls.Add(lbl, i, ch-64);
+                    contador++;
                 }
                 
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Show_Click(object sender, EventArgs e)
         {
             tbl_Coord.Controls.Clear();
             FillLabels();
-            FillContent();
+            if (coordenades.Count > 0)
+            {
+                FillContent(coordenades);
+            }
         }
 
 
 
         private Dictionary<string, string> GenerateCoordenades(Dictionary<string, string> dic_coordenadas)
         {
-
-            
 
             int numberRandom;
             String numberString;
@@ -155,11 +163,11 @@ namespace ProvaClasse
                     
                     do
                     {
-                        numberRandom = intData.GenerateRandom(0, 20);
+                        numberRandom = intData.GenerateRandom(0, 9999);
                         numberString = StringData.FillIntChar(numberRandom, 4, "0");
                         repeatednumber = dic_coordenadas.ContainsValue(numberString);
              
-                    } while (!repeatednumber);
+                    } while (repeatednumber);
                     
                     String _keytotal = ch.ToString() + i.ToString();
                     dic_coordenadas.Add(_keytotal, numberString);
@@ -167,7 +175,6 @@ namespace ProvaClasse
                 }
 
             }
-
 
             return dic_coordenadas;
         }
