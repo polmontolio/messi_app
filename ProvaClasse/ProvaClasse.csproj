@@ -64,6 +64,11 @@
     <Compile Include="AdminGestionScreen.Designer.cs">
       <DependentUpon>AdminGestionScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="DarkCoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MenuUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +153,17 @@
     <EmbeddedResource Include="UserScreen.resx">
       <DependentUpon>UserScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DarkCoreDataSet.xsc">
+      <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DarkCoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DarkCoreDataSet.xss">
+      <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -237,6 +253,14 @@
     <ProjectReference Include="..\NetworkUtilities\NetworkUtilities.csproj">
       <Project>{d07c8195-73ad-4e32-8c2f-42baf48f93ec}</Project>
       <Name>NetworkUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SqlDatabase\Database.csproj">
+      <Project>{93be3911-7852-4917-81d6-63e6e0f35a6c}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\User\User.csproj">
+      <Project>{9112e478-eca9-4b50-913b-5613f8b8feeb}</Project>
+      <Name>User</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

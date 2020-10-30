@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using NetworkUtilities;
 
 namespace ProvaClasse
 {
@@ -18,10 +19,17 @@ namespace ProvaClasse
     {
 
         int intentos = 0;
-        
+        NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+        String _MAC;
+        String hostname;
     public UserScreen()
         {
             InitializeComponent();
+
+
+
+            _MAC = machine.getMAC();
+            hostname= machine.getHostname();
 
             
             
@@ -42,28 +50,37 @@ namespace ProvaClasse
             PrivateFontCollection pfc = new PrivateFontCollection();
             //pfc.AddFontFile("C:/Users/pol/Desktop/MESSI/SolucioProva/font/SF Distant Galaxy.ttf");
             //pfc.AddFontFile("D:/AAS2AM/MESSI/SolucioProva/font/SF Distant Galaxy.ttf");
-            //pfc.AddFontFile("E:/Messi_app/SolucioProva/font/SF Distant Galaxy.ttf");
-            pfc.AddFontFile("C:/Users/pol/Desktop/MESSI/messi_app/font/SF Distant Galaxy.ttf");
+            pfc.AddFontFile("E:/Messi_app/SolucioProva/font/SF Distant Galaxy.ttf");
+            //pfc.AddFontFile("C:/Users/pol/Desktop/MESSI/messi_app/font/SF Distant Galaxy.ttf");
             lbl_user_title.Font = new Font(pfc.Families[0], 35, FontStyle.Regular);
         }
 
         private void btn_login_Click(object sender, EventArgs e)
-        {   
+        {
+
+            User.User userData = new User.User();
+
+            Boolean validatelogin;
+            Boolean validatedevice;
+            
             //Creamos variables
             String username = txt_username.Text;
             String password = mtxt_password.Text;
-            
+        
+            validatelogin = userData.UserValidation(username, password);
+            validatedevice = userData.DeviceValidation(this._MAC, this.hostname);
 
-            //Varaibles de prueba
-            String user = "test";
-            String pass = "12345";
+            //Variables de prueba
+            //String user = "test";
+            //String pass = "12345";
 
             DateTime datetime = DateTime.Now;
             string fecha_actual = datetime.ToString("yyyyMMdd:HHmmss");
+            //if (username == user && password == pass)
 
-            if (username == user && password == pass)
+            if (validatelogin && validatedevice)
             {
-                this.Close();
+                this.Hide();
                 MenuUser MenuUser = new MenuUser();
                 MenuUser.Show();
             } else

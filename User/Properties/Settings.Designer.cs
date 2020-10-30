@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProvaClasse.Properties {
+namespace User.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

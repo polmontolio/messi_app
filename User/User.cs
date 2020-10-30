@@ -27,7 +27,7 @@ namespace User
             SqlConnection connection;
 
             //Declare the Database to connect
-            this.database = new Database.SqlDatabase("SecureCode");
+            this.database = new Database.SqlDatabase("DarkCore");
             connection = this.database.connectar();
 
             connection.Open();
@@ -36,7 +36,7 @@ namespace User
 
             command.CommandType = CommandType.Text;
             command.CommandText = "SELECT COUNT(*) FROM [Users] " + "WHERE [codeuser] = @User" +
-            " AND [Password] = @Password";
+            " AND [password] = @Password";
 
             command.Parameters.Add(new SqlParameter("@User", username));
             command.Parameters.Add(new SqlParameter("@Password", password));
@@ -48,16 +48,57 @@ namespace User
 
         }
 
-        public DataSet getMenu(int userRank, int menuId)
+        public Boolean DeviceValidation(string mac, string hostname)
         {
-            this.database = new Database.SqlDatabase("SecureCode");
-            string query = "select m.menu_id, m.menu_name,b.boton_id,b.boton_desc,b.boton_formOpen from Menus m, Botones b, MenuRanks r where m.menu_id = b.menu_id and b.boton_id = r.boton_id and m.menu_id = 1 and r.rank_id = 1";
+            SqlConnection connection;
 
-            DataSet dataset = this.database.portarPerConsultar(query, "menu");
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
 
+            connection.Open();
 
-            return dataset;
+            SqlCommand command = connection.CreateCommand();
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "SELECT COUNT(*) FROM [TrustedDevices] " + "WHERE [MAC] = @mac" +
+            " AND [HostName] = @hostname";
+
+            command.Parameters.Add(new SqlParameter("@mac", mac));
+            command.Parameters.Add(new SqlParameter("@hostname", hostname));
+
+            int count = (int)command.ExecuteScalar();
+
+            connection.Close();
+            return count == 1;
 
         }
+
+        public Boolean UserDeviceValidation(string mac, string hostname)
+        {
+            SqlConnection connection;
+
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
+
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "SELECT COUNT(*) FROM [TrustedDevices] " + "WHERE [MAC] = @mac" +
+            " AND [HostName] = @hostname";
+
+            command.Parameters.Add(new SqlParameter("@mac", mac));
+            command.Parameters.Add(new SqlParameter("@hostname", hostname));
+
+            int count = (int)command.ExecuteScalar();
+
+            connection.Close();
+            return count == 1;
+
+        }
+
     }
 }
