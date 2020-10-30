@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationApp", "Configu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{87A3DC55-A212-455B-BE8F-B08BBEB524FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "SqlDatabase\Database.csproj", "{93BE3911-7852-4917-81D6-63E6E0F35A6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{87A3DC55-A212-455B-BE8F-B08BBEB524FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87A3DC55-A212-455B-BE8F-B08BBEB524FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87A3DC55-A212-455B-BE8F-B08BBEB524FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BE3911-7852-4917-81D6-63E6E0F35A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BE3911-7852-4917-81D6-63E6E0F35A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BE3911-7852-4917-81D6-63E6E0F35A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BE3911-7852-4917-81D6-63E6E0F35A6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

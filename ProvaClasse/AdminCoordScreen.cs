@@ -153,7 +153,7 @@ namespace ProvaClasse
             int numberRandom;
             String numberString;
             Boolean repeatednumber = false;
-            int j = 10;
+
 
             for (int i = 1; i < 6; i++)
             {
