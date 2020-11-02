@@ -35,7 +35,7 @@ namespace User
             SqlCommand command = connection.CreateCommand();
 
             command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT COUNT(*) FROM [Users] " + "WHERE [codeuser] = @User" +
+            command.CommandText = "SELECT count(*) FROM [Users] " + "WHERE [codeuser] = @User" +
             " AND [password] = @Password";
 
             command.Parameters.Add(new SqlParameter("@User", username));
@@ -61,7 +61,7 @@ namespace User
             SqlCommand command = connection.CreateCommand();
 
             command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT COUNT(*) FROM [TrustedDevices] " + "WHERE [MAC] = @mac" +
+            command.CommandText = "SELECT count(*) FROM [TrustedDevices] " + "WHERE [MAC] = @mac" +
             " AND [HostName] = @hostname";
 
             command.Parameters.Add(new SqlParameter("@mac", mac));
@@ -71,31 +71,69 @@ namespace User
 
             connection.Close();
             return count == 1;
-
         }
 
-        public Boolean UserDeviceValidation(string mac, string hostname)
+        public Boolean SettingsValidation(string username)
         {
-            SqlConnection connection;
+            Boolean exist = false;
+            try
+            {
+                var appSettings = System.Configuration.ConfigurationManager.AppSettings;
+                string result = appSettings["TrustedUser"] ?? "Not Found";
+                exist = result == username;
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error reading app settings");
+            }
+            return exist;
+        }
 
-            //Declare the Database to connect
-            this.database = new Database.SqlDatabase("DarkCore");
-            connection = this.database.connectar();
 
-            connection.Open();
 
-            SqlCommand command = connection.CreateCommand();
+        public Boolean UserDeviceValidation(string username, string password, string mac, string hostname)
+        {
 
-            command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT COUNT(*) FROM [TrustedDevices] " + "WHERE [MAC] = @mac" +
-            " AND [HostName] = @hostname";
+            int count;
 
-            command.Parameters.Add(new SqlParameter("@mac", mac));
-            command.Parameters.Add(new SqlParameter("@hostname", hostname));
+            Boolean uservalidate = UserValidation(username, password);
+            Boolean devicevalidate = DeviceValidation(mac, hostname);
+            Boolean settingsvalidate = SettingsValidation(username);
 
-            int count = (int)command.ExecuteScalar();
+            
+            if (uservalidate && devicevalidate && settingsvalidate)
+            {
+                SqlConnection connection;
 
-            connection.Close();
+                //Declare the Database to connect
+                this.database = new Database.SqlDatabase("DarkCore");
+                connection = this.database.connectar();
+
+                connection.Open();
+
+                SqlCommand command = connection.CreateCommand();
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "SELECT COUNT(*) FROM  MessiUsers mu, TrustedDevices td, Users u  " +
+                    "WHERE u.idUser = mu.idUser and td.idDevice = mu.idDevice " +
+                    "and u.codeUser = @username and u.password = @password " +
+                    "and td.MAC = @mac and td.HostName = @hostname";
+
+
+                command.Parameters.Add(new SqlParameter("@username", username));
+                command.Parameters.Add(new SqlParameter("@password", password));
+                command.Parameters.Add(new SqlParameter("@mac", mac));
+                command.Parameters.Add(new SqlParameter("@hostname", hostname));
+
+                count = (int)command.ExecuteScalar();
+
+                connection.Close();
+            } else
+            {
+                
+                count = 0;
+            }
+            
             return count == 1;
 
         }

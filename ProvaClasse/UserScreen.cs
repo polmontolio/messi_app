@@ -60,25 +60,19 @@ namespace ProvaClasse
 
             User.User userData = new User.User();
 
-            Boolean validatelogin;
-            Boolean validatedevice;
             
             //Creamos variables
             String username = txt_username.Text;
             String password = mtxt_password.Text;
         
-            validatelogin = userData.UserValidation(username, password);
-            validatedevice = userData.DeviceValidation(this._MAC, this.hostname);
+            Boolean validatelogin = userData.UserDeviceValidation(username, password, _MAC, hostname);
 
-            //Variables de prueba
-            //String user = "test";
-            //String pass = "12345";
 
             DateTime datetime = DateTime.Now;
             string fecha_actual = datetime.ToString("yyyyMMdd:HHmmss");
-            //if (username == user && password == pass)
 
-            if (validatelogin && validatedevice)
+
+            if (validatelogin)
             {
                 this.Hide();
                 MenuUser MenuUser = new MenuUser();
@@ -86,7 +80,8 @@ namespace ProvaClasse
             } else
             {
                 intentos++;
-                //MessageBox.Show("intentos:" + intentos);
+                MessageBox.Show("Acceso denegado. Compruebe su usuario y/o dispositivos. \n" + "Intentos restantes: " 
+                    + (3 - intentos).ToString());
 
                 if (intentos >= 3)
                 {
@@ -110,7 +105,7 @@ namespace ProvaClasse
 
         public static void WriteLog(string logline)
         {
-            string path = "C:/Users/Pol/Desktop/";
+            string path = "C:/Users/Karol/Desktop/";
             
             string fileName = "log_error.log";
             try
