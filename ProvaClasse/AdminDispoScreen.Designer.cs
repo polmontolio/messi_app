@@ -72,6 +72,7 @@
             this.btn_save.TabIndex = 15;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_delete
             // 
@@ -83,6 +84,7 @@
             this.btn_delete.TabIndex = 16;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // txt_mac
             // 

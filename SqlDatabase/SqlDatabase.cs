@@ -17,7 +17,7 @@ namespace Database
 
         /**
          * The app connection string
-         */ 
+         */
         private string connectionString;
 
         /**
@@ -27,7 +27,7 @@ namespace Database
 
         /**
          * Array of stored selects
-         */ 
+         */
         private string[] selects;
 
         /**
@@ -37,7 +37,7 @@ namespace Database
 
         /**
          * 
-         */ 
+         */
         private DataSet dataSet;
 
         /**
@@ -67,15 +67,15 @@ namespace Database
 
         /**
          * From a table name of the database return all the data in a dataSet 
-         */ 
-        public DataSet portarTaula( string table)
+         */
+        public DataSet portarTaula(string table)
         {
             SqlDataAdapter adapter;
 
             // Build a select
             string query;
 
-            query = "SELECT * FROM " + table ;
+            query = "SELECT * FROM " + table;
 
             // add the query to the array
             this.addSelect(query);
@@ -107,7 +107,7 @@ namespace Database
          */
         public int actualitzar(DataSet dataset, string query)
         {
-         
+
             try
             {
                 // Open the connection
@@ -140,7 +140,8 @@ namespace Database
                     return 0;
                 }
 
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("SqlDatabase executar exeption = ", ex);
                 return 0;
@@ -150,7 +151,7 @@ namespace Database
         /**
          * 
          * 
-         */ 
+         */
         public void executa(string query)
         {
             // Open the connection
@@ -168,15 +169,21 @@ namespace Database
                 SqlCommand command = this.connection.CreateCommand();
 
                 // add the query inside the commandText
-                command.CommandText = query;
+                
 
                 command.Transaction = transaction;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
 
-            } catch(Exception ex)
+                transaction.Commit();
+
+            }
+            catch (Exception ex)
             {
                 transaction.Rollback();
                 Console.WriteLine("SqlDatabase executar exeption = ", ex);
-            } finally
+            }
+            finally
             {
                 // Close the connection
                 this.connection.Close();
@@ -287,7 +294,7 @@ namespace Database
          */
         private Boolean isSelectAlreadyExist(string select)
         {
-           return this.selects.Contains(select);
+            return this.selects.Contains(select);
         }
 
 
@@ -295,8 +302,8 @@ namespace Database
         {
             // check if the procedure is inside of the array
             // if not then add it 
-           if(!this.isSelectAlreadyExist(select))
-            {   
+            if (!this.isSelectAlreadyExist(select))
+            {
                 // increment the array counter positions
                 this.selectsCounter++;
 
@@ -304,7 +311,7 @@ namespace Database
                 {
                     this.selects[this.selectsCounter] = select;
                 }
-               
+
             }
         }
     }

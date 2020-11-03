@@ -80,7 +80,7 @@ namespace ProvaClasse
             } else
             {
                 intentos++;
-                MessageBox.Show("Acceso denegado. Compruebe su usuario y/o dispositivos. \n" + "Intentos restantes: " 
+                MessageBox.Show("Access denied. Check your username or device. \n" + "Remaining attemps: " 
                     + (3 - intentos).ToString());
 
                 if (intentos >= 3)
