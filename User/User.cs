@@ -189,5 +189,29 @@ namespace User
 
         }
 
+        public string getValueCoordenada(string coordenada)
+        {
+            SqlConnection connection;
+
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
+
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "SELECT Value from AdminCoordinates WHERE Coordinate = @Coordenada";
+
+            command.Parameters.Add(new SqlParameter("@Coordenada", coordenada));
+
+
+            string value = command.ExecuteScalar().ToString();
+
+            connection.Close();
+            return value;
+        }
+
     }
 }

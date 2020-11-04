@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProvaClasse
 {
     public partial class AdminScreen : Form
     {
+        String coordenada;
+        User.User userData = new User.User();
         public AdminScreen()
         {
             InitializeComponent();
@@ -40,7 +43,7 @@ namespace ProvaClasse
             //Generar coordenada random
             int random_number = rand.Next(1, 6);
             char random_letter = (char)rand.Next('A', 'D');
-            String coordenada = random_letter.ToString() + random_number.ToString();
+            coordenada = random_letter.ToString() + random_number.ToString();
             lbl_codigo.Text = coordenada;
 
             // ==================================================================
@@ -130,8 +133,11 @@ namespace ProvaClasse
 
             } else if (btn.Text.Equals("#") || btn.Name.Equals("buttonCorrect"))
             { //Es como el enter, hemos de comprobar si concuerda con el codigo
-                //MessageBox.Show(labelResult.Text);
-                if (mtxt_password.Text.Equals(txt_CodigoTemp.Text))
+
+
+                //COMPROBAR HACIENDO SELECT A LA BASE DE DATOS
+                string valueCoordenada = userData.getValueCoordenada(coordenada);
+                if (mtxt_password.Text.Equals(valueCoordenada))
                 {
                     //MessageBox.Show("CORRECTO");
                     MenuAdmin menuAdmin = new MenuAdmin();
@@ -144,7 +150,7 @@ namespace ProvaClasse
                 }
             }
             else
-            {
+            { // VA AGREGANDO AL TEXTO EL VALOR DE CADA BOTON
                 mtxt_password.Text = mtxt_password.Text + btn.Text;
               
             }
@@ -172,5 +178,8 @@ namespace ProvaClasse
         {
 
         }
+
+
+        
     }
 }

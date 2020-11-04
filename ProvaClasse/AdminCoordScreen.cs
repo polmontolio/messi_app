@@ -13,7 +13,8 @@ namespace ProvaClasse
 {
     public partial class AdminCoordScreen : BaseForm
     {
-
+        private Database.SqlDatabase database;
+        String query;
         DataManagement.StringData StringData = new DataManagement.StringData();
         DataManagement.intData intData = new DataManagement.intData();
 
@@ -25,12 +26,8 @@ namespace ProvaClasse
             //FillLabels();
 
            
-            foreach (KeyValuePair<string, string> kvp in coordenades)
-                Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);
-            
-
-
-
+            //foreach (KeyValuePair<string, string> kvp in coordenades)
+            //    Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);
 
 
         }
@@ -47,7 +44,7 @@ namespace ProvaClasse
 
         private void FillLabels()
         {
-            String letra="";   
+            String letra = "";   
             
             //HORIZONTAL
             for (int i = 1; i < 6; i++)
@@ -105,6 +102,12 @@ namespace ProvaClasse
         {
             coordenades.Clear();
             coordenades = GenerateCoordenades(coordenades);
+            //Subir las coordenadas por primera vez
+            //UploadCoordinates(coordenades);
+
+
+            //Update de las coordenadas
+            UpdateCoordinates(coordenades);
             tbl_Coord.Controls.Clear();
 
         }
@@ -182,6 +185,44 @@ namespace ProvaClasse
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+
+        private void UploadCoordinates(Dictionary<string, string> dic_coordenadas)
+        {
+            //Upload coordinates for the first time from the Dictionary
+            
+            
+            this.database = new Database.SqlDatabase("DarkCore");
+
+
+            for (int index = 0; index < dic_coordenadas.Count; index++)
+            {
+                var item = dic_coordenadas.ElementAt(index);
+                var itemKey = item.Key;
+                var itemValue = item.Value;
+
+                query = "INSERT INTO AdminCoordinates(Coordinate, Value) VALUES('" + itemKey + "','" + itemValue + "');";
+                database.executa(query);
+            }
+        }
+
+
+        private void UpdateCoordinates(Dictionary<string, string> dic_coordenadas)
+        {
+            //UPDATE coordinates for the first time from the Dictionary
+            this.database = new Database.SqlDatabase("DarkCore");
+
+
+            for (int index = 0; index < dic_coordenadas.Count; index++)
+            {
+                var item = dic_coordenadas.ElementAt(index);
+                var itemKey = item.Key;
+                var itemValue = item.Value;
+
+                query = "UPDATE AdminCoordinates SET value = '"+ itemValue + "' WHERE Coordinate = '"+ itemKey + "';";
+                database.executa(query);
+            }
         }
     }
 }
