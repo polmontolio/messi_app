@@ -212,11 +212,16 @@ namespace User
 
         }
 
+<<<<<<< HEAD
         public Boolean UserDeviceValidation(string username, string mac, string hostname)
         {
 
             int count;
 
+=======
+        public string getValueCoordenada(string coordenada)
+        {
+>>>>>>> 1f292bbccaca8bb5eefa00690fa193596ef7d709
             SqlConnection connection;
 
             //Declare the Database to connect
@@ -228,6 +233,7 @@ namespace User
             SqlCommand command = connection.CreateCommand();
 
             command.CommandType = CommandType.Text;
+<<<<<<< HEAD
             command.CommandText = "SELECT COUNT(*) FROM  MessiUsers mu, TrustedDevices td, Users u  " +
                 "WHERE u.idUser = mu.idUser and td.idDevice = mu.idDevice " +
                 "and u.codeUser = @username " +
@@ -249,5 +255,18 @@ namespace User
             return count == 1;
 
         }
+=======
+            command.CommandText = "SELECT Value from AdminCoordinates WHERE Coordinate = @Coordenada";
+
+            command.Parameters.Add(new SqlParameter("@Coordenada", coordenada));
+
+
+            string value = command.ExecuteScalar().ToString();
+
+            connection.Close();
+            return value;
+        }
+
+>>>>>>> 1f292bbccaca8bb5eefa00690fa193596ef7d709
     }
 }
