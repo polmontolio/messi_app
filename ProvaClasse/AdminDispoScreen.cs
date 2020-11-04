@@ -55,6 +55,7 @@ namespace ProvaClasse
         private void btn_delete_Click(object sender, EventArgs e)
         {
             this.database = new Database.SqlDatabase("DarkCore");
+            //this.database = new Database.SqlDatabase("DarkCoreConnection");
             int DeviceID = userData.getDeviceID(_mac, hostname);
 
             query = "DELETE MessiUsers where idDevice = " + DeviceID + "; DELETE TrustedDevices where idDevice = " + DeviceID + ";";
@@ -68,7 +69,7 @@ namespace ProvaClasse
         private void btn_save_Click(object sender, EventArgs e)
         {
             this.database = new Database.SqlDatabase("DarkCore");
-            
+            //this.database = new Database.SqlDatabase("DarkCoreConnection");
 
             query = "insert into TrustedDevices(MAC, HostName) values('" +_mac + "','" + hostname + "');";
             database.executa(query);

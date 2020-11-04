@@ -26,6 +26,8 @@ namespace ProvaClasse
         String query;
         String _mac;
         String hostname;
+        int idUser;
+        int idDevice;
         public AdminGestionScreen()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace ProvaClasse
         {
             NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
             User.User userData = new User.User();
+            this.database = new Database.SqlDatabase("DarkCore");
             
 
             txt_hostname.Text = machine.getHostname();
@@ -55,7 +58,8 @@ namespace ProvaClasse
                 threatScreen.ShowDialog();
             } else
             {
-                DataSet dataset = this.database.portarPerConsultar("select descUser from Users;", "Users");
+                cmbUser.DisplayMember = "codeUser";
+                DataSet dataset = this.database.portarPerConsultar("select * from Users;", "Users");
                 //We add this dataset to the controller
                 cmbUser.DataSource = dataset.Tables[0];
             }
@@ -65,7 +69,29 @@ namespace ProvaClasse
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            
+            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+            User.User userData = new User.User();
+            this.database = new Database.SqlDatabase("DarkCore");
+
+            hostname = machine.getHostname();
+            _mac = machine.getMAC();
+            userSelected = cmbUser.Text;
+
+            //MessageBox.Show(userSelected);
+
+
+            Boolean validatelogin = userData.UserDeviceValidation(userSelected, _mac, hostname);
+
+            if (validatelogin)
+            {
+                btnDelete.Enabled = true;
+                btnRegister.Enabled = false;
+            }
+            else
+            {
+                btnDelete.Enabled = false;
+                btnRegister.Enabled = true;
+            }
 
         }
 
@@ -73,7 +99,7 @@ namespace ProvaClasse
         {
 
             ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
-            userSelected = cmbUser.SelectedItem.ToString();
+            userSelected = cmbUser.Text;
 
             ConfigurationApp.Configuration.AddUpdateAppSettings("TrustedUser", userSelected);
 

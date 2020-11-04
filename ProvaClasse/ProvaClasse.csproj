@@ -69,6 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DarkCoreDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MenuUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +168,17 @@
     </None>
     <None Include="DarkCoreDataSet.xss">
       <DependentUpon>DarkCoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet1.xsc">
+      <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DarkCoreDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DarkCoreDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DarkCoreDataSet1.xss">
+      <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
