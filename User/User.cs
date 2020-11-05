@@ -212,16 +212,10 @@ namespace User
 
         }
 
-<<<<<<< HEAD
+
         public Boolean UserDeviceValidation(string username, string mac, string hostname)
         {
 
-            int count;
-
-=======
-        public string getValueCoordenada(string coordenada)
-        {
->>>>>>> 1f292bbccaca8bb5eefa00690fa193596ef7d709
             SqlConnection connection;
 
             //Declare the Database to connect
@@ -233,29 +227,43 @@ namespace User
             SqlCommand command = connection.CreateCommand();
 
             command.CommandType = CommandType.Text;
-<<<<<<< HEAD
+
             command.CommandText = "SELECT COUNT(*) FROM  MessiUsers mu, TrustedDevices td, Users u  " +
                 "WHERE u.idUser = mu.idUser and td.idDevice = mu.idDevice " +
                 "and u.codeUser = @username " +
                 "and td.MAC = @mac and td.HostName = @hostname";
-
-            
 
 
             command.Parameters.Add(new SqlParameter("@username", username));
             command.Parameters.Add(new SqlParameter("@mac", mac));
             command.Parameters.Add(new SqlParameter("@hostname", hostname));
 
-            count = (int)command.ExecuteScalar();
+            int count = (int)command.ExecuteScalar();
 
-           
+
 
             connection.Close();
 
             return count == 1;
 
         }
-=======
+
+
+
+
+        public string getValueCoordenada(string coordenada)
+        {
+            SqlConnection connection;
+
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
+
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+
+
             command.CommandText = "SELECT Value from AdminCoordinates WHERE Coordinate = @Coordenada";
 
             command.Parameters.Add(new SqlParameter("@Coordenada", coordenada));
@@ -267,6 +275,6 @@ namespace User
             return value;
         }
 
->>>>>>> 1f292bbccaca8bb5eefa00690fa193596ef7d709
+
     }
 }
