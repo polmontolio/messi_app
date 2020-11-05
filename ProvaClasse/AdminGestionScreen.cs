@@ -32,12 +32,14 @@ namespace ProvaClasse
         {
             InitializeComponent();
             //Adjuntamos el enum al combobox
-            
+
             
         }
 
         private void AdminGestionScreen_Load(object sender, EventArgs e)
         {
+            btnDelete.Enabled = false;
+            btnRegister.Enabled = false;
             NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
             User.User userData = new User.User();
             this.database = new Database.SqlDatabase("DarkCore");
@@ -97,12 +99,48 @@ namespace ProvaClasse
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            User.User userData = new User.User();
+            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+            ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
+            userSelected = cmbUser.Text;
+            hostname = machine.getHostname();
+            _mac = machine.getMAC();
 
+
+            
+            String existsUser = ConfigurationApp.Configuration.CheckUser("TrustedUser", userSelected);
+            //REGISTER IF THE USER IS NOT IN APPSETINS.VALUE
+            if (!userSelected.Equals(existsUser) && existsUser.Length > 0) {
+
+                MessageBox.Show("This device is already connected to a user.");
+
+            } else {
+                userData.RegisterUserDevice(userSelected, _mac, hostname);
+
+                ConfigurationApp.Configuration.AddUpdateAppSettings("TrustedUser", userSelected);
+                MessageBox.Show("Your connection have been saved correctly.");
+                btnDelete.Enabled = false;
+                btnRegister.Enabled = false;
+            }
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            User.User userData = new User.User();
+            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
             ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
             userSelected = cmbUser.Text;
 
-            ConfigurationApp.Configuration.AddUpdateAppSettings("TrustedUser", userSelected);
 
+            hostname = machine.getHostname();
+            _mac = machine.getMAC();
+
+            userData.DeleteUserDevice(userSelected, _mac, hostname);
+            ConfigurationApp.Configuration.DeleteAppSettings("TrustedUser");
+            MessageBox.Show("Your connection have been deleted correctly.");
+            btnDelete.Enabled = false;
+            btnRegister.Enabled = false;
         }
     }
 }

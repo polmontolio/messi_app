@@ -212,7 +212,6 @@ namespace User
 
         }
 
-
         public Boolean UserDeviceValidation(string username, string mac, string hostname)
         {
 
@@ -247,10 +246,6 @@ namespace User
             return count == 1;
 
         }
-
-
-
-
         public string getValueCoordenada(string coordenada)
         {
             SqlConnection connection;
@@ -275,6 +270,58 @@ namespace User
             return value;
         }
 
+        public void RegisterUserDevice(string username, string mac, string hostname)
+        {
 
+            int idUser = getUserID(username); 
+            int idDevice = getDeviceID(mac, hostname);
+
+            SqlConnection connection;
+
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
+
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "INSERT INTO MessiUsers (idDevice, idUser) VALUES (@idDevice, @idUser) ";
+
+            command.Parameters.Add(new SqlParameter("@idDevice", idDevice));
+            command.Parameters.Add(new SqlParameter("@idUser", idUser));
+          
+            command.ExecuteScalar();
+
+            connection.Close();
+        }
+
+        public void DeleteUserDevice(string username, string mac, string hostname)
+        {
+
+            int idUser = getUserID(username);
+            int idDevice = getDeviceID(mac, hostname);
+
+            SqlConnection connection;
+
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
+
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "DELETE MessiUsers where idDevice = @idDevice and idUser  = @idUser ";
+
+            command.Parameters.Add(new SqlParameter("@idDevice", idDevice));
+            command.Parameters.Add(new SqlParameter("@idUser", idUser));
+
+            command.ExecuteScalar();
+
+            connection.Close();
+        }
     }
 }
