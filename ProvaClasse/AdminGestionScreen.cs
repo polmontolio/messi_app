@@ -12,27 +12,29 @@ using NetworkUtilities;
 using ConfigurationApp;
 using System.Configuration;
 using User;
+using DataManagement;
 
 namespace ProvaClasse
 {
-
+    
     public partial class AdminGestionScreen : BaseForm
     {
 
 
-        string userSelected;
-        
-        private Database.SqlDatabase database;
-        String query;
+        //CONSTRUCTORES
+        NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+        private Database.SqlDatabase database = new Database.SqlDatabase("DarkCore");
+        User.User userData = new User.User();
+        DataManagement.emailData emailData = new emailData();
+
+        //DECLARACIONES
         String _mac;
         String hostname;
-        int idUser;
-        int idDevice;
+        string userSelected;
+
         public AdminGestionScreen()
         {
             InitializeComponent();
-            //Adjuntamos el enum al combobox
-
             
         }
 
@@ -40,17 +42,14 @@ namespace ProvaClasse
         {
             btnDelete.Enabled = false;
             btnRegister.Enabled = false;
-            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
-            User.User userData = new User.User();
-            this.database = new Database.SqlDatabase("DarkCore");
-            
 
-            txt_hostname.Text = machine.getHostname();
-            txt_mac.Text = machine.getMAC();
+            hostname = machine.getHostname();
+            _mac = machine.getMAC();
+
+            txt_hostname.Text = hostname;
+            txt_mac.Text = _mac;
 
 
-            _mac = txt_mac.Text;
-            hostname = txt_hostname.Text;
 
             Boolean devicevalidate = userData.DeviceValidation(_mac, hostname);
 
@@ -71,18 +70,11 @@ namespace ProvaClasse
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
-            User.User userData = new User.User();
-            this.database = new Database.SqlDatabase("DarkCore");
 
-            hostname = machine.getHostname();
-            _mac = machine.getMAC();
             userSelected = cmbUser.Text;
+            
 
-            //MessageBox.Show(userSelected);
-
-
-            Boolean validatelogin = userData.UserDeviceValidation(userSelected, _mac, hostname);
+            Boolean validatelogin = userData.UserDeviceValidation(userSelected, this._mac, this.hostname);
 
             if (validatelogin)
             {
@@ -99,48 +91,49 @@ namespace ProvaClasse
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            User.User userData = new User.User();
-            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+
             ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
             userSelected = cmbUser.Text;
-            hostname = machine.getHostname();
-            _mac = machine.getMAC();
+            String userEmail = userData.getUserEmail(userSelected);
 
-
-            
             String existsUser = ConfigurationApp.Configuration.CheckUser("TrustedUser", userSelected);
-            //REGISTER IF THE USER IS NOT IN APPSETINS.VALUE
+            
+            /*
             if (!userSelected.Equals(existsUser) && existsUser.Length > 0) {
 
                 MessageBox.Show("This device is already connected to a user.");
 
             } else {
-                userData.RegisterUserDevice(userSelected, _mac, hostname);
 
-                ConfigurationApp.Configuration.AddUpdateAppSettings("TrustedUser", userSelected);
-                MessageBox.Show("Your connection have been saved correctly.");
-                btnDelete.Enabled = false;
-                btnRegister.Enabled = false;
-            }
-            
+            }*/
+
+            userData.RegisterUserDevice(userSelected, _mac, hostname);
+            ConfigurationApp.Configuration.AddUpdateAppSettings("TrustedUser", userSelected);
+
+            btnDelete.Enabled = false;
+            btnRegister.Enabled = false;
+            String body = "Your device (" + this.hostname + ") have been connected to your user account.";
+            emailData.sendEmail(userEmail, "DEVICE REGISTERED " + userSelected.ToUpper(), body);
+            MessageBox.Show("Your connection have been saved correctly. An email have been sent to the user.");
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            User.User userData = new User.User();
-            NetworkUtilities.Machine machine = new NetworkUtilities.Machine();
+
             ConfigurationApp.Configuration configApp = new ConfigurationApp.Configuration();
             userSelected = cmbUser.Text;
+            String userEmail = userData.getUserEmail(userSelected);
 
 
-            hostname = machine.getHostname();
-            _mac = machine.getMAC();
-
-            userData.DeleteUserDevice(userSelected, _mac, hostname);
+            userData.DeleteUserDevice(userSelected, this._mac, this.hostname);
             ConfigurationApp.Configuration.DeleteAppSettings("TrustedUser");
-            MessageBox.Show("Your connection have been deleted correctly.");
+            
             btnDelete.Enabled = false;
             btnRegister.Enabled = false;
+            String body = "Your device (" + hostname + ") have been disconnected to your user account.";
+            emailData.sendEmail(userEmail, "DEVICE DISCONNECTED " + userSelected.ToUpper(), body);
+            MessageBox.Show("Your connection have been deleted correctly. An email have been sent to the user.");
         }
     }
 }

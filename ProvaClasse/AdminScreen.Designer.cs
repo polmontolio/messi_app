@@ -35,7 +35,6 @@
             this.tituloMessiAd = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.mtxt_password = new System.Windows.Forms.MaskedTextBox();
-            this.txt_CodigoTemp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -127,19 +126,11 @@
             this.mtxt_password.TabIndex = 11;
             this.mtxt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txt_CodigoTemp
-            // 
-            this.txt_CodigoTemp.Location = new System.Drawing.Point(722, 231);
-            this.txt_CodigoTemp.Name = "txt_CodigoTemp";
-            this.txt_CodigoTemp.Size = new System.Drawing.Size(160, 22);
-            this.txt_CodigoTemp.TabIndex = 10;
-            // 
             // AdminScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::ProvaClasse.Properties.Resources.star_wars_BG2;
             this.ClientSize = new System.Drawing.Size(1074, 640);
-            this.Controls.Add(this.txt_CodigoTemp);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -152,7 +143,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -164,7 +154,6 @@
         private System.Windows.Forms.Label lbl_codigo;
         private System.Windows.Forms.Label tituloMessiAd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txt_CodigoTemp;
         private System.Windows.Forms.MaskedTextBox mtxt_password;
     }
 }

@@ -123,6 +123,31 @@ namespace User
 
         }
 
+        public String getUserEmail(string username)
+        {
+            SqlConnection connection;
+
+            //Declare the Database to connect
+            this.database = new Database.SqlDatabase("DarkCore");
+            connection = this.database.connectar();
+
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "SELECT email FROM [Users] " + "WHERE [codeuser] = @User";
+
+            command.Parameters.Add(new SqlParameter("@User", username));
+
+
+            String email = command.ExecuteScalar().ToString();
+
+            connection.Close();
+            return email;
+
+        }
+
         public int getUserID(string username)
         {
             SqlConnection connection;
