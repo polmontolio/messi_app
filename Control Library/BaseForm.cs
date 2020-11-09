@@ -38,5 +38,12 @@ namespace Control_Library
             get { return lbl_titulo.Text; }
             set { lbl_titulo.Text = value; }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form formContainer = FindForm();
+
+
+        }
     }
 }
