@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 
 namespace Control_Library
 {
-    public partial class ButtonClose : UserControl
+    public partial class ButtonClose : Button
     {
 
         

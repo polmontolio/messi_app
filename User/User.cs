@@ -288,7 +288,6 @@ namespace User
 
             command.Parameters.Add(new SqlParameter("@Coordenada", coordenada));
 
-
             string value = command.ExecuteScalar().ToString();
 
             connection.Close();

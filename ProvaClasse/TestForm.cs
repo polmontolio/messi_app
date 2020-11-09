@@ -29,5 +29,18 @@ namespace ProvaClasse
 
 
         }
+
+        private void buttonBack1_Click(object sender, EventArgs e)
+        {
+           /* 
+            Form FormContainer = FindForm();
+
+            FormContainer.Hide();
+            
+            System.Reflection.Assembly _asm = System.Reflection.Assembly.GetExecutingAssembly();
+            var _form = (Form)_asm.CreateInstance("ProvaClasse" + "." + buttonBack1.Formulari);
+            _form.Show();
+           */
+        }
     }
 }

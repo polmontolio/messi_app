@@ -34,7 +34,7 @@
             // buttonCloseUs
             // 
             this.buttonCloseUs.BackColor = System.Drawing.Color.OrangeRed;
-            this.buttonCloseUs.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCloseUs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonCloseUs.FlatAppearance.BorderSize = 0;
             this.buttonCloseUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -52,8 +52,8 @@
             // 
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.buttonCloseUs);
-            this.Name = "ButtonClose";
             this.Size = new System.Drawing.Size(31, 33);
+            this.UseVisualStyleBackColor = false;
             this.ResumeLayout(false);
 
         }
