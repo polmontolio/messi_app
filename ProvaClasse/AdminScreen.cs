@@ -105,10 +105,10 @@ namespace ProvaClasse
                     }
 
                     //Detalles para crear el boton
-                    btn.Size = new Size(80, 50);
+                    btn.Size = new Size(80, 60);
                     btn.FlatStyle = FlatStyle.Flat;
-                    btn.FlatAppearance.MouseOverBackColor = Color.PaleVioletRed;
-                    btn.FlatAppearance.MouseDownBackColor = Color.LightSteelBlue;
+                    btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(85, 248, 220, 51);
+                    btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(248, 220, 51);
                     btn.Font = new Font("Microsoft Sans Serif", 15);
                     tb_Buttons.Controls.Add(btn, x, y);
                     btn.Click += new EventHandler(this.ButtonClick);

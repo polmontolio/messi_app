@@ -70,7 +70,7 @@
             this.tb_Buttons.ColumnCount = 2;
             this.tb_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tb_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_Buttons.Location = new System.Drawing.Point(79, 174);
+            this.tb_Buttons.Location = new System.Drawing.Point(79, 170);
             this.tb_Buttons.Name = "tb_Buttons";
             this.tb_Buttons.RowCount = 2;
             this.tb_Buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -92,7 +92,6 @@
             // 
             // tituloMessiAd
             // 
-            this.tituloMessiAd.Dock = System.Windows.Forms.DockStyle.Top;
             this.tituloMessiAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloMessiAd.Location = new System.Drawing.Point(0, 0);
             this.tituloMessiAd.Name = "tituloMessiAd";
@@ -104,7 +103,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.mtxt_password);
             this.panel3.Controls.Add(this.tituloMessiAd);
@@ -112,17 +111,20 @@
             this.panel3.Controls.Add(this.tb_Buttons);
             this.panel3.Location = new System.Drawing.Point(47, 56);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(443, 556);
+            this.panel3.Size = new System.Drawing.Size(418, 556);
             this.panel3.TabIndex = 9;
             // 
             // mtxt_password
             // 
-            this.mtxt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxt_password.Location = new System.Drawing.Point(179, 478);
+            this.mtxt_password.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.mtxt_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mtxt_password.Enabled = false;
+            this.mtxt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxt_password.Location = new System.Drawing.Point(152, 464);
             this.mtxt_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxt_password.Name = "mtxt_password";
             this.mtxt_password.PasswordChar = '*';
-            this.mtxt_password.Size = new System.Drawing.Size(89, 23);
+            this.mtxt_password.Size = new System.Drawing.Size(111, 45);
             this.mtxt_password.TabIndex = 11;
             this.mtxt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
