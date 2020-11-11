@@ -135,5 +135,12 @@ namespace ProvaClasse
             emailData.sendEmail(userEmail, "DEVICE DISCONNECTED " + userSelected.ToUpper(), body);
             MessageBox.Show("Your connection have been deleted correctly. An email have been sent to the user.");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuAdmin menuAdmin = new MenuAdmin();
+            menuAdmin.Show();
+            this.Close();
+        }
     }
 }

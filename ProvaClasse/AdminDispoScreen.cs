@@ -77,5 +77,12 @@ namespace ProvaClasse
             btn_delete.Enabled = true;
             MessageBox.Show("Your device have been saved correctly.");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuAdmin menuAdmin = new MenuAdmin();
+            menuAdmin.Show();
+            this.Close();
+        }
     }
 }

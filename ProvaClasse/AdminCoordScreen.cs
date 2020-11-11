@@ -182,11 +182,6 @@ namespace ProvaClasse
             return dic_coordenadas;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void UploadCoordinates(Dictionary<string, string> dic_coordenadas)
         {
@@ -223,6 +218,13 @@ namespace ProvaClasse
                 query = "UPDATE AdminCoordinates SET value = '"+ itemValue + "' WHERE Coordinate = '"+ itemKey + "';";
                 database.executa(query);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuAdmin menuAdmin = new MenuAdmin();
+            menuAdmin.Show();
+            this.Close();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace ProvaClasse
 {
@@ -34,7 +35,13 @@ namespace ProvaClasse
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile("../font/SF Distant Galaxy.ttf");
 
+
+            label1.Font = new Font(pfc.Families[0], 25, FontStyle.Regular);
+            label2.Font = new Font(pfc.Families[0], 25, FontStyle.Regular);
+            label3.Font = new Font(pfc.Families[0], 25, FontStyle.Regular);
         }
 
         private void menuAd_Dispositivos_Click(object sender, EventArgs e)
@@ -53,6 +60,11 @@ namespace ProvaClasse
             gestionScreen.Show();
             //this.Close();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

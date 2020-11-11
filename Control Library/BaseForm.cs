@@ -41,20 +41,6 @@ namespace Control_Library
             set { lbl_titulo.Text = value; }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form formContainer = FindForm();
-            MessageBox.Show("Click");
-
-
-            System.Reflection.Assembly _asm = System.Reflection.Assembly.GetExecutingAssembly();
-            //Create the instance of the form
-            var _frm = (Form)_asm.CreateInstance("ProvaClasse" + "." + "MenuAdmin");
-
-            
-            _frm.Show();
-            formContainer.Hide();
-
-        }
+        
     }
 }
