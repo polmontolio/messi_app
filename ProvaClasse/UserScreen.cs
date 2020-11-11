@@ -49,7 +49,6 @@ namespace ProvaClasse
         {
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile("../font/SF Distant Galaxy.ttf");
-            //pfc.AddFontFile("C:/Users/pol/Desktop/MESSI/messi_app/font/SF Distant Galaxy.ttf");
             lbl_user_title.Font = new Font(pfc.Families[0], 35, FontStyle.Regular);
         }
 
