@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "SqlDatabase\Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User", "User\User.csproj", "{9112E478-ECA9-4B50-913B-5613F8B8FEEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserForms", "UserForms\UserForms.csproj", "{7F6E8D38-15AE-4483-8310-C095A62E9708}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9112E478-ECA9-4B50-913B-5613F8B8FEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9112E478-ECA9-4B50-913B-5613F8B8FEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9112E478-ECA9-4B50-913B-5613F8B8FEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6E8D38-15AE-4483-8310-C095A62E9708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6E8D38-15AE-4483-8310-C095A62E9708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6E8D38-15AE-4483-8310-C095A62E9708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6E8D38-15AE-4483-8310-C095A62E9708}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
