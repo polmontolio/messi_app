@@ -48,9 +48,7 @@ namespace ProvaClasse
         private void UsenScreen_Load(object sender, EventArgs e)
         {
             PrivateFontCollection pfc = new PrivateFontCollection();
-            //pfc.AddFontFile("C:/Users/pol/Desktop/MESSI/SolucioProva/font/SF Distant Galaxy.ttf");
-            //pfc.AddFontFile("D:/AAS2AM/MESSI/SolucioProva/font/SF Distant Galaxy.ttf");
-            pfc.AddFontFile("E:/Messi_app/SolucioProva/font/SF Distant Galaxy.ttf");
+            pfc.AddFontFile("../font/SF Distant Galaxy.ttf");
             //pfc.AddFontFile("C:/Users/pol/Desktop/MESSI/messi_app/font/SF Distant Galaxy.ttf");
             lbl_user_title.Font = new Font(pfc.Families[0], 35, FontStyle.Regular);
         }

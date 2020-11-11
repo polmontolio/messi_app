@@ -88,6 +88,7 @@
             this.buttonClose1.Name = "buttonClose1";
             this.buttonClose1.Size = new System.Drawing.Size(34, 36);
             this.buttonClose1.TabIndex = 0;
+            this.buttonClose1.UseVisualStyleBackColor = false;
             this.buttonClose1.Click += new System.EventHandler(this.buttonClose1_Click);
             // 
             // BaseForm

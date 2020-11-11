@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Control_Library
 {
     public partial class BaseForm: Form
@@ -47,8 +49,9 @@ namespace Control_Library
 
             System.Reflection.Assembly _asm = System.Reflection.Assembly.GetExecutingAssembly();
             //Create the instance of the form
-            var _frm = (Form)_asm.CreateInstance("SecureCode" + "." + "MenuAdmin");
+            var _frm = (Form)_asm.CreateInstance("ProvaClasse" + "." + "MenuAdmin");
 
+            
             _frm.Show();
             formContainer.Hide();
 
