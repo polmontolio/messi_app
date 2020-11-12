@@ -68,6 +68,12 @@
     <Compile Include="AdminGestionScreen.Designer.cs">
       <DependentUpon>AdminGestionScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseBlueprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseBlueprint.Designer.cs">
+      <DependentUpon>BaseBlueprint.cs</DependentUpon>
+    </Compile>
     <Compile Include="DarkCoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGestionScreen.resx">
       <DependentUpon>AdminGestionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseBlueprint.resx">
+      <DependentUpon>BaseBlueprint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUser.resx">
       <DependentUpon>MenuUser.cs</DependentUpon>

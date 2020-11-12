@@ -48,6 +48,12 @@
     <Compile Include="ButtonClose.Designer.cs">
       <DependentUpon>ButtonClose.cs</DependentUpon>
     </Compile>
+    <Compile Include="PanelOpacity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PanelOpacity.Designer.cs">
+      <DependentUpon>PanelOpacity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

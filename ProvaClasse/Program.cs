@@ -17,7 +17,7 @@ namespace ProvaClasse
             //Application.EnableVisualStyles();
 
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuUser());
+            Application.Run(new BaseBlueprint());
         }
     }
 }
