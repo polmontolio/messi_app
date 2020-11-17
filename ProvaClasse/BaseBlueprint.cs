@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Control_Library;
+using System.Drawing;
 
 namespace ProvaClasse
 {
-    public partial class BaseBlueprint : Form
+    public partial class BaseBlueprint : BaseForm
     {
-        PanelOpacity panelOp = new PanelOpacity();
         public BaseBlueprint()
         {
             InitializeComponent();
@@ -21,28 +15,45 @@ namespace ProvaClasse
 
         private void BaseBlueprint_Load(object sender, EventArgs e)
         {
+            String rutaImageMain = "";
+            String ruta = "../img/blueprintimages/StarKiller/";
 
-            pictureBox1.BackgroundImage = Image.FromFile("../img/death_star2.png");
-            panelOp.Opacity = 20;
+            // Cargar XML (Solo el nodo Blueprints)
+            XElement documemt = null;
+            documemt = XElement.Load(@"../img/blueprintimages/Info.xml");
+            // Crear listado del XML
+            var listaBlueprint = documemt.Elements("Blueprints");
+
+
+            // Bucle para buscar la imagenMain
+            foreach (XElement ele in listaBlueprint)
+                rutaImageMain += ele.Element("imageMain").Value + "\r\n";
+
+            pictureBox1.BackgroundImage = Image.FromFile(ruta + rutaImageMain);
+
+
         }
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panelOp.Opacity = 100;
+            pnloGreen.Visible = true;
+            pnloOrange.Visible = true;
+            pnloYellow.Visible = true;
         }
 
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        private void pnloOrange_Click(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = Image.FromFile("../img/Sith_canon.png");
+
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        private void pnloGreen_Click(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = Image.FromFile("../img/death_star2.png");
 
-            
+        }
+
+        private void pnloYellow_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

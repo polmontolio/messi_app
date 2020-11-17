@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ProvaClasse
 {
@@ -17,30 +11,29 @@ namespace ProvaClasse
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void TestForm_Load(object sender, EventArgs e)
         {
-            DataManagement.StringData StringData = new DataManagement.StringData();
-            DataManagement.intData intData = new DataManagement.intData();
+            //Alumnos
+            XElement alumnes = null;
+            alumnes = XElement.Load(@"../alumnes.xml");
 
 
-            int numberRandom = intData.GenerateRandom(0, 9999);
+            var llistaAlumnes = alumnes.Elements("alumne");
+            foreach (XElement ele in llistaAlumnes)
+                txtResultat.Text += ele.Element("nom") + "\r\n";
 
-            label1.Text = StringData.FillIntChar(numberRandom, 4, "0");
+
+            //Modulos
+            XElement modulos = null;
+            modulos = XElement.Load(@"../alumnes.xml");
 
 
-        }
+            var llistaModulos = alumnes.Elements("alumne").Elements("moduls").Elements("modul");
+            foreach (XElement ele in llistaModulos)
+                txtModuls.Text += ele.Element("nomModul").Value + "\r\n";
 
-        private void buttonBack1_Click(object sender, EventArgs e)
-        {
-           /* 
-            Form FormContainer = FindForm();
-
-            FormContainer.Hide();
-            
-            System.Reflection.Assembly _asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var _form = (Form)_asm.CreateInstance("ProvaClasse" + "." + buttonBack1.Formulari);
-            _form.Show();
-           */
         }
     }
 }

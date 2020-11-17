@@ -51,6 +51,7 @@ namespace Control_Library
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
             base.OnPaint(e);
+            this.Update();
         }
     
     }
