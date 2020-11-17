@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDetail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pboxDetail = new System.Windows.Forms.PictureBox();
+            this.lblDetail = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pnloOrange = new Control_Library.PanelOpacity();
             this.pnloYellow = new Control_Library.PanelOpacity();
             this.pnloGreen = new Control_Library.PanelOpacity();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDetail)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtDetail
             // 
-            this.textBox1.Location = new System.Drawing.Point(709, 374);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 245);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Visible = false;
-            this.textBox1.WordWrap = false;
+            this.txtDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetail.Location = new System.Drawing.Point(709, 374);
+            this.txtDetail.Multiline = true;
+            this.txtDetail.Name = "txtDetail";
+            this.txtDetail.Size = new System.Drawing.Size(457, 245);
+            this.txtDetail.TabIndex = 0;
+            this.txtDetail.Visible = false;
             // 
             // pictureBox1
             // 
@@ -60,25 +60,26 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pboxDetail
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(709, 133);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(208, 205);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.pboxDetail.BackColor = System.Drawing.Color.Transparent;
+            this.pboxDetail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pboxDetail.Location = new System.Drawing.Point(709, 133);
+            this.pboxDetail.Name = "pboxDetail";
+            this.pboxDetail.Size = new System.Drawing.Size(263, 205);
+            this.pboxDetail.TabIndex = 14;
+            this.pboxDetail.TabStop = false;
             // 
-            // label1
+            // lblDetail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1004, 222);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 39);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
+            this.lblDetail.AutoSize = true;
+            this.lblDetail.BackColor = System.Drawing.Color.Transparent;
+            this.lblDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetail.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDetail.Location = new System.Drawing.Point(1004, 222);
+            this.lblDetail.Name = "lblDetail";
+            this.lblDetail.Size = new System.Drawing.Size(0, 39);
+            this.lblDetail.TabIndex = 15;
             // 
             // button1
             // 
@@ -131,24 +132,24 @@
             this.Controls.Add(this.pnloYellow);
             this.Controls.Add(this.pnloOrange);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblDetail);
+            this.Controls.Add(this.pboxDetail);
+            this.Controls.Add(this.txtDetail);
             this.Controls.Add(this.pictureBox1);
             this.Name = "BaseBlueprint";
             this.Text = "BaseBlueprint";
             this.Texto = "Weapons Blueprints and Information";
             this.Load += new System.EventHandler(this.BaseBlueprint_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.pictureBox2, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.txtDetail, 0);
+            this.Controls.SetChildIndex(this.pboxDetail, 0);
+            this.Controls.SetChildIndex(this.lblDetail, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.pnloOrange, 0);
             this.Controls.SetChildIndex(this.pnloYellow, 0);
             this.Controls.SetChildIndex(this.pnloGreen, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,10 +157,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDetail;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pboxDetail;
+        private System.Windows.Forms.Label lblDetail;
         private System.Windows.Forms.Button button1;
         private Control_Library.PanelOpacity pnloOrange;
         private Control_Library.PanelOpacity pnloYellow;
