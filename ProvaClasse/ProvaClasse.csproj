@@ -96,6 +96,12 @@
     <Compile Include="MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpaceshipTechnical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpaceshipTechnical.Designer.cs">
+      <DependentUpon>SpaceshipTechnical.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpaceshipTechnical.resx">
+      <DependentUpon>SpaceshipTechnical.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
