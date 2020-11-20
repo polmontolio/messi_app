@@ -42,10 +42,15 @@
             // 
             // txtDetail
             // 
-            this.txtDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetail.BackColor = System.Drawing.Color.Black;
+            this.txtDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDetail.Cursor = System.Windows.Forms.Cursors.NoMoveVert;
+            this.txtDetail.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetail.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtDetail.Location = new System.Drawing.Point(709, 374);
             this.txtDetail.Multiline = true;
             this.txtDetail.Name = "txtDetail";
+            this.txtDetail.ReadOnly = true;
             this.txtDetail.Size = new System.Drawing.Size(457, 245);
             this.txtDetail.TabIndex = 0;
             this.txtDetail.Visible = false;
@@ -64,7 +69,7 @@
             // 
             this.pboxDetail.BackColor = System.Drawing.Color.Transparent;
             this.pboxDetail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pboxDetail.Location = new System.Drawing.Point(709, 133);
+            this.pboxDetail.Location = new System.Drawing.Point(812, 146);
             this.pboxDetail.Name = "pboxDetail";
             this.pboxDetail.Size = new System.Drawing.Size(263, 205);
             this.pboxDetail.TabIndex = 14;
@@ -75,8 +80,8 @@
             this.lblDetail.AutoSize = true;
             this.lblDetail.BackColor = System.Drawing.Color.Transparent;
             this.lblDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetail.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDetail.Location = new System.Drawing.Point(1004, 222);
+            this.lblDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
+            this.lblDetail.Location = new System.Drawing.Point(776, 84);
             this.lblDetail.Name = "lblDetail";
             this.lblDetail.Size = new System.Drawing.Size(0, 39);
             this.lblDetail.TabIndex = 15;
@@ -94,6 +99,7 @@
             // pnloOrange
             // 
             this.pnloOrange.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnloOrange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnloOrange.Location = new System.Drawing.Point(429, 238);
             this.pnloOrange.Name = "pnloOrange";
             this.pnloOrange.Opacity = 25;
@@ -105,6 +111,7 @@
             // pnloYellow
             // 
             this.pnloYellow.BackColor = System.Drawing.Color.Orange;
+            this.pnloYellow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnloYellow.Location = new System.Drawing.Point(34, 134);
             this.pnloYellow.Name = "pnloYellow";
             this.pnloYellow.Opacity = 25;
@@ -116,10 +123,11 @@
             // pnloGreen
             // 
             this.pnloGreen.BackColor = System.Drawing.Color.Turquoise;
-            this.pnloGreen.Location = new System.Drawing.Point(223, 284);
+            this.pnloGreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnloGreen.Location = new System.Drawing.Point(223, 289);
             this.pnloGreen.Name = "pnloGreen";
             this.pnloGreen.Opacity = 25;
-            this.pnloGreen.Size = new System.Drawing.Size(201, 203);
+            this.pnloGreen.Size = new System.Drawing.Size(188, 191);
             this.pnloGreen.TabIndex = 19;
             this.pnloGreen.Visible = false;
             this.pnloGreen.Click += new System.EventHandler(this.pnloGreen_Click);

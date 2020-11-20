@@ -4,6 +4,7 @@ using System.Xml.Linq;
 using Control_Library;
 using System.Drawing;
 using System.Linq;
+using System.Drawing.Text;
 
 
 namespace ProvaClasse
@@ -23,7 +24,15 @@ namespace ProvaClasse
 
         private void BaseBlueprint_Load(object sender, EventArgs e)
         {
-           
+            // POSICIONES DE OBJETOS
+
+            pboxDetail.Location = new Point(this.ClientSize.Width - pboxDetail.Size.Width - 170, 146 );
+            
+
+
+            //
+
+
             ruta = "../img/blueprintimages/StarKiller/";
 
             // Cargar XML (Solo el nodo Blueprints)
@@ -43,6 +52,13 @@ namespace ProvaClasse
             pictureBox1.BackgroundImage = Image.FromFile(ruta + rutaImageMain);
 
 
+
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile("../font/SF Distant Galaxy.ttf");
+            lblDetail.Font = new Font(pfc.Families[0], 23, FontStyle.Regular);
+
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,30 +71,22 @@ namespace ProvaClasse
         private void pnloOrange_Click(object sender, EventArgs e)
         {
             getDetail(1);
-            pboxDetail.BackgroundImage = Image.FromFile(ruta + rutaImgDetail);
-            txtDetail.Text = descDetail;
-            lblDetail.Text = tituloDetail;
-            txtDetail.Visible = true;
-
-
+            lblDetail.Location = new Point(this.ClientSize.Width - pboxDetail.Size.Width - 195, pboxDetail.Height - 80);
+            asignDetail();
         }
 
         private void pnloGreen_Click(object sender, EventArgs e)
         {
             getDetail(2);
-            pboxDetail.BackgroundImage = Image.FromFile(ruta + rutaImgDetail);
-            txtDetail.Text = descDetail;
-            lblDetail.Text = tituloDetail;
-            txtDetail.Visible = true;
+            lblDetail.Location = new Point(this.ClientSize.Width - pboxDetail.Size.Width - 190, pboxDetail.Height - 100);
+            asignDetail();
         }
 
         private void pnloYellow_Click(object sender, EventArgs e)
         {
             getDetail(3);
-            pboxDetail.BackgroundImage = Image.FromFile(ruta + rutaImgDetail);
-            txtDetail.Text = descDetail;
-            lblDetail.Text = tituloDetail;
-            txtDetail.Visible = true;
+            lblDetail.Location = new Point(this.ClientSize.Width - pboxDetail.Size.Width - 200, pboxDetail.Height - 100);
+            asignDetail();
         }
 
         private void getDetail(int numeroDetail)
@@ -98,8 +106,19 @@ namespace ProvaClasse
                             where (int)ele.Element("idDetail") == numeroDetail
                             select ele.Element("textDetail").Value).SingleOrDefault();
 
+            lblDetail.Visible = false;
         }
 
+        private void asignDetail()
+        {
+
+            lblDetail.Visible = true;
+            pboxDetail.BackgroundImage = Image.FromFile(ruta + rutaImgDetail);
+            txtDetail.Text = descDetail;
+            lblDetail.Text = tituloDetail;
+            txtDetail.Visible = true;
+
+        }
 
 
     }
