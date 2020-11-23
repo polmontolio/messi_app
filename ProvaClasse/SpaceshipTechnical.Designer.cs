@@ -28,86 +28,184 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_titu = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lbl_fija = new System.Windows.Forms.Label();
+            this.pbox_principal = new System.Windows.Forms.PictureBox();
+            this.tbl_galeria = new System.Windows.Forms.TableLayoutPanel();
+            this.list_naves = new System.Windows.Forms.ListView();
+            this.lbl_nave = new System.Windows.Forms.Label();
+            this.lbl_desc = new System.Windows.Forms.Label();
+            this.lbl_nose = new System.Windows.Forms.PictureBox();
+            this.tbl_info = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbl_fija2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_nose)).BeginInit();
+            this.tbl_info.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_titu
+            // lbl_fija
             // 
-            this.lbl_titu.AutoSize = true;
-            this.lbl_titu.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_titu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.lbl_titu.Location = new System.Drawing.Point(731, 72);
-            this.lbl_titu.Name = "lbl_titu";
-            this.lbl_titu.Size = new System.Drawing.Size(310, 20);
-            this.lbl_titu.TabIndex = 20;
-            this.lbl_titu.Text = "SPACESHIP TECHNICAL INFORMATION";
+            this.lbl_fija.AutoSize = true;
+            this.lbl_fija.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_fija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
+            this.lbl_fija.Location = new System.Drawing.Point(713, 59);
+            this.lbl_fija.Name = "lbl_fija";
+            this.lbl_fija.Size = new System.Drawing.Size(246, 25);
+            this.lbl_fija.TabIndex = 20;
+            this.lbl_fija.Text = "SPACESHIP TECHNICAL";
             // 
-            // pictureBox1
+            // pbox_principal
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(681, 111);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(407, 358);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pbox_principal.Location = new System.Drawing.Point(693, 125);
+            this.pbox_principal.Name = "pbox_principal";
+            this.pbox_principal.Size = new System.Drawing.Size(348, 286);
+            this.pbox_principal.TabIndex = 19;
+            this.pbox_principal.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // tbl_galeria
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1118, 85);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(97, 536);
-            this.tableLayoutPanel1.TabIndex = 18;
+            this.tbl_galeria.ColumnCount = 1;
+            this.tbl_galeria.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tbl_galeria.Location = new System.Drawing.Point(1107, 87);
+            this.tbl_galeria.Name = "tbl_galeria";
+            this.tbl_galeria.RowCount = 6;
+            this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_galeria.Size = new System.Drawing.Size(97, 536);
+            this.tbl_galeria.TabIndex = 18;
             // 
-            // listView1
+            // list_naves
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 55);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(175, 220);
-            this.listView1.TabIndex = 17;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.list_naves.HideSelection = false;
+            this.list_naves.Location = new System.Drawing.Point(0, 85);
+            this.list_naves.Name = "list_naves";
+            this.list_naves.Size = new System.Drawing.Size(175, 220);
+            this.list_naves.TabIndex = 17;
+            this.list_naves.UseCompatibleStateImageBehavior = false;
+            // 
+            // lbl_nave
+            // 
+            this.lbl_nave.AutoSize = true;
+            this.lbl_nave.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
+            this.lbl_nave.Location = new System.Drawing.Point(716, 430);
+            this.lbl_nave.Name = "lbl_nave";
+            this.lbl_nave.Size = new System.Drawing.Size(310, 20);
+            this.lbl_nave.TabIndex = 21;
+            this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
+            // 
+            // lbl_desc
+            // 
+            this.lbl_desc.AutoSize = true;
+            this.lbl_desc.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbl_desc.Location = new System.Drawing.Point(689, 475);
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_desc.TabIndex = 22;
+            this.lbl_desc.Text = "label1";
+            // 
+            // lbl_nose
+            // 
+            this.lbl_nose.Location = new System.Drawing.Point(253, 85);
+            this.lbl_nose.Name = "lbl_nose";
+            this.lbl_nose.Size = new System.Drawing.Size(348, 286);
+            this.lbl_nose.TabIndex = 23;
+            this.lbl_nose.TabStop = false;
+            // 
+            // tbl_info
+            // 
+            this.tbl_info.BackColor = System.Drawing.Color.Transparent;
+            this.tbl_info.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tbl_info.ColumnCount = 2;
+            this.tbl_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbl_info.Controls.Add(this.label1, 0, 0);
+            this.tbl_info.Controls.Add(this.label2, 1, 0);
+            this.tbl_info.Location = new System.Drawing.Point(234, 390);
+            this.tbl_info.Name = "tbl_info";
+            this.tbl_info.RowCount = 6;
+            this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tbl_info.Size = new System.Drawing.Size(386, 249);
+            this.tbl_info.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Impact", 16F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
+            this.label1.Location = new System.Drawing.Point(4, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Data";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Impact", 16F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(731, 482);
+            this.label2.Location = new System.Drawing.Point(196, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(310, 20);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "SPACESHIP TECHNICAL INFORMATION";
+            this.label2.Size = new System.Drawing.Size(186, 40);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Value";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_fija2
+            // 
+            this.lbl_fija2.AutoSize = true;
+            this.lbl_fija2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_fija2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
+            this.lbl_fija2.Location = new System.Drawing.Point(774, 93);
+            this.lbl_fija2.Name = "lbl_fija2";
+            this.lbl_fija2.Size = new System.Drawing.Size(151, 25);
+            this.lbl_fija2.TabIndex = 25;
+            this.lbl_fija2.Text = "INFORMATION";
             // 
             // SpaceshipTechnical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1237, 668);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbl_titu);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lbl_fija2);
+            this.Controls.Add(this.tbl_info);
+            this.Controls.Add(this.lbl_nose);
+            this.Controls.Add(this.lbl_desc);
+            this.Controls.Add(this.lbl_nave);
+            this.Controls.Add(this.lbl_fija);
+            this.Controls.Add(this.pbox_principal);
+            this.Controls.Add(this.tbl_galeria);
+            this.Controls.Add(this.list_naves);
             this.Name = "SpaceshipTechnical";
             this.Load += new System.EventHandler(this.SpaceshipTechnical_Load);
-            this.Controls.SetChildIndex(this.listView1, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
-            this.Controls.SetChildIndex(this.lbl_titu, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.SetChildIndex(this.list_naves, 0);
+            this.Controls.SetChildIndex(this.tbl_galeria, 0);
+            this.Controls.SetChildIndex(this.pbox_principal, 0);
+            this.Controls.SetChildIndex(this.lbl_fija, 0);
+            this.Controls.SetChildIndex(this.lbl_nave, 0);
+            this.Controls.SetChildIndex(this.lbl_desc, 0);
+            this.Controls.SetChildIndex(this.lbl_nose, 0);
+            this.Controls.SetChildIndex(this.tbl_info, 0);
+            this.Controls.SetChildIndex(this.lbl_fija2, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_nose)).EndInit();
+            this.tbl_info.ResumeLayout(false);
+            this.tbl_info.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,10 +213,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_titu;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lbl_fija;
+        private System.Windows.Forms.PictureBox pbox_principal;
+        private System.Windows.Forms.TableLayoutPanel tbl_galeria;
+        private System.Windows.Forms.ListView list_naves;
+        private System.Windows.Forms.Label lbl_nave;
+        private System.Windows.Forms.Label lbl_desc;
+        private System.Windows.Forms.PictureBox lbl_nose;
+        private System.Windows.Forms.TableLayoutPanel tbl_info;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_fija2;
     }
 }
