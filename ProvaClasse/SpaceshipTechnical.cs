@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace ProvaClasse
 {
@@ -17,7 +18,10 @@ namespace ProvaClasse
 
         private void SpaceshipTechnical_Load(object sender, EventArgs e)
         {
-
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile("../font/SF Distant Galaxy.ttf");
+            lbl_fija.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
+            lbl_fija2.Font = new Font(pfc.Families[0], 18, FontStyle.Regular);
         }
     }
 }
