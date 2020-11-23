@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_fija = new System.Windows.Forms.Label();
             this.pbox_principal = new System.Windows.Forms.PictureBox();
             this.tbl_galeria = new System.Windows.Forms.TableLayoutPanel();
@@ -39,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_fija2 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_nose)).BeginInit();
             this.tbl_info.SuspendLayout();
@@ -52,7 +54,7 @@
             this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija.Location = new System.Drawing.Point(713, 59);
             this.lbl_fija.Name = "lbl_fija";
-            this.lbl_fija.Size = new System.Drawing.Size(246, 25);
+            this.lbl_fija.Size = new System.Drawing.Size(204, 20);
             this.lbl_fija.TabIndex = 20;
             this.lbl_fija.Text = "SPACESHIP TECHNICAL";
             // 
@@ -82,10 +84,12 @@
             // 
             // list_naves
             // 
+            this.list_naves.BackColor = System.Drawing.Color.Black;
+            this.list_naves.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.list_naves.HideSelection = false;
             this.list_naves.Location = new System.Drawing.Point(0, 85);
             this.list_naves.Name = "list_naves";
-            this.list_naves.Size = new System.Drawing.Size(175, 220);
+            this.list_naves.Size = new System.Drawing.Size(138, 463);
             this.list_naves.TabIndex = 17;
             this.list_naves.UseCompatibleStateImageBehavior = false;
             // 
@@ -96,7 +100,7 @@
             this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_nave.Location = new System.Drawing.Point(716, 430);
             this.lbl_nave.Name = "lbl_nave";
-            this.lbl_nave.Size = new System.Drawing.Size(310, 20);
+            this.lbl_nave.Size = new System.Drawing.Size(263, 17);
             this.lbl_nave.TabIndex = 21;
             this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
             // 
@@ -107,7 +111,7 @@
             this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbl_desc.Location = new System.Drawing.Point(689, 475);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_desc.Size = new System.Drawing.Size(46, 17);
             this.lbl_desc.TabIndex = 22;
             this.lbl_desc.Text = "label1";
             // 
@@ -174,9 +178,15 @@
             this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija2.Location = new System.Drawing.Point(774, 93);
             this.lbl_fija2.Name = "lbl_fija2";
-            this.lbl_fija2.Size = new System.Drawing.Size(151, 25);
+            this.lbl_fija2.Size = new System.Drawing.Size(124, 20);
             this.lbl_fija2.TabIndex = 25;
             this.lbl_fija2.Text = "INFORMATION";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // SpaceshipTechnical
             // 
@@ -224,5 +234,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_fija2;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
