@@ -54,9 +54,11 @@
             this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija.Location = new System.Drawing.Point(713, 59);
             this.lbl_fija.Name = "lbl_fija";
-            this.lbl_fija.Size = new System.Drawing.Size(204, 20);
+            this.lbl_fija.Size = new System.Drawing.Size(246, 25);
             this.lbl_fija.TabIndex = 20;
             this.lbl_fija.Text = "SPACESHIP TECHNICAL";
+            this.lbl_fija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbl_fija.Visible = false;
             // 
             // pbox_principal
             // 
@@ -65,6 +67,7 @@
             this.pbox_principal.Size = new System.Drawing.Size(348, 286);
             this.pbox_principal.TabIndex = 19;
             this.pbox_principal.TabStop = false;
+            this.pbox_principal.Visible = false;
             // 
             // tbl_galeria
             // 
@@ -81,17 +84,19 @@
             this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tbl_galeria.Size = new System.Drawing.Size(97, 536);
             this.tbl_galeria.TabIndex = 18;
+            this.tbl_galeria.Visible = false;
             // 
             // list_naves
             // 
             this.list_naves.BackColor = System.Drawing.Color.Black;
             this.list_naves.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.list_naves.HideSelection = false;
-            this.list_naves.Location = new System.Drawing.Point(0, 85);
+            this.list_naves.Location = new System.Drawing.Point(0, 93);
             this.list_naves.Name = "list_naves";
-            this.list_naves.Size = new System.Drawing.Size(138, 463);
+            this.list_naves.Size = new System.Drawing.Size(123, 463);
             this.list_naves.TabIndex = 17;
             this.list_naves.UseCompatibleStateImageBehavior = false;
+            this.list_naves.Click += new System.EventHandler(this.list_naves_Click);
             // 
             // lbl_nave
             // 
@@ -100,9 +105,10 @@
             this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_nave.Location = new System.Drawing.Point(716, 430);
             this.lbl_nave.Name = "lbl_nave";
-            this.lbl_nave.Size = new System.Drawing.Size(263, 17);
+            this.lbl_nave.Size = new System.Drawing.Size(310, 20);
             this.lbl_nave.TabIndex = 21;
             this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
+            this.lbl_nave.Visible = false;
             // 
             // lbl_desc
             // 
@@ -111,9 +117,10 @@
             this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbl_desc.Location = new System.Drawing.Point(689, 475);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(46, 17);
+            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
             this.lbl_desc.TabIndex = 22;
             this.lbl_desc.Text = "label1";
+            this.lbl_desc.Visible = false;
             // 
             // lbl_nose
             // 
@@ -122,6 +129,7 @@
             this.lbl_nose.Size = new System.Drawing.Size(348, 286);
             this.lbl_nose.TabIndex = 23;
             this.lbl_nose.TabStop = false;
+            this.lbl_nose.Visible = false;
             // 
             // tbl_info
             // 
@@ -143,6 +151,7 @@
             this.tbl_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tbl_info.Size = new System.Drawing.Size(386, 249);
             this.tbl_info.TabIndex = 24;
+            this.tbl_info.Visible = false;
             // 
             // label1
             // 
@@ -178,9 +187,10 @@
             this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija2.Location = new System.Drawing.Point(774, 93);
             this.lbl_fija2.Name = "lbl_fija2";
-            this.lbl_fija2.Size = new System.Drawing.Size(124, 20);
+            this.lbl_fija2.Size = new System.Drawing.Size(151, 25);
             this.lbl_fija2.TabIndex = 25;
             this.lbl_fija2.Text = "INFORMATION";
+            this.lbl_fija2.Visible = false;
             // 
             // imageList1
             // 
