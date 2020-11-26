@@ -56,40 +56,42 @@ namespace ProvaClasse
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("../img/blueprintimages/Info.xml");
-            
-            //generales
-            XmlNodeList list_titulos = doc.GetElementsByTagName("title");
-            XmlNodeList list_pdf = doc.GetElementsByTagName("pdffile");
-            XmlNodeList list_mp4 = doc.GetElementsByTagName("textInfoDetail");
-            XmlNodeList list_desc = doc.GetElementsByTagName("title");
-            XmlNodeList list_img_front = doc.GetElementsByTagName("FrontView");
-            XmlNodeList list_img_side = doc.GetElementsByTagName("SideView");
-            XmlNodeList list_img_top = doc.GetElementsByTagName("TopView");
-            XmlNodeList list_img_rear = doc.GetElementsByTagName("RearView");
 
-            //info detallada
-            XmlNodeList list_manufacturer = doc.GetElementsByTagName("Manufacturer");
-            XmlNodeList list_length = doc.GetElementsByTagName("Length");
-            XmlNodeList list_speed = doc.GetElementsByTagName("Speed");
-            XmlNodeList list_hyperdrive = doc.GetElementsByTagName("Hyperdrive");
-            XmlNodeList list_shielding = doc.GetElementsByTagName("Shielding");
-            XmlNodeList list_armament = doc.GetElementsByTagName("Armament");
 
-            //este para hacer foreach
-            XmlNodeList list_detail = doc.GetElementsByTagName("idInfoDetail");
+            int numeroElegir = list_naves.FocusedItem.Index;
 
-            //foreach (XmlNodeList list in listasdelafuncionjoder)
-            //{
+            XmlNodeList spaceshipSelected;
+            spaceshipSelected = doc.SelectNodes("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail[idInfoDetail='" + numeroElegir + "']");
 
-            //}
-            for (int i = 0; i < list_detail.Count; i++)
+
+            foreach (XmlNode node in spaceshipSelected)
             {
-                String[] information;
+                //generales
+                string tituloS = node["title"].InnerText;
+                string pdfS = node["pdffile"].InnerText;
+                string blueprintS = node["Blueprint"].InnerText;
+                string descS = node["textInfoDetail"].InnerText;
+                string mp4S = node["GeneralView"].InnerText;
+                string img_frontS = node["FrontView"].InnerText;
+                string img_sideS = node["SideView"].InnerText;
+                string img_topS = node["TopView"].InnerText;
+                string img_rearS = node["RearView"].InnerText;
+                string img_rear_360S = node["View360"].InnerText;
 
-                information = getinfo(list_armament);
+                /*
+                //info detallada
+                string manufacturerS = node["Data/Manufacturer"].InnerText;
+                string lengthS = node["Data/Length"].InnerText;
+                string speedS = node["Data/Speed"].InnerText;
+                string hyperdriveS = node["Data/Hyperdrive"].InnerText;
+                string shieldingS = node["Data/Shielding"].InnerText;
+                string armamentS = node["Data/Armament"].InnerText;
 
-                //acciones
+                */
+
+                //Console.WriteLine("Name: {0} {1}", firstName, lastName);
             }
+
 
             pbox_principal.Visible = true;
             lbl_desc.Visible = true;
@@ -99,6 +101,9 @@ namespace ProvaClasse
             lbl_nose.Visible = true;
             tbl_galeria.Visible = true;
             tbl_info.Visible = true;
+
+
+            
         }
 
         public void getImages()

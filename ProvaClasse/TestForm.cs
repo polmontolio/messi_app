@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Drawing;
+using System.Xml;
 
 namespace ProvaClasse
 {
@@ -16,7 +17,7 @@ namespace ProvaClasse
 
         private void TestForm_Load(object sender, EventArgs e)
         {
-
+            /*
             
             //Alumnos
             XElement documemt = null;
@@ -47,6 +48,35 @@ namespace ProvaClasse
                 imageCount++;
             }
 
+            */
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("../img/blueprintimages/Info.xml");
+
+            /*
+            XmlNode spaceshipSelected;
+            spaceshipSelected = doc.SelectSingleNode("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail");
+            */
+            //txtResultat.Text = spaceshipSelected.InnerText;
+
+            int numeroElegir ;
+
+            XmlNodeList spaceshipSelected;
+            spaceshipSelected = doc.SelectNodes("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail[idInfoDetail='3']");
+
+
+            
+            /*
+            foreach (XmlNode node in spaceshipSelected)
+                txtResultat.Text += node + "\r\n";
+            */
+
+            foreach (XmlNode node in spaceshipSelected)
+            {
+                string firstName = node["Data/Manufacturer"].InnerText;
+                string lastName = node["Data/Manufacturer"].InnerText;
+                Console.WriteLine("Name: {0} {1}", firstName, lastName);
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
