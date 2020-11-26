@@ -13,7 +13,22 @@ namespace ProvaClasse
 
     public partial class SpaceshipTechnical : Control_Library.BaseForm
     {
-
+        string tituloS;
+        string pdfS;
+        string blueprintS;
+        string descS;
+        string mp4S;
+        string img_frontS;
+        string img_sideS;
+        string img_topS;
+        string img_rearS;
+        string img_rear_360S;
+        string manufacturerS;
+        string lengthS;
+        string speedS;
+        string hyperdriveS;
+        string shieldingS;
+        string armamentS;
         public SpaceshipTechnical()
         {
             InitializeComponent();
@@ -54,56 +69,22 @@ namespace ProvaClasse
 
         private void list_naves_Click(object sender, EventArgs e)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("../img/blueprintimages/Info.xml");
+            //makeVisible(false);
 
 
             int numeroElegir = list_naves.FocusedItem.Index;
-
-            XmlNodeList spaceshipSelected;
-            spaceshipSelected = doc.SelectNodes("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail[idInfoDetail='" + numeroElegir + "']");
-
-
-            foreach (XmlNode node in spaceshipSelected)
-            {
-                //generales
-                string tituloS = node["title"].InnerText;
-                string pdfS = node["pdffile"].InnerText;
-                string blueprintS = node["Blueprint"].InnerText;
-                string descS = node["textInfoDetail"].InnerText;
-                string mp4S = node["GeneralView"].InnerText;
-                string img_frontS = node["FrontView"].InnerText;
-                string img_sideS = node["SideView"].InnerText;
-                string img_topS = node["TopView"].InnerText;
-                string img_rearS = node["RearView"].InnerText;
-                string img_rear_360S = node["View360"].InnerText;
-
-                /*
-                //info detallada
-                string manufacturerS = node["Data/Manufacturer"].InnerText;
-                string lengthS = node["Data/Length"].InnerText;
-                string speedS = node["Data/Speed"].InnerText;
-                string hyperdriveS = node["Data/Hyperdrive"].InnerText;
-                string shieldingS = node["Data/Shielding"].InnerText;
-                string armamentS = node["Data/Armament"].InnerText;
-
-                */
-
-                //Console.WriteLine("Name: {0} {1}", firstName, lastName);
-            }
+            getInfo(numeroElegir);
+            String spaceShipSelectName = list_naves.FocusedItem.Text;
+            String rutaSpaceshipSelect = "../img/blueprintimages/" + spaceShipSelectName + "/";
 
 
-            pbox_principal.Visible = true;
-            lbl_desc.Visible = true;
-            lbl_fija.Visible = true;
-            lbl_fija2.Visible = true;
-            lbl_nave.Visible = true;
-            lbl_nose.Visible = true;
-            tbl_galeria.Visible = true;
-            tbl_info.Visible = true;
+            pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
+            lbl_desc.Text = descS;
 
 
-            
+            makeVisible(true);
+
+
         }
 
         public void getImages()
@@ -125,15 +106,103 @@ namespace ProvaClasse
             }
         }
 
-        public String[] getinfo(XmlNodeList info) {
+       public void getInfo(int numberSpaceship)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("../img/blueprintimages/Info.xml");
 
-            foreach (XmlNode node in info)
+            XmlNodeList spaceshipSelected;
+            spaceshipSelected = doc.SelectNodes("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail[idInfoDetail='" + numberSpaceship + "']");
+
+
+            foreach (XmlNode node in spaceshipSelected)
             {
-               
+                //generales
+                tituloS = node["title"].InnerText;
+                pdfS = node["pdfFile"].InnerText;
+                blueprintS = node["Blueprint"].InnerText;
+                descS = node["textInfoDetail"].InnerText;
+                mp4S = node["GeneralView"].InnerText;
+                img_frontS = node["FrontView"].InnerText;
+                img_sideS = node["SideView"].InnerText;
+                img_topS = node["TopView"].InnerText;
+                img_rearS = node["RearView"].InnerText;
+                img_rear_360S = node["View360"].InnerText;
 
             }
 
-            return null;
+            //info detallada
+            XmlNodeList dataSpaceShip = doc.SelectNodes("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail[idInfoDetail='" + numberSpaceship + "']/Data");
+
+
+            foreach (XmlNode item in dataSpaceShip)
+            {
+                manufacturerS = item["Manufacturer"].InnerText;
+                lengthS = item["Length"].InnerText;
+                speedS = item["Speed"].InnerText;
+                hyperdriveS = item["Hyperdrive"].InnerText;
+                shieldingS = item["Shielding"].InnerText;
+                armamentS = item["Armament"].InnerText;
+
+                //Console.WriteLine("Name: {0} {1}", manufacturerS, speedS);
+            }
+
+        }
+
+        public void makeVisible(bool option)
+        {
+            pbox_principal.Visible = option;
+            lbl_desc.Visible = option;
+            lbl_fija.Visible = option;
+            lbl_fija2.Visible = option;
+            lbl_nave.Visible = option;
+            pbox_blueprint.Visible = option;
+            tbl_galeria.Visible = option;
+            tbl_info.Visible = option;
+        }
+
+        public void FillLabels()
+        {
+            String letra = "";
+
+
+            //VERTICAl
+            for (int i = 1; i < 5; i++)
+            {
+                //Agregamos el Label
+                Label lbl = new Label();
+                //Detalles para crear el Label
+                lbl.Font = new Font("Impact", 18);
+                lbl.ForeColor = Color.FromArgb(248, 220, 51);
+
+                switch (i)
+                {
+                    case 1:
+                        lbl.Text = "A";
+                        lbl.Name = "lbl_" + letra;
+                        break;
+                    case 2:
+                        lbl.Text = "B";
+                        break;
+                    case 3:
+                        lbl.Text = "C";
+                        break;
+                    case 4:
+                        lbl.Text = "D";
+                        break;
+                    default:
+                        break;
+                }
+
+                lbl.Name = "lbl_" + letra;
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+                lbl.Dock = DockStyle.Fill;
+                //tbl_Coord.Controls.Add(lbl, 0, i);
+
+
+
+            }
+
         }
 
     }
