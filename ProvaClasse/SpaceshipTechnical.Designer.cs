@@ -63,6 +63,7 @@
             // 
             // pbox_principal
             // 
+            this.pbox_principal.BackColor = System.Drawing.Color.Transparent;
             this.pbox_principal.Location = new System.Drawing.Point(793, 163);
             this.pbox_principal.Name = "pbox_principal";
             this.pbox_principal.Size = new System.Drawing.Size(493, 375);
@@ -72,6 +73,7 @@
             // 
             // tbl_galeria
             // 
+            this.tbl_galeria.BackColor = System.Drawing.Color.Transparent;
             this.tbl_galeria.ColumnCount = 6;
             this.tbl_galeria.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tbl_galeria.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -79,7 +81,7 @@
             this.tbl_galeria.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tbl_galeria.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tbl_galeria.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_galeria.Location = new System.Drawing.Point(833, 702);
+            this.tbl_galeria.Location = new System.Drawing.Point(871, 708);
             this.tbl_galeria.Name = "tbl_galeria";
             this.tbl_galeria.RowCount = 1;
             this.tbl_galeria.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -99,7 +101,7 @@
             this.list_naves.HideSelection = false;
             this.list_naves.Location = new System.Drawing.Point(0, 93);
             this.list_naves.Name = "list_naves";
-            this.list_naves.Size = new System.Drawing.Size(123, 288);
+            this.list_naves.Size = new System.Drawing.Size(123, 254);
             this.list_naves.TabIndex = 17;
             this.list_naves.UseCompatibleStateImageBehavior = false;
             this.list_naves.Click += new System.EventHandler(this.list_naves_Click);
@@ -109,7 +111,7 @@
             this.lbl_nave.AutoSize = true;
             this.lbl_nave.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.lbl_nave.Location = new System.Drawing.Point(985, 668);
+            this.lbl_nave.Location = new System.Drawing.Point(907, 668);
             this.lbl_nave.Name = "lbl_nave";
             this.lbl_nave.Size = new System.Drawing.Size(263, 17);
             this.lbl_nave.TabIndex = 21;

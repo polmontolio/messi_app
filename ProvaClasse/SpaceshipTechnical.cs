@@ -52,7 +52,7 @@ namespace ProvaClasse
             XmlNodeList spaceshipList = doc.GetElementsByTagName("textOption");
 
             //Consigo imagenes
-            getImages();
+            getImagesListView();
 
             list_naves.View = View.SmallIcon;
             imageList1.ImageSize = new Size(32, 32);
@@ -82,14 +82,14 @@ namespace ProvaClasse
 
             pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
             lbl_desc.Text = descS;
-            
 
+            getImagesGallery(rutaSpaceshipSelect);
             makeVisible(true);
 
 
         }
 
-        public void getImages()
+        public void getImagesListView()
         {
             String ruta = "../img/blueprintimages/iconShips/";
             String imagepath = "";
@@ -108,7 +108,77 @@ namespace ProvaClasse
             }
         }
 
-       public void getInfo(int numberSpaceship)
+        public void getImagesGallery(String rutaselected)
+        {
+            tbl_galeria.Controls.Clear();
+
+            String imagepath = "";
+            
+            for (int i = 0; i < 5; i++)
+            {
+
+                switch (i)
+                {
+                    case 0:
+                        imagepath = img_frontS;
+                        break;
+                    case 1:
+                        imagepath = img_sideS;
+                        break;
+                    case 2:
+                        imagepath = img_topS;
+                        break;
+                    case 3:
+                        imagepath = img_rearS;
+                        break;
+                    case 4:
+                        imagepath = img_rear_360S;
+                        break;
+                    default:
+                        break;
+                }
+
+                //Agregamos el pbox
+                PictureBox pbox = new PictureBox();
+                pbox.Image = Image.FromFile(rutaselected + imagepath);
+                pbox.SizeMode = PictureBoxSizeMode.Zoom;
+                pbox.Dock = DockStyle.Fill;
+                if (i < 4)
+                {
+                    pbox.Click += new EventHandler(this.PictureBoxClick);
+                } else
+                {
+                    pbox.Click += new EventHandler(this.ShowVideoClick);
+                }
+                
+                //Console.WriteLine(rutaselected + imagepath);
+                tbl_galeria.Controls.Add(pbox, i, 0);
+
+            }
+
+            
+        }
+
+        void PictureBoxClick(object sender, EventArgs e)
+        {
+
+            PictureBox pboxSender = (PictureBox)sender;
+            Image saveImage = pboxSender.Image;
+
+            pbox_principal.Image = saveImage;
+            pbox_principal.SizeMode = PictureBoxSizeMode.Zoom;
+            pbox_principal.Visible = true;
+
+        }
+
+        void ShowVideoClick(object sender, EventArgs e)
+        {
+            //Show the video settings
+            pbox_principal.Visible = false;
+
+        }
+
+        public void getInfo(int numberSpaceship)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("../img/blueprintimages/Info.xml");
@@ -130,7 +200,7 @@ namespace ProvaClasse
                 img_topS = node["TopView"].InnerText;
                 img_rearS = node["RearView"].InnerText;
                 img_rear_360S = node["View360"].InnerText;
-
+                //Console.WriteLine("Name: {0} {1}", img_frontS, img_sideS);
             }
 
             //info detallada
