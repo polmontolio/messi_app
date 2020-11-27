@@ -73,14 +73,16 @@ namespace ProvaClasse
 
 
             int numeroElegir = list_naves.FocusedItem.Index;
-            getInfo(numeroElegir);
             String spaceShipSelectName = list_naves.FocusedItem.Text;
+
+            getInfo(numeroElegir);
+          
             String rutaSpaceshipSelect = "../img/blueprintimages/" + spaceShipSelectName + "/";
 
 
             pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
             lbl_desc.Text = descS;
-
+            
 
             makeVisible(true);
 
@@ -161,49 +163,6 @@ namespace ProvaClasse
             tbl_info.Visible = option;
         }
 
-        public void FillLabels()
-        {
-            String letra = "";
-
-
-            //VERTICAl
-            for (int i = 1; i < 5; i++)
-            {
-                //Agregamos el Label
-                Label lbl = new Label();
-                //Detalles para crear el Label
-                lbl.Font = new Font("Impact", 18);
-                lbl.ForeColor = Color.FromArgb(248, 220, 51);
-
-                switch (i)
-                {
-                    case 1:
-                        lbl.Text = "A";
-                        lbl.Name = "lbl_" + letra;
-                        break;
-                    case 2:
-                        lbl.Text = "B";
-                        break;
-                    case 3:
-                        lbl.Text = "C";
-                        break;
-                    case 4:
-                        lbl.Text = "D";
-                        break;
-                    default:
-                        break;
-                }
-
-                lbl.Name = "lbl_" + letra;
-                lbl.TextAlign = ContentAlignment.MiddleCenter;
-                lbl.Dock = DockStyle.Fill;
-                //tbl_Coord.Controls.Add(lbl, 0, i);
-
-
-
-            }
-
-        }
 
     }
 }
