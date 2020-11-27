@@ -40,10 +40,10 @@
             this.tbl_info = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_fija2 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.video_Spaceship = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.video_Spaceship)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_fija
@@ -54,7 +54,7 @@
             this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija.Location = new System.Drawing.Point(867, 87);
             this.lbl_fija.Name = "lbl_fija";
-            this.lbl_fija.Size = new System.Drawing.Size(246, 25);
+            this.lbl_fija.Size = new System.Drawing.Size(204, 20);
             this.lbl_fija.TabIndex = 20;
             this.lbl_fija.Text = "SPACESHIP TECHNICAL";
             this.lbl_fija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -112,7 +112,7 @@
             this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_nave.Location = new System.Drawing.Point(907, 668);
             this.lbl_nave.Name = "lbl_nave";
-            this.lbl_nave.Size = new System.Drawing.Size(310, 20);
+            this.lbl_nave.Size = new System.Drawing.Size(263, 17);
             this.lbl_nave.TabIndex = 21;
             this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
             this.lbl_nave.Visible = false;
@@ -124,7 +124,7 @@
             this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbl_desc.Location = new System.Drawing.Point(815, 592);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_desc.Size = new System.Drawing.Size(46, 17);
             this.lbl_desc.TabIndex = 22;
             this.lbl_desc.Text = "label1";
             this.lbl_desc.Visible = false;
@@ -170,7 +170,7 @@
             this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija2.Location = new System.Drawing.Point(928, 121);
             this.lbl_fija2.Name = "lbl_fija2";
-            this.lbl_fija2.Size = new System.Drawing.Size(151, 25);
+            this.lbl_fija2.Size = new System.Drawing.Size(124, 20);
             this.lbl_fija2.TabIndex = 25;
             this.lbl_fija2.Text = "INFORMATION";
             this.lbl_fija2.Visible = false;
@@ -181,20 +181,21 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // axWindowsMediaPlayer1
+            // video_Spaceship
             // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(738, 162);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(443, 376);
-            this.axWindowsMediaPlayer1.TabIndex = 26;
+            this.video_Spaceship.Enabled = true;
+            this.video_Spaceship.Location = new System.Drawing.Point(818, 162);
+            this.video_Spaceship.Name = "video_Spaceship";
+            this.video_Spaceship.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video_Spaceship.OcxState")));
+            this.video_Spaceship.Size = new System.Drawing.Size(443, 376);
+            this.video_Spaceship.TabIndex = 26;
+            this.video_Spaceship.Visible = false;
             // 
             // SpaceshipTechnical
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1369, 805);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.video_Spaceship);
             this.Controls.Add(this.lbl_fija2);
             this.Controls.Add(this.tbl_info);
             this.Controls.Add(this.pbox_blueprint);
@@ -215,10 +216,10 @@
             this.Controls.SetChildIndex(this.pbox_blueprint, 0);
             this.Controls.SetChildIndex(this.tbl_info, 0);
             this.Controls.SetChildIndex(this.lbl_fija2, 0);
-            this.Controls.SetChildIndex(this.axWindowsMediaPlayer1, 0);
+            this.Controls.SetChildIndex(this.video_Spaceship, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.video_Spaceship)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +237,6 @@
         private System.Windows.Forms.TableLayoutPanel tbl_info;
         private System.Windows.Forms.Label lbl_fija2;
         private System.Windows.Forms.ImageList imageList1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer video_Spaceship;
     }
 }

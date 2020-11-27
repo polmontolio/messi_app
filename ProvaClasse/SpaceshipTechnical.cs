@@ -69,7 +69,8 @@ namespace ProvaClasse
 
         private void list_naves_Click(object sender, EventArgs e)
         {
-            //makeVisible(false);
+            makeVisible(false);
+            pbox_principal.Image = null;
 
 
             int numeroElegir = list_naves.FocusedItem.Index;
@@ -83,11 +84,10 @@ namespace ProvaClasse
             pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
             lbl_desc.Text = descS;
 
-<<<<<<< HEAD
             getImagesGallery(rutaSpaceshipSelect);
-=======
+
             filllabels();
->>>>>>> c1dc5e37256608c3df8789ef357952e0d65ab355
+
             makeVisible(true);
 
         }
@@ -164,6 +164,7 @@ namespace ProvaClasse
 
         void PictureBoxClick(object sender, EventArgs e)
         {
+            video_Spaceship.Visible = false;
 
             PictureBox pboxSender = (PictureBox)sender;
             Image saveImage = pboxSender.Image;
@@ -178,6 +179,7 @@ namespace ProvaClasse
         {
             //Show the video settings
             pbox_principal.Visible = false;
+            video_Spaceship.Visible = true;
 
         }
 
@@ -237,6 +239,8 @@ namespace ProvaClasse
         }
 
         private void filllabels() {
+
+            tbl_info.Controls.Clear();
 
             //COLUMNA 1
             for (int i = 0; i < 7; i++)
