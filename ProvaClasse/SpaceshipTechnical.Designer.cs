@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpaceshipTechnical));
             this.lbl_fija = new System.Windows.Forms.Label();
             this.pbox_principal = new System.Windows.Forms.PictureBox();
             this.tbl_galeria = new System.Windows.Forms.TableLayoutPanel();
@@ -37,14 +38,12 @@
             this.lbl_desc = new System.Windows.Forms.Label();
             this.pbox_blueprint = new System.Windows.Forms.PictureBox();
             this.tbl_info = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbl_fija2 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label3 = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).BeginInit();
-            this.tbl_info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_fija
@@ -55,7 +54,7 @@
             this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija.Location = new System.Drawing.Point(867, 87);
             this.lbl_fija.Name = "lbl_fija";
-            this.lbl_fija.Size = new System.Drawing.Size(204, 20);
+            this.lbl_fija.Size = new System.Drawing.Size(246, 25);
             this.lbl_fija.TabIndex = 20;
             this.lbl_fija.Text = "SPACESHIP TECHNICAL";
             this.lbl_fija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -113,7 +112,7 @@
             this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_nave.Location = new System.Drawing.Point(907, 668);
             this.lbl_nave.Name = "lbl_nave";
-            this.lbl_nave.Size = new System.Drawing.Size(263, 17);
+            this.lbl_nave.Size = new System.Drawing.Size(310, 20);
             this.lbl_nave.TabIndex = 21;
             this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
             this.lbl_nave.Visible = false;
@@ -125,7 +124,7 @@
             this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbl_desc.Location = new System.Drawing.Point(815, 592);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(46, 17);
+            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
             this.lbl_desc.TabIndex = 22;
             this.lbl_desc.Text = "label1";
             this.lbl_desc.Visible = false;
@@ -149,9 +148,6 @@
             this.tbl_info.ColumnCount = 2;
             this.tbl_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tbl_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbl_info.Controls.Add(this.label1, 0, 0);
-            this.tbl_info.Controls.Add(this.label2, 1, 0);
-            this.tbl_info.Controls.Add(this.label3, 1, 1);
             this.tbl_info.Location = new System.Drawing.Point(261, 511);
             this.tbl_info.Name = "tbl_info";
             this.tbl_info.RowCount = 7;
@@ -166,32 +162,6 @@
             this.tbl_info.TabIndex = 24;
             this.tbl_info.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Impact", 16F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Data";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Impact", 16F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(196, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 37);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Value";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbl_fija2
             // 
             this.lbl_fija2.AutoSize = true;
@@ -200,7 +170,7 @@
             this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija2.Location = new System.Drawing.Point(928, 121);
             this.lbl_fija2.Name = "lbl_fija2";
-            this.lbl_fija2.Size = new System.Drawing.Size(124, 20);
+            this.lbl_fija2.Size = new System.Drawing.Size(151, 25);
             this.lbl_fija2.TabIndex = 25;
             this.lbl_fija2.Text = "INFORMATION";
             this.lbl_fija2.Visible = false;
@@ -211,20 +181,20 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // label3
+            // axWindowsMediaPlayer1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(196, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 37);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(738, 162);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(443, 376);
+            this.axWindowsMediaPlayer1.TabIndex = 26;
             // 
             // SpaceshipTechnical
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1369, 805);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.lbl_fija2);
             this.Controls.Add(this.tbl_info);
             this.Controls.Add(this.pbox_blueprint);
@@ -245,10 +215,10 @@
             this.Controls.SetChildIndex(this.pbox_blueprint, 0);
             this.Controls.SetChildIndex(this.tbl_info, 0);
             this.Controls.SetChildIndex(this.lbl_fija2, 0);
+            this.Controls.SetChildIndex(this.axWindowsMediaPlayer1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).EndInit();
-            this.tbl_info.ResumeLayout(false);
-            this.tbl_info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,10 +234,8 @@
         private System.Windows.Forms.Label lbl_desc;
         private System.Windows.Forms.PictureBox pbox_blueprint;
         private System.Windows.Forms.TableLayoutPanel tbl_info;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_fija2;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label label3;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
