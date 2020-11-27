@@ -82,10 +82,9 @@ namespace ProvaClasse
 
             pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
             lbl_desc.Text = descS;
-            
 
+            filllabels();
             makeVisible(true);
-
 
         }
 
@@ -163,6 +162,94 @@ namespace ProvaClasse
             tbl_info.Visible = option;
         }
 
+        private void filllabels() {
+
+            //COLUMNA 1
+            for (int i = 0; i < 7; i++)
+            {
+                String texto_fijo = "";
+                String texto_valor = "";
+
+                switch (i)
+                {
+                    case 0:
+                        texto_fijo = "DATA";
+                        texto_valor = "VALUE";
+                        break;
+                    case 1:
+                        texto_fijo = "Manufacturer";
+                        texto_valor = manufacturerS;
+                        break;
+                    case 2:
+                        texto_fijo = "Length";
+                        texto_valor = lengthS;
+                        break;
+                    case 3:
+                        texto_fijo = "Speed";
+                        texto_valor = speedS;
+                        break;
+                    case 4:
+                        texto_fijo = "Hyperdrive";
+                        texto_valor = hyperdriveS;
+                        break;
+                    case 5:
+                        texto_fijo = "Shielding";
+                        texto_valor = shieldingS;
+                        break;
+                    case 6:
+                        texto_fijo = "Armament";
+                        texto_valor = armamentS;
+                        break;
+                    default:
+                        break;
+                }
+
+                //Creamos las Label
+                Label lbls_fijas = new Label();
+                Label lbls_datos = new Label();
+
+                //Detalles comunes para crear el Label
+                lbls_fijas.Text = texto_fijo;
+                lbls_fijas.Name = "lbl_fija" + i.ToString();
+                lbls_fijas.TextAlign = ContentAlignment.MiddleCenter;
+                lbls_fijas.Dock = DockStyle.Fill;
+                
+
+                lbls_datos.Text = texto_valor;
+                lbls_datos.Name = "lbl_fija" + i.ToString();
+                lbls_datos.TextAlign = ContentAlignment.MiddleCenter;
+                lbls_datos.Dock = DockStyle.Fill;
+                
+
+                //Detalles no comunes
+                if (i == 0)
+                {
+                    lbls_fijas.Font = new Font("Impact", 20);
+                    lbls_fijas.ForeColor = Color.FromArgb(248, 220, 51);
+                }
+                else
+                {
+                    lbls_fijas.Font = new Font("Impact", 18);
+                    lbls_fijas.ForeColor = Color.Gainsboro;
+                }
+
+                if (i == 0)
+                {
+                    lbls_datos.Font = new Font("Impact", 20);
+                    lbls_datos.ForeColor = Color.FromArgb(248, 220, 51);
+                }
+                else
+                {
+                    lbls_datos.Font = new Font("Impact", 18);
+                    lbls_datos.ForeColor = Color.Gainsboro;
+                }
+
+                //Agregamos Labels
+                tbl_info.Controls.Add(lbls_fijas, 0, i);
+                tbl_info.Controls.Add(lbls_datos, 1, i);
+            }
+
+        }
 
     }
 }
