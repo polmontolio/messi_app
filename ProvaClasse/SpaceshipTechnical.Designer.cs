@@ -41,6 +41,8 @@
             this.lbl_fija2 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.video_Spaceship = new AxWMPLib.AxWindowsMediaPlayer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.video_Spaceship)).BeginInit();
@@ -192,10 +194,31 @@
             this.video_Spaceship.TabIndex = 26;
             this.video_Spaceship.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(44, 659);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 76);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.webBrowser1.Location = new System.Drawing.Point(530, 38);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(839, 767);
+            this.webBrowser1.TabIndex = 28;
+            // 
             // SpaceshipTechnical
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1369, 805);
+            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.video_Spaceship);
             this.Controls.Add(this.lbl_fija2);
             this.Controls.Add(this.tbl_info);
@@ -218,6 +241,8 @@
             this.Controls.SetChildIndex(this.tbl_info, 0);
             this.Controls.SetChildIndex(this.lbl_fija2, 0);
             this.Controls.SetChildIndex(this.video_Spaceship, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.webBrowser1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.video_Spaceship)).EndInit();
@@ -239,5 +264,7 @@
         private System.Windows.Forms.Label lbl_fija2;
         private System.Windows.Forms.ImageList imageList1;
         private AxWMPLib.AxWindowsMediaPlayer video_Spaceship;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
