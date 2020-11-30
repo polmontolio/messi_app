@@ -70,7 +70,9 @@ namespace ProvaClasse
         private void list_naves_Click(object sender, EventArgs e)
         {
             makeVisible(false);
-            pbox_principal.Image = null;
+            
+            //pbox_principal.Image = null;
+
 
 
             int numeroElegir = list_naves.FocusedItem.Index;
@@ -81,7 +83,9 @@ namespace ProvaClasse
             String rutaSpaceshipSelect = "../img/blueprintimages/" + spaceShipSelectName + "/";
 
 
+
             pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
+            pbox_principal.Image = (Image.FromFile(rutaSpaceshipSelect + img_frontS));
             lbl_desc.Text = descS;
 
             getImagesGallery(rutaSpaceshipSelect);

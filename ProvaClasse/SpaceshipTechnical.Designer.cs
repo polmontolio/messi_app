@@ -52,7 +52,7 @@
             this.lbl_fija.BackColor = System.Drawing.Color.Transparent;
             this.lbl_fija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.lbl_fija.Location = new System.Drawing.Point(867, 87);
+            this.lbl_fija.Location = new System.Drawing.Point(884, 87);
             this.lbl_fija.Name = "lbl_fija";
             this.lbl_fija.Size = new System.Drawing.Size(204, 20);
             this.lbl_fija.TabIndex = 20;
@@ -66,6 +66,7 @@
             this.pbox_principal.Location = new System.Drawing.Point(793, 163);
             this.pbox_principal.Name = "pbox_principal";
             this.pbox_principal.Size = new System.Drawing.Size(493, 375);
+            this.pbox_principal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbox_principal.TabIndex = 19;
             this.pbox_principal.TabStop = false;
             this.pbox_principal.Visible = false;
@@ -168,7 +169,7 @@
             this.lbl_fija2.BackColor = System.Drawing.Color.Transparent;
             this.lbl_fija2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.lbl_fija2.Location = new System.Drawing.Point(928, 121);
+            this.lbl_fija2.Location = new System.Drawing.Point(945, 121);
             this.lbl_fija2.Name = "lbl_fija2";
             this.lbl_fija2.Size = new System.Drawing.Size(124, 20);
             this.lbl_fija2.TabIndex = 25;
