@@ -70,10 +70,7 @@ namespace ProvaClasse
         private void list_naves_Click(object sender, EventArgs e)
         {
             makeVisible(false);
-            
-            //pbox_principal.Image = null;
-
-
+            video_Spaceship.Ctlcontrols.stop();
 
             int numeroElegir = list_naves.FocusedItem.Index;
             String spaceShipSelectName = list_naves.FocusedItem.Text;
@@ -169,6 +166,7 @@ namespace ProvaClasse
         void PictureBoxClick(object sender, EventArgs e)
         {
             video_Spaceship.Visible = false;
+            video_Spaceship.Ctlcontrols.stop();
 
             PictureBox pboxSender = (PictureBox)sender;
             Image saveImage = pboxSender.Image;
