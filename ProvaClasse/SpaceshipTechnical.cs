@@ -7,6 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Text;
 using System.Xml;
+using System.IO;
+using System.Reflection;
+
 
 namespace ProvaClasse
 {
@@ -70,16 +73,17 @@ namespace ProvaClasse
 
         private void list_naves_Click(object sender, EventArgs e)
         {
-            makeVisible(false);
+            video_Spaceship.Visible = false;
             video_Spaceship.Ctlcontrols.stop();
+            makeVisible(false);
 
+            video_Spaceship.uiMode = "none";
             int numeroElegir = list_naves.FocusedItem.Index;
             String spaceShipSelectName = list_naves.FocusedItem.Text;
 
             getInfo(numeroElegir);
           
             rutaSpaceshipSelect = "../img/blueprintimages/" + spaceShipSelectName + "/";
-
 
 
             pbox_blueprint.Image = (Image.FromFile(rutaSpaceshipSelect + blueprintS));
@@ -183,9 +187,20 @@ namespace ProvaClasse
             //Show the video settings
             pbox_principal.Visible = false;
             video_Spaceship.Visible = true;
-            
-            
-            video_Spaceship.URL = @"C:/Users/pol/Desktop/MESSI/messi_app/img/blueprintimages/Tie - Advanced/TieAdvanced.mp4";
+
+            //Get path for videos
+            string executableFilePath = Assembly.GetExecutingAssembly().Location;
+            string executableDirectoryPath = Path.GetDirectoryName(executableFilePath);
+
+            string videoPath = Path.GetFullPath(Path.Combine(executableDirectoryPath, @"" + rutaSpaceshipSelect + mp4S));
+
+
+
+            //video_Spaceship.URL = @"E:/Messi_app/Messi_app/img/blueprintimages/Tie-Interceptor/TieInterceptor.mp4";
+            video_Spaceship.URL = videoPath;
+
+
+            //video_Spaceship.URL = @"C:/Users/pol/Desktop/MESSI/messi_app/img/blueprintimages/Tie - Advanced/TieAdvanced.mp4";
             video_Spaceship.settings.autoStart = true;
 
             video_Spaceship.settings.setMode("loop", true);
@@ -238,6 +253,7 @@ namespace ProvaClasse
 
         public void makeVisible(bool option)
         {
+
             pbox_principal.Visible = option;
             lbl_desc.Visible = option;
             lbl_fija.Visible = option;

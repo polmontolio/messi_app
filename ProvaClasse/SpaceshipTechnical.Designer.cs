@@ -54,7 +54,7 @@
             this.lbl_fija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija.Location = new System.Drawing.Point(884, 87);
             this.lbl_fija.Name = "lbl_fija";
-            this.lbl_fija.Size = new System.Drawing.Size(246, 25);
+            this.lbl_fija.Size = new System.Drawing.Size(204, 20);
             this.lbl_fija.TabIndex = 20;
             this.lbl_fija.Text = "SPACESHIP TECHNICAL";
             this.lbl_fija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -113,7 +113,7 @@
             this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_nave.Location = new System.Drawing.Point(907, 668);
             this.lbl_nave.Name = "lbl_nave";
-            this.lbl_nave.Size = new System.Drawing.Size(310, 20);
+            this.lbl_nave.Size = new System.Drawing.Size(263, 17);
             this.lbl_nave.TabIndex = 21;
             this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
             this.lbl_nave.Visible = false;
@@ -123,9 +123,9 @@
             this.lbl_desc.AutoSize = true;
             this.lbl_desc.BackColor = System.Drawing.Color.Transparent;
             this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbl_desc.Location = new System.Drawing.Point(815, 592);
+            this.lbl_desc.Location = new System.Drawing.Point(805, 591);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_desc.Size = new System.Drawing.Size(46, 17);
             this.lbl_desc.TabIndex = 22;
             this.lbl_desc.Text = "label1";
             this.lbl_desc.Visible = false;
@@ -171,7 +171,7 @@
             this.lbl_fija2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
             this.lbl_fija2.Location = new System.Drawing.Point(945, 121);
             this.lbl_fija2.Name = "lbl_fija2";
-            this.lbl_fija2.Size = new System.Drawing.Size(151, 25);
+            this.lbl_fija2.Size = new System.Drawing.Size(124, 20);
             this.lbl_fija2.TabIndex = 25;
             this.lbl_fija2.Text = "INFORMATION";
             this.lbl_fija2.Visible = false;
