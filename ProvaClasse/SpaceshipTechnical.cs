@@ -29,6 +29,7 @@ namespace ProvaClasse
         string hyperdriveS;
         string shieldingS;
         string armamentS;
+        String rutaSpaceshipSelect;
         public SpaceshipTechnical()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace ProvaClasse
 
             getInfo(numeroElegir);
           
-            String rutaSpaceshipSelect = "../img/blueprintimages/" + spaceShipSelectName + "/";
+            rutaSpaceshipSelect = "../img/blueprintimages/" + spaceShipSelectName + "/";
 
 
 
@@ -184,7 +185,14 @@ namespace ProvaClasse
             //Show the video settings
             pbox_principal.Visible = false;
             video_Spaceship.Visible = true;
+            
+            
+            video_Spaceship.URL = @"C:/Users/pol/Desktop/MESSI/messi_app/img/blueprintimages/Tie - Advanced/TieAdvanced.mp4";
+            video_Spaceship.settings.autoStart = true;
 
+            video_Spaceship.settings.setMode("loop", true);
+
+            //video_Spaceship.Ctlcontrols.play();
         }
 
         public void getInfo(int numberSpaceship)
