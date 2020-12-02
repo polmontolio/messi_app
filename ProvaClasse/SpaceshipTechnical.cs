@@ -360,10 +360,13 @@ namespace ProvaClasse
         private void button1_Click(object sender, EventArgs e)
         {
             String fileName = "E:/Messi_app/Messi_app/img/blueprintimages/Tie-Bomber/TieBomber.pdf";
-
-            //webBrowser1.Url = new Uri(fileName);
+            webBrowser1.ScriptErrorsSuppressed = true;
+            //webBrowser1.Url = new Uri("file:///" + fileName);
 
             webBrowser1.Navigate(new Uri("file:///"  + fileName));
+
+            //this.webBrowser1.Navigate("https://www.microsoft.com");
+            
 
 
         }
