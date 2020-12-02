@@ -14,92 +14,57 @@ namespace ProvaClasse
         }
 
 
+        private PointF[] p = new PointF[100];
+
 
         private void TestForm_Load(object sender, EventArgs e)
         {
-            /*
-            
-            //Alumnos
-            XElement documemt = null;
-            documemt = XElement.Load(@"../img/blueprintimages/Info.xml");
 
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
 
-            var llistaAlumnes = documemt.Elements("TechnicalInfo").Elements("InfoDetails").Elements("InfoDetail");
-            foreach (XElement ele in llistaAlumnes)
-                txtResultat.Text += ele + "\r\n";
+            Calculo();
+            //CalculoExponencial();
 
+        }
 
-            // SEGUNDA PARTE
-            var llistaModulos = documemt.Elements("TechnicalInfo").Elements("InfoOptions").Elements("InfoOption");
+        private void CalculoExponencial()
+        {
             
 
-            getImages();
-
-            listView1.View = View.LargeIcon;
-            imageList1.ImageSize = new Size(32, 32);
-            listView1.LargeImageList = imageList1;
-
-            int imageCount = 0;
-
-            foreach (XElement ele in llistaModulos)
+            int space = 0;
+            for (int x = 0; x < 100; x++)
             {
-                listView1.Items.Add(new ListViewItem { ImageIndex = imageCount, Text = ele.Element("textOption").Value });
-                txtModuls.Text += ele.Element("textOption").Value + "\r\n";
-                imageCount++;
-            }
 
-            */
-
-            XmlDocument doc = new XmlDocument();
-            doc.Load("../img/blueprintimages/Info.xml");
-
-            /*
-            XmlNode spaceshipSelected;
-            spaceshipSelected = doc.SelectSingleNode("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail");
-            */
-            //txtResultat.Text = spaceshipSelected.InnerText;
-
-            int numeroElegir ;
-
-            XmlNodeList spaceshipSelected;
-            spaceshipSelected = doc.SelectNodes("GeneralInfo/TechnicalInfo/InfoDetails/InfoDetail[idInfoDetail='3']");
-
-
-            
-            /*
-            foreach (XmlNode node in spaceshipSelected)
-                txtResultat.Text += node + "\r\n";
-            */
-
-            foreach (XmlNode node in spaceshipSelected)
-            {
-                string firstName = node["Data/Manufacturer"].InnerText;
-                string lastName = node["Data/Manufacturer"].InnerText;
-                Console.WriteLine("Name: {0} {1}", firstName, lastName);
+                double y = Math.Pow(x, 2);
+                p[x] = new PointF(space, (float)y);
+                space += 10;
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Calculo()
         {
 
-        }
 
-        public void getImages()
-        {
-            String ruta = "../img/blueprintimages/iconShips/";
-            String imagepath = "";
-
-            XElement imagenes = null;
-            imagenes = XElement.Load(@"../img/blueprintimages/Info.xml");
-
-
-            var llistaImagenes = imagenes.Elements("TechnicalInfo").Elements("InfoOptions").Elements("InfoOption");
-            foreach (XElement ele in llistaImagenes)
+            int space = 0;
+            for (int x = 0; x < 20; x++)
             {
-                imagepath = ele.Element("icon").Value;
-                imageList1.Images.Add(Image.FromFile(ruta + imagepath));
-            }
 
+                double y = Math.Pow(Math.E, x) / 100;
+                p[x] = new PointF(space, (float)y);
+                space += 10;
+            }
         }
+
+
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.TranslateTransform(10, 400);
+            e.Graphics.ScaleTransform(1, -0.25F);
+            e.Graphics.DrawLines(Pens.Blue, p);
+        }
+
+
     }
 }
