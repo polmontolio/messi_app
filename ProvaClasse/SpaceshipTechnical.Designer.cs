@@ -35,14 +35,14 @@
             this.tbl_galeria = new System.Windows.Forms.TableLayoutPanel();
             this.list_naves = new System.Windows.Forms.ListView();
             this.lbl_nave = new System.Windows.Forms.Label();
-            this.lbl_desc = new System.Windows.Forms.Label();
             this.pbox_blueprint = new System.Windows.Forms.PictureBox();
             this.tbl_info = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_fija2 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.video_Spaceship = new AxWMPLib.AxWindowsMediaPlayer();
-            this.button1 = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.button1 = new System.Windows.Forms.Panel();
+            this.lbl_desc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.video_Spaceship)).BeginInit();
@@ -103,7 +103,7 @@
             this.list_naves.HideSelection = false;
             this.list_naves.Location = new System.Drawing.Point(0, 93);
             this.list_naves.Name = "list_naves";
-            this.list_naves.Size = new System.Drawing.Size(123, 254);
+            this.list_naves.Size = new System.Drawing.Size(123, 231);
             this.list_naves.TabIndex = 17;
             this.list_naves.UseCompatibleStateImageBehavior = false;
             this.list_naves.Click += new System.EventHandler(this.list_naves_Click);
@@ -119,18 +119,6 @@
             this.lbl_nave.TabIndex = 21;
             this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
             this.lbl_nave.Visible = false;
-            // 
-            // lbl_desc
-            // 
-            this.lbl_desc.AutoSize = true;
-            this.lbl_desc.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbl_desc.Location = new System.Drawing.Point(805, 591);
-            this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(46, 17);
-            this.lbl_desc.TabIndex = 22;
-            this.lbl_desc.Text = "label1";
-            this.lbl_desc.Visible = false;
             // 
             // pbox_blueprint
             // 
@@ -194,36 +182,48 @@
             this.video_Spaceship.TabIndex = 26;
             this.video_Spaceship.Visible = false;
             // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(175, 66);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(590, 727);
+            this.webBrowser2.TabIndex = 28;
+            this.webBrowser2.Visible = false;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 659);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::ProvaClasse.Properties.Resources.Graphicloads_Filetype_Pdf1;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(35, 668);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 76);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Size = new System.Drawing.Size(99, 88);
+            this.button1.TabIndex = 29;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // webBrowser1
+            // lbl_desc
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.webBrowser1.Location = new System.Drawing.Point(530, 38);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(839, 767);
-            this.webBrowser1.TabIndex = 28;
+            this.lbl_desc.BackColor = System.Drawing.Color.Gainsboro;
+            this.lbl_desc.Location = new System.Drawing.Point(793, 577);
+            this.lbl_desc.Multiline = true;
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(514, 52);
+            this.lbl_desc.TabIndex = 30;
+            this.lbl_desc.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SpaceshipTechnical
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1369, 805);
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.lbl_desc);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.webBrowser2);
             this.Controls.Add(this.video_Spaceship);
             this.Controls.Add(this.lbl_fija2);
             this.Controls.Add(this.tbl_info);
             this.Controls.Add(this.pbox_blueprint);
-            this.Controls.Add(this.lbl_desc);
             this.Controls.Add(this.lbl_nave);
             this.Controls.Add(this.lbl_fija);
             this.Controls.Add(this.pbox_principal);
@@ -236,13 +236,13 @@
             this.Controls.SetChildIndex(this.pbox_principal, 0);
             this.Controls.SetChildIndex(this.lbl_fija, 0);
             this.Controls.SetChildIndex(this.lbl_nave, 0);
-            this.Controls.SetChildIndex(this.lbl_desc, 0);
             this.Controls.SetChildIndex(this.pbox_blueprint, 0);
             this.Controls.SetChildIndex(this.tbl_info, 0);
             this.Controls.SetChildIndex(this.lbl_fija2, 0);
             this.Controls.SetChildIndex(this.video_Spaceship, 0);
+            this.Controls.SetChildIndex(this.webBrowser2, 0);
             this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.webBrowser1, 0);
+            this.Controls.SetChildIndex(this.lbl_desc, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_principal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_blueprint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.video_Spaceship)).EndInit();
@@ -258,13 +258,13 @@
         private System.Windows.Forms.TableLayoutPanel tbl_galeria;
         private System.Windows.Forms.ListView list_naves;
         private System.Windows.Forms.Label lbl_nave;
-        private System.Windows.Forms.Label lbl_desc;
         private System.Windows.Forms.PictureBox pbox_blueprint;
         private System.Windows.Forms.TableLayoutPanel tbl_info;
         private System.Windows.Forms.Label lbl_fija2;
         private System.Windows.Forms.ImageList imageList1;
         private AxWMPLib.AxWindowsMediaPlayer video_Spaceship;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.Panel button1;
+        private System.Windows.Forms.TextBox lbl_desc;
     }
 }

@@ -124,9 +124,6 @@
   <data name="estrellas-galaxia-espacio-ultraterrestre-cielo-universo-nocturno-negro-fondo-estrellado-starfield-brillante_146539-280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\estrellas-galaxia-espacio-ultraterrestre-cielo-universo-nocturno-negro-fondo-estrellado-starfield-brillante_146539-280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="halconmilenario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\halconmilenario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="dark_council" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark_council.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,8 +133,14 @@
   <data name="star_wars_BG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star_wars_BG2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="death_star2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death_star2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="amenazante" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\amenazante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sith_canon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sith_canon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngwave_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngwave_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,6 +150,12 @@
   </data>
   <data name="78534-and-star-light-wallpaper-sky-black-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\78534-and-star-light-wallpaper-sky-black-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PDF_file_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDF_file_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads-Filetype-Pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graphicloads-Filetype-Pdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="34695fafb7ebb88e880f798a81af0d40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\34695fafb7ebb88e880f798a81af0d40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +178,8 @@
   <data name="115-1150078_restricted-area-do-not-enter-sign-australia-unt-health-science-center" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\115-1150078_restricted-area-do-not-enter-sign-australia-unt-health-science-center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="death_star2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death_star2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="halconmilenario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\halconmilenario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Death_Star-RO_U_Visual_Guide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Death_Star-RO_U_Visual_Guide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +187,7 @@
   <data name="darth_vader_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\darth_vader_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sith_canon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sith_canon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Graphicloads-Filetype-Pdf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graphicloads-Filetype-Pdf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

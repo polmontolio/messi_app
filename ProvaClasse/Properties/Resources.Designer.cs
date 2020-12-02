@@ -196,6 +196,26 @@ namespace ProvaClasse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Filetype_Pdf {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads-Filetype-Pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Filetype_Pdf1 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads-Filetype-Pdf1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap halconmilenario {
             get {
                 object obj = ResourceManager.GetObject("halconmilenario", resourceCulture);
@@ -209,6 +229,16 @@ namespace ProvaClasse.Properties {
         internal static System.Drawing.Bitmap halconmilenario1 {
             get {
                 object obj = ResourceManager.GetObject("halconmilenario1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PDF_file_icon {
+            get {
+                object obj = ResourceManager.GetObject("PDF_file_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

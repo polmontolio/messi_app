@@ -323,5 +323,14 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF_file_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graphicloads-Filetype-Pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graphicloads-Filetype-Pdf1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

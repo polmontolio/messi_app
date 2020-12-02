@@ -35,13 +35,22 @@ namespace ProvaClasse
         string shieldingS;
         string armamentS;
         String rutaSpaceshipSelect;
+        bool isOpen = false;
+        String spaceShipSelectName;
+
         public SpaceshipTechnical()
         {
             InitializeComponent();
         }
 
+        
+
         private void SpaceshipTechnical_Load(object sender, EventArgs e)
         {
+
+            button1.Visible = false;
+            makeVisible(false);
+
             //FUENTES
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile("../font/SF Distant Galaxy.ttf");
@@ -75,13 +84,16 @@ namespace ProvaClasse
 
         private void list_naves_Click(object sender, EventArgs e)
         {
+            isOpen = false;
+            webBrowser2.Visible = false;
             video_Spaceship.Visible = false;
             video_Spaceship.Ctlcontrols.stop();
+            
             makeVisible(false);
 
             video_Spaceship.uiMode = "none";
             int numeroElegir = list_naves.FocusedItem.Index;
-            String spaceShipSelectName = list_naves.FocusedItem.Text;
+            spaceShipSelectName = list_naves.FocusedItem.Text;
 
             getInfo(numeroElegir);
           
@@ -95,6 +107,7 @@ namespace ProvaClasse
             getImagesGallery(rutaSpaceshipSelect);
 
             filllabels();
+            button1.Visible = true;
 
             makeVisible(true);
 
@@ -225,7 +238,7 @@ namespace ProvaClasse
                 tituloS = node["title"].InnerText;
                 pdfS = node["pdfFile"].InnerText;
                 blueprintS = node["Blueprint"].InnerText;
-                descS = node["textInfoDetail"].InnerText;
+                descS = node["textInfoDetail"].InnerText.Trim();
                 mp4S = node["GeneralView"].InnerText;
                 img_frontS = node["FrontView"].InnerText;
                 img_sideS = node["SideView"].InnerText;
@@ -332,20 +345,13 @@ namespace ProvaClasse
                 {
                     lbls_fijas.Font = new Font("Impact", 20);
                     lbls_fijas.ForeColor = Color.FromArgb(248, 220, 51);
-                }
-                else
-                {
-                    lbls_fijas.Font = new Font("Impact", 18);
-                    lbls_fijas.ForeColor = Color.Gainsboro;
-                }
-
-                if (i == 0)
-                {
                     lbls_datos.Font = new Font("Impact", 20);
                     lbls_datos.ForeColor = Color.FromArgb(248, 220, 51);
                 }
                 else
                 {
+                    lbls_fijas.Font = new Font("Impact", 18);
+                    lbls_fijas.ForeColor = Color.Gainsboro;
                     lbls_datos.Font = new Font("Impact", 18);
                     lbls_datos.ForeColor = Color.Gainsboro;
                 }
@@ -359,15 +365,40 @@ namespace ProvaClasse
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String fileName = "E:/Messi_app/Messi_app/img/blueprintimages/Tie-Bomber/TieBomber.pdf";
-            webBrowser1.ScriptErrorsSuppressed = true;
-            //webBrowser1.Url = new Uri("file:///" + fileName);
 
-            webBrowser1.Navigate(new Uri("file:///"  + fileName));
+           if (spaceShipSelectName.Length > 0)
+            {
+                //Get path for videos
+                string executableFilePath = Assembly.GetExecutingAssembly().Location;
+                string executableDirectoryPath = Path.GetDirectoryName(executableFilePath);
 
-            //this.webBrowser1.Navigate("https://www.microsoft.com");
+                string videoPath = Path.GetFullPath(Path.Combine(executableDirectoryPath, @"" + rutaSpaceshipSelect + pdfS));
+
+                Console.WriteLine(videoPath);
+
+                webBrowser2.ScriptErrorsSuppressed = true;
+                webBrowser2.Url = new Uri("file:///" + videoPath);
+
+
+                if (!isOpen)
+                {
+                    isOpen = true;
+                    webBrowser2.Visible = true;
+
+                }
+                else
+                {
+                    isOpen = false;
+                    webBrowser2.Visible = false;
+                }
+            }
+
             
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
