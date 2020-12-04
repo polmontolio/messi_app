@@ -14,57 +14,24 @@ namespace ProvaClasse
         }
 
 
-        private PointF[] p = new PointF[100];
+        private PointF[] puntosFormula = new PointF[1001];
 
 
         private void TestForm_Load(object sender, EventArgs e)
         {
-
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-
             Calculo();
-            //CalculoExponencial();
-
         }
 
-        private void CalculoExponencial()
-        {
-            
-
-            int space = 0;
-            for (int x = 0; x < 100; x++)
-            {
-
-                double y = Math.Pow(x, 2);
-                p[x] = new PointF(space, (float)y);
-                space += 10;
-            }
-        }
 
         private void Calculo()
         {
-
-
-            int space = 0;
-            for (int x = 0; x < 20; x++)
+            for (int x = 0; x <= 1000; x++)
             {
-
-                double y = Math.Pow(Math.E, x) / 100;
-                p[x] = new PointF(space, (float)y);
-                space += 10;
+                double y = Math.Pow(Math.E, (double)x / 100);
+                puntosFormula[x] = new PointF(x, (float)y);
+                chart1.Series[0].Points.AddXY(x, (float)y);
             }
         }
-
-
-
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            e.Graphics.TranslateTransform(10, 400);
-            e.Graphics.ScaleTransform(1, -0.25F);
-            e.Graphics.DrawLines(Pens.Blue, p);
-        }
-
-
+        
     }
 }
