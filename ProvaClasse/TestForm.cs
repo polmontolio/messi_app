@@ -22,6 +22,7 @@ namespace ProvaClasse
         private void TestForm_Load(object sender, EventArgs e)
         {
             Calculo();
+            ShowListView(puntosFormula);
         }
 
 
@@ -41,6 +42,7 @@ namespace ProvaClasse
             }
         }
 
+<<<<<<< HEAD
         public static void WriteLog(string logline)
         {
             string path = "C:/Users/Pol/Desktop/";
@@ -55,5 +57,28 @@ namespace ProvaClasse
             catch (Exception) { }
         }
 
+=======
+        private void ShowListView(PointF[] puntosF)
+        {
+
+            listView1.Columns.Add("X");
+            listView1.Columns.Add("Y");
+
+            for (int j = 0; j < puntosF.Length; j += 25)
+            {
+                listView1.Items.Add(new ListViewItem(new string[] { puntosFormula[j].X.ToString(), puntosFormula[j].Y.ToString() }));
+            }
+
+            
+
+            int k = listView1.Width - 5;
+            int i = k / 2;
+            listView1.Columns[0].Width = k - i - 17;
+            listView1.Columns[1].Width = i;
+
+        }
+
+
+>>>>>>> 012bfa593166fecc729ee555ccad3bd4d144f140
     }
 }
