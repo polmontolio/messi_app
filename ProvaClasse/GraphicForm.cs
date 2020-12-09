@@ -16,6 +16,16 @@ namespace ProvaClasse
 
         private void GraphicForm_Load(object sender, EventArgs e)
         {
+            chart1.BackColor = Color.Black;
+            chart1.ChartAreas["ChartArea1"].BackColor = Color.Black;
+            chart1.ChartAreas["ChartArea1"].AxisX.MajorGrid.LineColor = Color.Gainsboro;
+            chart1.ChartAreas["ChartArea1"].AxisY.MajorGrid.LineColor = Color.Gainsboro;
+            chart1.ChartAreas["ChartArea1"].AxisX.LabelStyle.ForeColor = Color.Gainsboro;
+            chart1.ChartAreas["ChartArea1"].AxisY.LabelStyle.ForeColor = Color.Gainsboro;
+            chart1.ChartAreas["ChartArea1"].AxisY.LineColor = Color.Gainsboro;
+            chart1.ChartAreas["ChartArea1"].AxisX.LineColor = Color.Gainsboro;
+
+
             Calculo();
             ShowListView(puntosFormula);
         }
