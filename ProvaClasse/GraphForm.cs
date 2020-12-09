@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using System.Drawing;
-using System.Xml;
 using DataManagement;
 
 namespace ProvaClasse
 {
-    public partial class TestForm : Form
+    public partial class GraphForm : Form
     {
         StringData StringData = new StringData();
-        public TestForm()
+        public GraphForm()
         {
             InitializeComponent();
         }
@@ -42,7 +40,7 @@ namespace ProvaClasse
             }
         }
 
-<<<<<<< HEAD
+
         public static void WriteLog(string logline)
         {
             string path = "C:/Users/Pol/Desktop/";
@@ -57,7 +55,7 @@ namespace ProvaClasse
             catch (Exception) { }
         }
 
-=======
+
         private void ShowListView(PointF[] puntosF)
         {
 
@@ -78,7 +76,5 @@ namespace ProvaClasse
 
         }
 
-
->>>>>>> 012bfa593166fecc729ee555ccad3bd4d144f140
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProvaClasse
 {
-    partial class TestForm
+    partial class GraphForm
     {
         /// <summary>
         /// Required designer variable.
