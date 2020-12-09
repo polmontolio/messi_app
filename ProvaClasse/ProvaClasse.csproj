@@ -85,6 +85,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DarkCoreDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GraphicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicForm.Designer.cs">
+      <DependentUpon>GraphicForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +108,6 @@
     </Compile>
     <Compile Include="SpaceshipTechnical.Designer.cs">
       <DependentUpon>SpaceshipTechnical.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ThreatScreen.cs">
       <SubType>Form</SubType>
@@ -147,6 +147,9 @@
     <EmbeddedResource Include="BaseBlueprint.resx">
       <DependentUpon>BaseBlueprint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GraphicForm.resx">
+      <DependentUpon>GraphicForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuUser.resx">
       <DependentUpon>MenuUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,9 +158,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpaceshipTechnical.resx">
       <DependentUpon>SpaceshipTechnical.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThreatScreen.resx">
       <DependentUpon>ThreatScreen.cs</DependentUpon>

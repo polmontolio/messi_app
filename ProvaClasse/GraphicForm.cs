@@ -5,24 +5,20 @@ using DataManagement;
 
 namespace ProvaClasse
 {
-    public partial class GraphForm : Form
+    public partial class GraphicForm : Control_Library.BaseForm
     {
         StringData StringData = new StringData();
-        public GraphForm()
+        private PointF[] puntosFormula = new PointF[1001];
+        public GraphicForm()
         {
             InitializeComponent();
         }
 
-
-        private PointF[] puntosFormula = new PointF[1001];
-
-
-        private void TestForm_Load(object sender, EventArgs e)
+        private void GraphicForm_Load(object sender, EventArgs e)
         {
             Calculo();
             ShowListView(puntosFormula);
         }
-
 
         private void Calculo()
         {
@@ -35,7 +31,7 @@ namespace ProvaClasse
                 String StringX = StringData.FillIntChar(x, 4, " ");
 
                 String log = StringX + " | " + y;
-               
+
                 WriteLog(log);
             }
         }
@@ -43,7 +39,7 @@ namespace ProvaClasse
 
         public static void WriteLog(string logline)
         {
-            string path = "C:/Users/Pol/Desktop/";
+            string path = "../DLL/";
 
             string fileName = "testing.log";
             try
@@ -53,6 +49,8 @@ namespace ProvaClasse
                 file.Close();
             }
             catch (Exception) { }
+
+            
         }
 
 
@@ -67,7 +65,7 @@ namespace ProvaClasse
                 listView1.Items.Add(new ListViewItem(new string[] { puntosFormula[j].X.ToString(), puntosFormula[j].Y.ToString() }));
             }
 
-            
+
 
             int k = listView1.Width - 5;
             int i = k / 2;
@@ -75,6 +73,5 @@ namespace ProvaClasse
             listView1.Columns[1].Width = i;
 
         }
-
     }
 }
