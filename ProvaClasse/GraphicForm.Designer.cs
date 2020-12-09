@@ -39,25 +39,9 @@
             // 
             // chart1
             // 
-<<<<<<< HEAD
-            chartArea1.BackColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(45, 118);
             this.chart1.Name = "chart1";
-            series1.BackSecondaryColor = System.Drawing.Color.White;
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.Name = "ch_Power";
-            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(735, 421);
-=======
             chartArea4.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
@@ -73,7 +57,6 @@
             series4.Name = "ch_Power";
             this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(827, 526);
->>>>>>> dd31be9eee9a0dcc6bf94424d7f6081967a704af
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
             // 

@@ -27,6 +27,8 @@ namespace ProvaClasse
             chart1.ChartAreas["ChartArea1"].AxisY.LabelStyle.ForeColor = Color.Gainsboro;
             chart1.ChartAreas["ChartArea1"].AxisY.LineColor = Color.Gainsboro;
             chart1.ChartAreas["ChartArea1"].AxisX.LineColor = Color.Gainsboro;
+            chart1.Series[0].Color = Color.FromArgb(248, 220, 51);
+            chart1.Series[0].BorderWidth = 3;
 
 
             Calculo();
