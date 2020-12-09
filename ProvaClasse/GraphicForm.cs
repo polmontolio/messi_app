@@ -2,12 +2,15 @@
 using System.Windows.Forms;
 using System.Drawing;
 using DataManagement;
+using System.IO;
 
 namespace ProvaClasse
 {
     public partial class GraphicForm : Control_Library.BaseForm
     {
         StringData StringData = new StringData();
+        OpenFileDialog ofd = new OpenFileDialog();
+
         private PointF[] puntosFormula = new PointF[1001];
         public GraphicForm()
         {
@@ -28,6 +31,10 @@ namespace ProvaClasse
 
             Calculo();
             ShowListView(puntosFormula);
+
+            string s = File.ReadAllText("../DLL/testing.log");
+            rtxt_datos.Text = s;
+
         }
 
         private void Calculo()
