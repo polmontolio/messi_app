@@ -273,7 +273,7 @@ namespace ProvaClasse
             lbl_desc.Visible = option;
             lbl_fija.Visible = option;
             lbl_fija2.Visible = option;
-            lbl_nave.Visible = option;
+            
             pbox_blueprint.Visible = option;
             tbl_galeria.Visible = option;
             tbl_info.Visible = option;

@@ -10,6 +10,12 @@ namespace ProvaClasse
     {
         StringData StringData = new StringData();
         OpenFileDialog ofd = new OpenFileDialog();
+        int inicio = 1;
+        int final = 10;
+        int aumento = 10;
+        string path = "../DLL/";
+
+        string fileName = "testing.log";
 
         private PointF[] puntosFormula = new PointF[1001];
         public GraphicForm()
@@ -29,19 +35,31 @@ namespace ProvaClasse
             chart1.ChartAreas["ChartArea1"].AxisX.LineColor = Color.Gainsboro;
             chart1.Series[0].Color = Color.FromArgb(248, 220, 51);
             chart1.Series[0].BorderWidth = 3;
+            chart1.ChartAreas[0].AxisX.Minimum = 0;
+            chart1.ChartAreas[0].AxisX.Maximum = 1100;
+            chart1.ChartAreas[0].AxisY.Minimum = 0;
+            chart1.ChartAreas[0].AxisY.Maximum = 25000;
 
 
-            Calculo();
-            ShowListView(puntosFormula);
+            timer1.Enabled = true;
+            timer1.Interval = 25;
+            timer1.Start();
+            listView1.Visible = false;
+            rtxt_datos.Visible = false;
 
-            string s = File.ReadAllText("../DLL/testing.log");
-            rtxt_datos.Text = s;
+            System.IO.File.WriteAllText(path + fileName, string.Empty);
+
+            //Calculo(1, 1000);
+            //ShowListView(puntosFormula);
+
+            //string s = File.ReadAllText("../DLL/testing.log");
+            //rtxt_datos.Text = s;
 
         }
 
-        private void Calculo()
+        private void Calculo(int inicio, int final)
         {
-            for (int x = 1; x <= 1000; x++)
+            for (int x = inicio; x <= final; x++)
             {
                 double y = Math.Pow(Math.E, (double)x / 100);
                 puntosFormula[x] = new PointF(x, (float)y);
@@ -61,6 +79,9 @@ namespace ProvaClasse
             string path = "../DLL/";
 
             string fileName = "testing.log";
+
+            
+
             try
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(path + fileName, true);
@@ -91,6 +112,29 @@ namespace ProvaClasse
             listView1.Columns[0].Width = k - i - 17;
             listView1.Columns[1].Width = i;
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            
+            if (final > 1001)
+            {
+                timer1.Enabled = false;
+                timer1.Stop();
+                ShowListView(puntosFormula);
+                string s = File.ReadAllText("../DLL/testing.log");
+                rtxt_datos.Text = s;
+                listView1.Visible = true;
+                rtxt_datos.Visible = true;
+            } else
+            {
+                //Console.WriteLine("inicio: " + inicio + " final: " + final);
+                Calculo(inicio, final);
+                inicio += aumento;
+                final += aumento;
+            }
+            
         }
     }
 }

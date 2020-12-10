@@ -34,7 +34,6 @@
             this.pbox_principal = new System.Windows.Forms.PictureBox();
             this.tbl_galeria = new System.Windows.Forms.TableLayoutPanel();
             this.list_naves = new System.Windows.Forms.ListView();
-            this.lbl_nave = new System.Windows.Forms.Label();
             this.pbox_blueprint = new System.Windows.Forms.PictureBox();
             this.tbl_info = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_fija2 = new System.Windows.Forms.Label();
@@ -99,26 +98,15 @@
             // list_naves
             // 
             this.list_naves.BackColor = System.Drawing.Color.Black;
+            this.list_naves.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.list_naves.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.list_naves.HideSelection = false;
-            this.list_naves.Location = new System.Drawing.Point(0, 93);
+            this.list_naves.Location = new System.Drawing.Point(35, 87);
             this.list_naves.Name = "list_naves";
-            this.list_naves.Size = new System.Drawing.Size(123, 231);
+            this.list_naves.Size = new System.Drawing.Size(108, 231);
             this.list_naves.TabIndex = 17;
             this.list_naves.UseCompatibleStateImageBehavior = false;
             this.list_naves.Click += new System.EventHandler(this.list_naves_Click);
-            // 
-            // lbl_nave
-            // 
-            this.lbl_nave.AutoSize = true;
-            this.lbl_nave.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_nave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(220)))), ((int)(((byte)(51)))));
-            this.lbl_nave.Location = new System.Drawing.Point(907, 668);
-            this.lbl_nave.Name = "lbl_nave";
-            this.lbl_nave.Size = new System.Drawing.Size(263, 17);
-            this.lbl_nave.TabIndex = 21;
-            this.lbl_nave.Text = "SPACESHIP TECHNICAL INFORMATION";
-            this.lbl_nave.Visible = false;
             // 
             // pbox_blueprint
             // 
@@ -205,11 +193,14 @@
             // 
             // lbl_desc
             // 
-            this.lbl_desc.BackColor = System.Drawing.Color.Gainsboro;
+            this.lbl_desc.BackColor = System.Drawing.Color.Black;
+            this.lbl_desc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbl_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_desc.ForeColor = System.Drawing.Color.Gainsboro;
             this.lbl_desc.Location = new System.Drawing.Point(793, 577);
             this.lbl_desc.Multiline = true;
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(514, 52);
+            this.lbl_desc.Size = new System.Drawing.Size(535, 110);
             this.lbl_desc.TabIndex = 30;
             this.lbl_desc.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -224,7 +215,6 @@
             this.Controls.Add(this.lbl_fija2);
             this.Controls.Add(this.tbl_info);
             this.Controls.Add(this.pbox_blueprint);
-            this.Controls.Add(this.lbl_nave);
             this.Controls.Add(this.lbl_fija);
             this.Controls.Add(this.pbox_principal);
             this.Controls.Add(this.tbl_galeria);
@@ -235,7 +225,6 @@
             this.Controls.SetChildIndex(this.tbl_galeria, 0);
             this.Controls.SetChildIndex(this.pbox_principal, 0);
             this.Controls.SetChildIndex(this.lbl_fija, 0);
-            this.Controls.SetChildIndex(this.lbl_nave, 0);
             this.Controls.SetChildIndex(this.pbox_blueprint, 0);
             this.Controls.SetChildIndex(this.tbl_info, 0);
             this.Controls.SetChildIndex(this.lbl_fija2, 0);
@@ -257,7 +246,6 @@
         private System.Windows.Forms.PictureBox pbox_principal;
         private System.Windows.Forms.TableLayoutPanel tbl_galeria;
         private System.Windows.Forms.ListView list_naves;
-        private System.Windows.Forms.Label lbl_nave;
         private System.Windows.Forms.PictureBox pbox_blueprint;
         private System.Windows.Forms.TableLayoutPanel tbl_info;
         private System.Windows.Forms.Label lbl_fija2;
