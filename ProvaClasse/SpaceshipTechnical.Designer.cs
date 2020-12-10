@@ -220,6 +220,7 @@
             this.Controls.Add(this.tbl_galeria);
             this.Controls.Add(this.list_naves);
             this.Name = "SpaceshipTechnical";
+            this.Texto = "Technical Information";
             this.Load += new System.EventHandler(this.SpaceshipTechnical_Load);
             this.Controls.SetChildIndex(this.list_naves, 0);
             this.Controls.SetChildIndex(this.tbl_galeria, 0);
