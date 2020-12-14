@@ -27,10 +27,6 @@ namespace ProvaClasse
             // POSICIONES DE OBJETOS
 
             pboxDetail.Location = new Point(this.ClientSize.Width - pboxDetail.Size.Width - 170, 146 );
-            
-
-
-            //
 
 
             ruta = "../img/blueprintimages/StarKiller/";
