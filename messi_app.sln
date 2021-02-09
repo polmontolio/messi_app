@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserForms", "UserForms\User
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalisesPassives", "BalisesPassives\BalisesPassives.csproj", "{232784E3-CFB6-485E-9755-60DE8DF64B79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalisesActives", "BalisesActives\BalisesActives.csproj", "{6CAACDC3-C96D-4052-B334-5838EC3EE52C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{232784E3-CFB6-485E-9755-60DE8DF64B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{232784E3-CFB6-485E-9755-60DE8DF64B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{232784E3-CFB6-485E-9755-60DE8DF64B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

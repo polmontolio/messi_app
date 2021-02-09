@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
 
-namespace BalisesPassives
+namespace BalisesActives
 {
     public partial class Form1 : Form
     {
@@ -44,39 +44,7 @@ namespace BalisesPassives
             Console.ReadLine();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            int gciclos = 0;
-            int divisor = 0;
-
-            try
-            {
-                gciclos = int.Parse(textBox1.Text);
-                divisor = int.Parse(textBox2.Text);
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-            }
-            
-
-            bool condicionCiclos = gciclos >= 5 && gciclos <= 20;
-            bool condicionDivisor = divisor >= 2 && divisor <= 7;
-
-            if (condicionCiclos && condicionDivisor)
-            {
-                _serialPort.Open();
-                _serialPort.Write("configurar\n");
-                _serialPort.Write(gciclos.ToString()+ "\n");
-                _serialPort.Write(divisor.ToString() + "\n");
-                _serialPort.Close();
-            }
-
-
-        }
-
+       
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (_serialPort.IsOpen)
@@ -96,6 +64,11 @@ namespace BalisesPassives
             _serialPort.Write("connect\n");
             //_serialPort.Write("0");
             _serialPort.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
