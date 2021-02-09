@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label5 = new System.Windows.Forms.Label();
             this.lbx_RecievedMsg = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,7 +43,11 @@
             this.txt_SendMsg = new System.Windows.Forms.TextBox();
             this.txt_PortBase = new System.Windows.Forms.TextBox();
             this.txt_PortSistema = new System.Windows.Forms.TextBox();
-            this.txt_IPSistema = new System.Windows.Forms.TextBox();
+            this.txt_IPBase = new System.Windows.Forms.TextBox();
+            this.crt_temp = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pnl_Status = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_temp)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -63,7 +70,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 93);
+            this.label4.Location = new System.Drawing.Point(254, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 24;
@@ -72,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 25);
+            this.label3.Location = new System.Drawing.Point(254, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 23;
@@ -92,9 +99,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(44, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 21;
-            this.label1.Text = "IP Sistema";
+            this.label1.Text = "IP Base";
             // 
             // btn_Send
             // 
@@ -113,6 +120,7 @@
             this.btn_Disconnect.TabIndex = 19;
             this.btn_Disconnect.Text = "Disconnect";
             this.btn_Disconnect.UseVisualStyleBackColor = true;
+            this.btn_Disconnect.Click += new System.EventHandler(this.btn_Disconnect_Click);
             // 
             // btn_Connect
             // 
@@ -122,6 +130,7 @@
             this.btn_Connect.TabIndex = 18;
             this.btn_Connect.Text = "Connect";
             this.btn_Connect.UseVisualStyleBackColor = true;
+            this.btn_Connect.Click += new System.EventHandler(this.btn_Connect_Click);
             // 
             // txt_SendMsg
             // 
@@ -132,30 +141,70 @@
             // 
             // txt_PortBase
             // 
-            this.txt_PortBase.Location = new System.Drawing.Point(257, 109);
+            this.txt_PortBase.Location = new System.Drawing.Point(257, 41);
             this.txt_PortBase.Name = "txt_PortBase";
             this.txt_PortBase.Size = new System.Drawing.Size(169, 20);
             this.txt_PortBase.TabIndex = 16;
             // 
             // txt_PortSistema
             // 
-            this.txt_PortSistema.Location = new System.Drawing.Point(257, 41);
+            this.txt_PortSistema.Location = new System.Drawing.Point(257, 109);
             this.txt_PortSistema.Name = "txt_PortSistema";
             this.txt_PortSistema.Size = new System.Drawing.Size(169, 20);
             this.txt_PortSistema.TabIndex = 15;
             // 
-            // txt_IPSistema
+            // txt_IPBase
             // 
-            this.txt_IPSistema.Location = new System.Drawing.Point(44, 41);
-            this.txt_IPSistema.Name = "txt_IPSistema";
-            this.txt_IPSistema.Size = new System.Drawing.Size(153, 20);
-            this.txt_IPSistema.TabIndex = 14;
+            this.txt_IPBase.Location = new System.Drawing.Point(44, 41);
+            this.txt_IPBase.Name = "txt_IPBase";
+            this.txt_IPBase.Size = new System.Drawing.Size(153, 20);
+            this.txt_IPBase.TabIndex = 14;
+            // 
+            // crt_temp
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.crt_temp.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.crt_temp.Legends.Add(legend2);
+            this.crt_temp.Location = new System.Drawing.Point(347, 148);
+            this.crt_temp.Margin = new System.Windows.Forms.Padding(2);
+            this.crt_temp.Name = "crt_temp";
+            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "ch_Power";
+            this.crt_temp.Series.Add(series2);
+            this.crt_temp.Size = new System.Drawing.Size(411, 256);
+            this.crt_temp.TabIndex = 27;
+            this.crt_temp.Text = "chart1";
+            // 
+            // pnl_Status
+            // 
+            this.pnl_Status.BackColor = System.Drawing.Color.Red;
+            this.pnl_Status.Location = new System.Drawing.Point(696, 244);
+            this.pnl_Status.Name = "pnl_Status";
+            this.pnl_Status.Size = new System.Drawing.Size(41, 36);
+            this.pnl_Status.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(700, 228);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Status";
             // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pnl_Status);
+            this.Controls.Add(this.crt_temp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbx_RecievedMsg);
             this.Controls.Add(this.label4);
@@ -168,9 +217,11 @@
             this.Controls.Add(this.txt_SendMsg);
             this.Controls.Add(this.txt_PortBase);
             this.Controls.Add(this.txt_PortSistema);
-            this.Controls.Add(this.txt_IPSistema);
+            this.Controls.Add(this.txt_IPBase);
             this.Name = "Server";
             this.Text = "Server";
+            this.Load += new System.EventHandler(this.Server_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.crt_temp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +241,9 @@
         private System.Windows.Forms.TextBox txt_SendMsg;
         private System.Windows.Forms.TextBox txt_PortBase;
         private System.Windows.Forms.TextBox txt_PortSistema;
-        private System.Windows.Forms.TextBox txt_IPSistema;
+        private System.Windows.Forms.TextBox txt_IPBase;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crt_temp;
+        private System.Windows.Forms.Panel pnl_Status;
+        private System.Windows.Forms.Label label6;
     }
 }
