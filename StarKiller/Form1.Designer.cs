@@ -98,6 +98,7 @@ namespace StarKiller
             this.btn_Send.TabIndex = 6;
             this.btn_Send.Text = "Send";
             this.btn_Send.UseVisualStyleBackColor = true;
+            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
             // label1
             // 
@@ -172,6 +173,7 @@ namespace StarKiller
             this.Controls.Add(this.txt_IPSistema);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
