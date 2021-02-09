@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalisesPassives", "BalisesP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalisesActives", "BalisesActives\BalisesActives.csproj", "{6CAACDC3-C96D-4052-B334-5838EC3EE52C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarKiller", "StarKiller\StarKiller.csproj", "{FFF3E5F0-98A2-4B30-BC2A-377BCEDF9DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarKillerBase", "StarKillerBase\StarKillerBase.csproj", "{1D260047-39A0-4F7E-B482-38619DBC0DCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAACDC3-C96D-4052-B334-5838EC3EE52C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF3E5F0-98A2-4B30-BC2A-377BCEDF9DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF3E5F0-98A2-4B30-BC2A-377BCEDF9DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF3E5F0-98A2-4B30-BC2A-377BCEDF9DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF3E5F0-98A2-4B30-BC2A-377BCEDF9DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

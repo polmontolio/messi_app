@@ -80,6 +80,7 @@ namespace StarKiller
             this.btn_Connect.TabIndex = 4;
             this.btn_Connect.Text = "Connect";
             this.btn_Connect.UseVisualStyleBackColor = true;
+            this.btn_Connect.Click += new System.EventHandler(this.btn_Connect_Click);
             // 
             // btn_Disconnect
             // 
@@ -89,6 +90,7 @@ namespace StarKiller
             this.btn_Disconnect.TabIndex = 5;
             this.btn_Disconnect.Text = "Disconnect";
             this.btn_Disconnect.UseVisualStyleBackColor = true;
+            this.btn_Disconnect.Click += new System.EventHandler(this.btn_Disconnect_Click);
             // 
             // btn_Send
             // 
