@@ -140,7 +140,6 @@ namespace StarKillerBase
                     {
                         SendingMsg("SKD|" + puntosFormula[i].X.ToString() +"|"+ puntosFormula[i].Y.ToString(), txt_IPBase.Text, txt_PortBase.Text);
                     }
-                    
                     break;
                 case "FLP":
                     Console.WriteLine("Case 2");

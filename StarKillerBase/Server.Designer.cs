@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label5 = new System.Windows.Forms.Label();
             this.lbx_RecievedMsg = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.pnl_Status = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.crt_temp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -165,20 +167,20 @@
             // 
             // crt_temp
             // 
-            chartArea3.Name = "ChartArea1";
-            this.crt_temp.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.crt_temp.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.crt_temp.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.crt_temp.Legends.Add(legend1);
             this.crt_temp.Location = new System.Drawing.Point(347, 148);
             this.crt_temp.Margin = new System.Windows.Forms.Padding(2);
             this.crt_temp.Name = "crt_temp";
-            series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "ch_Power";
-            this.crt_temp.Series.Add(series3);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "ch_Power";
+            this.crt_temp.Series.Add(series1);
             this.crt_temp.Size = new System.Drawing.Size(411, 256);
             this.crt_temp.TabIndex = 27;
             this.crt_temp.Text = "chart1";
@@ -212,6 +214,10 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enable UDP Listener";
+            // 
+            // timer
+            // 
+            this.timer.Interval = 500;
             // 
             // Server
             // 
@@ -261,5 +267,6 @@
         private System.Windows.Forms.Panel pnl_Status;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Timer timer;
     }
 }

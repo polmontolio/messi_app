@@ -29,6 +29,7 @@ namespace StarKiller
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_IPSistema = new System.Windows.Forms.TextBox();
             this.txt_PortSistema = new System.Windows.Forms.TextBox();
             this.txt_PortBase = new System.Windows.Forms.TextBox();
@@ -43,6 +44,7 @@ namespace StarKiller
             this.lbx_RecievedMsg = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,6 +172,11 @@ namespace StarKiller
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enable UDP Listener";
             // 
+            // timer
+            // 
+            this.timer.Interval = 500;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +218,7 @@ namespace StarKiller
         private System.Windows.Forms.ListBox lbx_RecievedMsg;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
