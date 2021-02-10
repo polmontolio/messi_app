@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
+using System.IO;
 
 namespace StarKiller
 {
@@ -29,6 +24,7 @@ namespace StarKiller
         private void btn_Connect_Click(object sender, EventArgs e)
         {
             connected = true;
+            btn_Disconnect.Enabled = true;
             t_connect = new Thread(serverHilo);
             t_connect.Start();
 
@@ -54,7 +50,10 @@ namespace StarKiller
 
         private void serverHilo()
         {
-            server = new UdpClient(int.Parse(txt_PortBase.Text));
+            if (server == null)
+            {
+                server = new UdpClient(int.Parse(txt_PortBase.Text));
+            }
 
             while (connected)
             {
@@ -72,12 +71,14 @@ namespace StarKiller
 
         private void btn_Send_Click(object sender, EventArgs e)
         {
-
-            UdpClient client = new UdpClient();
-            byte[] sendBytes;
-            client.Connect(txt_IPSistema.Text, int.Parse(txt_PortSistema.Text));
-            sendBytes = Encoding.ASCII.GetBytes(txt_SendMsg.Text);
-            client.Send(sendBytes, sendBytes.Length);
+            if (txt_IPSistema.Text.Length > 0 && txt_PortSistema.Text.Length > 0)
+            {
+                UdpClient client = new UdpClient();
+                byte[] sendBytes;
+                client.Connect(txt_IPSistema.Text, int.Parse(txt_PortSistema.Text));
+                sendBytes = Encoding.ASCII.GetBytes(txt_SendMsg.Text);
+                client.Send(sendBytes, sendBytes.Length);
+            }     
         }
 
         private void Form1_Load(object sender, EventArgs e)

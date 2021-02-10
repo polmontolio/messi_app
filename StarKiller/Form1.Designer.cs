@@ -42,39 +42,41 @@ namespace StarKiller
             this.label4 = new System.Windows.Forms.Label();
             this.lbx_RecievedMsg = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_IPSistema
             // 
-            this.txt_IPSistema.Location = new System.Drawing.Point(40, 47);
+            this.txt_IPSistema.Location = new System.Drawing.Point(40, 48);
             this.txt_IPSistema.Name = "txt_IPSistema";
             this.txt_IPSistema.Size = new System.Drawing.Size(153, 20);
             this.txt_IPSistema.TabIndex = 0;
             // 
             // txt_PortSistema
             // 
-            this.txt_PortSistema.Location = new System.Drawing.Point(253, 47);
+            this.txt_PortSistema.Location = new System.Drawing.Point(40, 117);
             this.txt_PortSistema.Name = "txt_PortSistema";
-            this.txt_PortSistema.Size = new System.Drawing.Size(169, 20);
+            this.txt_PortSistema.Size = new System.Drawing.Size(153, 20);
             this.txt_PortSistema.TabIndex = 1;
             // 
             // txt_PortBase
             // 
-            this.txt_PortBase.Location = new System.Drawing.Point(253, 115);
+            this.txt_PortBase.Location = new System.Drawing.Point(21, 53);
             this.txt_PortBase.Name = "txt_PortBase";
             this.txt_PortBase.Size = new System.Drawing.Size(169, 20);
             this.txt_PortBase.TabIndex = 2;
             // 
             // txt_SendMsg
             // 
-            this.txt_SendMsg.Location = new System.Drawing.Point(40, 187);
+            this.txt_SendMsg.Location = new System.Drawing.Point(40, 196);
             this.txt_SendMsg.Name = "txt_SendMsg";
-            this.txt_SendMsg.Size = new System.Drawing.Size(153, 20);
+            this.txt_SendMsg.Size = new System.Drawing.Size(293, 20);
             this.txt_SendMsg.TabIndex = 3;
             // 
             // btn_Connect
             // 
-            this.btn_Connect.Location = new System.Drawing.Point(455, 47);
+            this.btn_Connect.Location = new System.Drawing.Point(223, 32);
             this.btn_Connect.Name = "btn_Connect";
             this.btn_Connect.Size = new System.Drawing.Size(97, 23);
             this.btn_Connect.TabIndex = 4;
@@ -84,7 +86,7 @@ namespace StarKiller
             // 
             // btn_Disconnect
             // 
-            this.btn_Disconnect.Location = new System.Drawing.Point(455, 89);
+            this.btn_Disconnect.Location = new System.Drawing.Point(223, 66);
             this.btn_Disconnect.Name = "btn_Disconnect";
             this.btn_Disconnect.Size = new System.Drawing.Size(97, 23);
             this.btn_Disconnect.TabIndex = 5;
@@ -94,7 +96,7 @@ namespace StarKiller
             // 
             // btn_Send
             // 
-            this.btn_Send.Location = new System.Drawing.Point(223, 185);
+            this.btn_Send.Location = new System.Drawing.Point(343, 193);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(80, 23);
             this.btn_Send.TabIndex = 6;
@@ -105,7 +107,7 @@ namespace StarKiller
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 31);
+            this.label1.Location = new System.Drawing.Point(40, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 8;
@@ -114,7 +116,7 @@ namespace StarKiller
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 171);
+            this.label2.Location = new System.Drawing.Point(40, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 9;
@@ -123,7 +125,7 @@ namespace StarKiller
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(250, 31);
+            this.label3.Location = new System.Drawing.Point(37, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 10;
@@ -132,7 +134,7 @@ namespace StarKiller
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 99);
+            this.label4.Location = new System.Drawing.Point(18, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 11;
@@ -143,7 +145,7 @@ namespace StarKiller
             this.lbx_RecievedMsg.FormattingEnabled = true;
             this.lbx_RecievedMsg.Location = new System.Drawing.Point(40, 250);
             this.lbx_RecievedMsg.Name = "lbx_RecievedMsg";
-            this.lbx_RecievedMsg.Size = new System.Drawing.Size(249, 160);
+            this.lbx_RecievedMsg.Size = new System.Drawing.Size(557, 160);
             this.lbx_RecievedMsg.TabIndex = 12;
             // 
             // label5
@@ -155,27 +157,39 @@ namespace StarKiller
             this.label5.TabIndex = 13;
             this.label5.Text = "Recieves Messages";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_Disconnect);
+            this.groupBox1.Controls.Add(this.txt_PortBase);
+            this.groupBox1.Controls.Add(this.btn_Connect);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(233, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 113);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Enable UDP Listener";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 441);
+            this.ClientSize = new System.Drawing.Size(637, 444);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbx_RecievedMsg);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Send);
-            this.Controls.Add(this.btn_Disconnect);
-            this.Controls.Add(this.btn_Connect);
             this.Controls.Add(this.txt_SendMsg);
-            this.Controls.Add(this.txt_PortBase);
             this.Controls.Add(this.txt_PortSistema);
             this.Controls.Add(this.txt_IPSistema);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Client";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,6 +210,7 @@ namespace StarKiller
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lbx_RecievedMsg;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

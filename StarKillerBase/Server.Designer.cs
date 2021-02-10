@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label5 = new System.Windows.Forms.Label();
             this.lbx_RecievedMsg = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,7 +47,9 @@
             this.crt_temp = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnl_Status = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.crt_temp)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -64,13 +66,13 @@
             this.lbx_RecievedMsg.FormattingEnabled = true;
             this.lbx_RecievedMsg.Location = new System.Drawing.Point(44, 244);
             this.lbx_RecievedMsg.Name = "lbx_RecievedMsg";
-            this.lbx_RecievedMsg.Size = new System.Drawing.Size(249, 160);
+            this.lbx_RecievedMsg.Size = new System.Drawing.Size(263, 160);
             this.lbx_RecievedMsg.TabIndex = 25;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 25);
+            this.label4.Location = new System.Drawing.Point(44, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 24;
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 93);
+            this.label3.Location = new System.Drawing.Point(24, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 23;
@@ -105,16 +107,17 @@
             // 
             // btn_Send
             // 
-            this.btn_Send.Location = new System.Drawing.Point(227, 179);
+            this.btn_Send.Location = new System.Drawing.Point(246, 179);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(80, 23);
             this.btn_Send.TabIndex = 20;
             this.btn_Send.Text = "Send";
             this.btn_Send.UseVisualStyleBackColor = true;
+            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
             // btn_Disconnect
             // 
-            this.btn_Disconnect.Location = new System.Drawing.Point(459, 83);
+            this.btn_Disconnect.Location = new System.Drawing.Point(246, 63);
             this.btn_Disconnect.Name = "btn_Disconnect";
             this.btn_Disconnect.Size = new System.Drawing.Size(97, 23);
             this.btn_Disconnect.TabIndex = 19;
@@ -124,7 +127,7 @@
             // 
             // btn_Connect
             // 
-            this.btn_Connect.Location = new System.Drawing.Point(459, 41);
+            this.btn_Connect.Location = new System.Drawing.Point(246, 34);
             this.btn_Connect.Name = "btn_Connect";
             this.btn_Connect.Size = new System.Drawing.Size(97, 23);
             this.btn_Connect.TabIndex = 18;
@@ -136,19 +139,19 @@
             // 
             this.txt_SendMsg.Location = new System.Drawing.Point(44, 181);
             this.txt_SendMsg.Name = "txt_SendMsg";
-            this.txt_SendMsg.Size = new System.Drawing.Size(153, 20);
+            this.txt_SendMsg.Size = new System.Drawing.Size(196, 20);
             this.txt_SendMsg.TabIndex = 17;
             // 
             // txt_PortBase
             // 
-            this.txt_PortBase.Location = new System.Drawing.Point(257, 41);
+            this.txt_PortBase.Location = new System.Drawing.Point(44, 102);
             this.txt_PortBase.Name = "txt_PortBase";
-            this.txt_PortBase.Size = new System.Drawing.Size(169, 20);
+            this.txt_PortBase.Size = new System.Drawing.Size(153, 20);
             this.txt_PortBase.TabIndex = 16;
             // 
             // txt_PortSistema
             // 
-            this.txt_PortSistema.Location = new System.Drawing.Point(257, 109);
+            this.txt_PortSistema.Location = new System.Drawing.Point(27, 55);
             this.txt_PortSistema.Name = "txt_PortSistema";
             this.txt_PortSistema.Size = new System.Drawing.Size(169, 20);
             this.txt_PortSistema.TabIndex = 15;
@@ -162,20 +165,20 @@
             // 
             // crt_temp
             // 
-            chartArea2.Name = "ChartArea1";
-            this.crt_temp.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.crt_temp.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.crt_temp.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.crt_temp.Legends.Add(legend3);
             this.crt_temp.Location = new System.Drawing.Point(347, 148);
             this.crt_temp.Margin = new System.Windows.Forms.Padding(2);
             this.crt_temp.Name = "crt_temp";
-            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.Name = "ch_Power";
-            this.crt_temp.Series.Add(series2);
+            series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.IsVisibleInLegend = false;
+            series3.Legend = "Legend1";
+            series3.Name = "ch_Power";
+            this.crt_temp.Series.Add(series3);
             this.crt_temp.Size = new System.Drawing.Size(411, 256);
             this.crt_temp.TabIndex = 27;
             this.crt_temp.Text = "chart1";
@@ -197,6 +200,19 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Status";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_PortSistema);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btn_Connect);
+            this.groupBox1.Controls.Add(this.btn_Disconnect);
+            this.groupBox1.Location = new System.Drawing.Point(394, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 113);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Enable UDP Listener";
+            // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,20 +224,19 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbx_RecievedMsg);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Send);
-            this.Controls.Add(this.btn_Disconnect);
-            this.Controls.Add(this.btn_Connect);
             this.Controls.Add(this.txt_SendMsg);
             this.Controls.Add(this.txt_PortBase);
-            this.Controls.Add(this.txt_PortSistema);
             this.Controls.Add(this.txt_IPBase);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Server";
             this.Text = "Server";
             this.Load += new System.EventHandler(this.Server_Load);
             ((System.ComponentModel.ISupportInitialize)(this.crt_temp)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +260,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart crt_temp;
         private System.Windows.Forms.Panel pnl_Status;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
