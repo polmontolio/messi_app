@@ -18,10 +18,10 @@ namespace StarKillerBase
         }
 
         StringData StringData = new StringData();
-        int inicio = 0;
+        int inicio = 1;
         int final = 300;
 
-        private PointF[] puntosFormula = new PointF[1001];
+        private PointF[] puntosFormula = new PointF[301];
 
         private void Server_Load(object sender, EventArgs e)
         {
@@ -131,9 +131,11 @@ namespace StarKillerBase
             switch (message)
             {
                 case "AYH":
+                    //Console.WriteLine("ENTRA A AYH");
                     SendingMsg("IAR", txt_IPBase.Text, txt_PortBase.Text);
                     break;
                 case "SLP":
+                    //Arreglar con los tiempos
                     for (int i = 0; i < puntosFormula.Length; i++)
                     {
                         SendingMsg("SKD|" + puntosFormula[i].X.ToString() +"|"+ puntosFormula[i].Y.ToString(), txt_IPBase.Text, txt_PortBase.Text);
@@ -157,6 +159,13 @@ namespace StarKillerBase
             client.Connect(ipBase, int.Parse(portBase));
             sendBytes = Encoding.ASCII.GetBytes(message);
             client.Send(sendBytes, sendBytes.Length);
+
+
+            /*
+            client.Client.Close();
+            client.Close();
+            client.Dispose();
+            */
         }
     }
 }
