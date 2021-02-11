@@ -242,6 +242,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Server";
             this.Text = "Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Server_FormClosing);
             this.Load += new System.EventHandler(this.Server_Load);
             ((System.ComponentModel.ISupportInitialize)(this.crt_temp)).EndInit();
             this.groupBox1.ResumeLayout(false);

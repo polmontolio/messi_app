@@ -52,6 +52,12 @@ namespace StarKiller
                 t_connect.Abort();
             }
 
+            if (timer.Enabled)
+            {
+                timer.Enabled = false;
+                timer.Stop();
+            }
+
         }
 
         private void serverHilo()
@@ -135,6 +141,28 @@ namespace StarKiller
         {
             //Control.CheckForIllegalCrossThreadCalls = false;
          
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (server != null)
+            {
+                connected = false;
+                btn_Disconnect.Enabled = false;
+                btn_Connect.Enabled = true;
+            }
+
+            if (t_connect != null)
+            {
+                t_connect.Abort();
+            }
+
+            if (timer.Enabled)
+            {
+                timer.Enabled = false;
+                timer.Stop();
+            }
+
         }
 
         private void timer_Tick(object sender, EventArgs e)

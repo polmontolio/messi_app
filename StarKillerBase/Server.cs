@@ -104,7 +104,7 @@ namespace StarKillerBase
             crt_temp.Series[0].Color = Color.FromArgb(248, 220, 51);
             crt_temp.Series[0].BorderWidth = 3;
             crt_temp.ChartAreas[0].AxisX.Minimum = 0;
-            crt_temp.ChartAreas[0].AxisX.Maximum = 200;
+            crt_temp.ChartAreas[0].AxisX.Maximum = 50;
             crt_temp.ChartAreas[0].AxisY.Minimum = 0;
             crt_temp.ChartAreas[0].AxisY.Maximum = 40;
         }
@@ -126,7 +126,7 @@ namespace StarKillerBase
                         line = message.Split('|');
                         tiempo = line[1];
                         valor = line[2];
-                        crt_temp.Series[0].Points.AddXY(double.Parse(valor), double.Parse(tiempo));
+                        crt_temp.Series[0].Points.AddXY(double.Parse(tiempo), double.Parse(valor) );
                     //}));
                     break;
             }
@@ -146,6 +146,21 @@ namespace StarKillerBase
             client.Close();
             client.Dispose();
             */
+        }
+
+        private void Server_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (server != null)
+            {
+                connected = false;
+                btn_Disconnect.Enabled = false;
+                btn_Connect.Enabled = true;
+            }
+
+            if (t_connect != null)
+            {
+                t_connect.Abort();
+            }
         }
     }
 }
