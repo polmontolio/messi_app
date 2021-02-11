@@ -54,6 +54,7 @@ namespace StarKiller
             this.txt_IPSistema.Name = "txt_IPSistema";
             this.txt_IPSistema.Size = new System.Drawing.Size(153, 20);
             this.txt_IPSistema.TabIndex = 0;
+            this.txt_IPSistema.Text = "127.0.0.1";
             // 
             // txt_PortSistema
             // 
@@ -61,6 +62,7 @@ namespace StarKiller
             this.txt_PortSistema.Name = "txt_PortSistema";
             this.txt_PortSistema.Size = new System.Drawing.Size(153, 20);
             this.txt_PortSistema.TabIndex = 1;
+            this.txt_PortSistema.Text = "8181";
             // 
             // txt_PortBase
             // 
@@ -68,6 +70,7 @@ namespace StarKiller
             this.txt_PortBase.Name = "txt_PortBase";
             this.txt_PortBase.Size = new System.Drawing.Size(169, 20);
             this.txt_PortBase.TabIndex = 2;
+            this.txt_PortBase.Text = "9191";
             // 
             // txt_SendMsg
             // 

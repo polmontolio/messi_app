@@ -25,9 +25,7 @@ namespace StarKillerBase
 
         private void Server_Load(object sender, EventArgs e)
         {
-
             ChartDesign();
-            Calculo(inicio, final);
         }
 
         bool connected = false;
@@ -106,46 +104,30 @@ namespace StarKillerBase
             crt_temp.Series[0].Color = Color.FromArgb(248, 220, 51);
             crt_temp.Series[0].BorderWidth = 3;
             crt_temp.ChartAreas[0].AxisX.Minimum = 0;
-            crt_temp.ChartAreas[0].AxisX.Maximum = 1100;
+            crt_temp.ChartAreas[0].AxisX.Maximum = 200;
             crt_temp.ChartAreas[0].AxisY.Minimum = 0;
-            crt_temp.ChartAreas[0].AxisY.Maximum = 25000;
-        }
-
-        private void Calculo(int inicio, int final)
-        {
-            for (int x = inicio; x <= final; x++)
-            {
-                double y = Math.Pow(Math.E, (double)x / 100);
-                puntosFormula[x] = new PointF(x, (float)y);
-                crt_temp.Series[0].Points.AddXY(x, (float)y);
-
-                String StringX = StringData.FillIntChar(x, 4, " ");
-
-                String log = StringX + " | " + y;
-
-            }
+            crt_temp.ChartAreas[0].AxisY.Maximum = 40;
         }
 
         private void RecievedMsg(string message)
         {
-            switch (message)
+            string[] line;
+            string tiempo, valor;
+
+            switch (message.Substring(0,3))
             {
                 case "AYH":
                     //Console.WriteLine("ENTRA A AYH");
                     SendingMsg("IAR", txt_IPBase.Text, txt_PortBase.Text);
                     break;
-                case "SLP":
-                    //Arreglar con los tiempos
-                    for (int i = 0; i < puntosFormula.Length; i++)
-                    {
-                        SendingMsg("SKD|" + puntosFormula[i].X.ToString() +"|"+ puntosFormula[i].Y.ToString(), txt_IPBase.Text, txt_PortBase.Text);
-                    }
-                    break;
-                case "FLP":
-                    Console.WriteLine("Case 2");
-                    break;
-                default:
-                    Console.WriteLine("Default case");
+                case "SKD":
+                    //this.Invoke((MethodInvoker)(() =>
+                    //{
+                        line = message.Split('|');
+                        tiempo = line[1];
+                        valor = line[2];
+                        crt_temp.Series[0].Points.AddXY(double.Parse(valor), double.Parse(tiempo));
+                    //}));
                     break;
             }
 
@@ -158,7 +140,6 @@ namespace StarKillerBase
             client.Connect(ipBase, int.Parse(portBase));
             sendBytes = Encoding.ASCII.GetBytes(message);
             client.Send(sendBytes, sendBytes.Length);
-
 
             /*
             client.Client.Close();

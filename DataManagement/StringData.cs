@@ -8,7 +8,6 @@ namespace DataManagement
 {
     public class StringData
     {
-
         public String FillIntChar(int number, int digit, String fillChar)
         {
             String numberS = number.ToString();

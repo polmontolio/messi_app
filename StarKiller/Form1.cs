@@ -21,8 +21,6 @@ namespace StarKiller
         UdpClient server;
         Thread t_connect;
         StringData StringData = new StringData();
-        int inicio = 1;
-        int final = 300;
         double contador, resultado;
         double temperatura = 20;
 
@@ -101,16 +99,21 @@ namespace StarKiller
                     SendingMsg("IAR", txt_IPSistema.Text, txt_PortSistema.Text);
                     break;
                 case "SLP":
-                    //Arreglar con los tiempos
-                    timer.Enabled = true;
-                    timer.Interval = 500;
-                    timer.Start();
+                    Console.WriteLine("ENTRA A SLP");
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        timer.Enabled = true;
+                        timer.Interval = 500;
+                        timer.Start();
+                    }));
+                    
                     break;
                 case "FLP":
-                    Console.WriteLine("Case 2");
-                    break;
-                default:
-                    Console.WriteLine("Default case");
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        timer.Enabled = false;
+                        timer.Stop();
+                    }));
                     break;
             }
         }
@@ -130,15 +133,18 @@ namespace StarKiller
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //Control.CheckForIllegalCrossThreadCalls = false;
+         
         }
 
         private void timer_Tick(object sender, EventArgs e)
-        { 
+        {
+            Console.WriteLine("RESPON");
             resultado = Calculo(temperatura);
             SendingMsg("SKD|" + contador + "|" + resultado, txt_IPSistema.Text, txt_PortSistema.Text);
             temperatura++;
             contador += 0.5;
+
         }
     }
 }
