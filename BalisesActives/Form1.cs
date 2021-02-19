@@ -22,6 +22,8 @@ namespace BalisesActives
 
         string[] ports;
         static SerialPort _serialPort;
+        Thread runningPort;
+        bool running = false;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -47,28 +49,69 @@ namespace BalisesActives
        
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (_serialPort.IsOpen)
+            if (_serialPort != null || _serialPort.IsOpen)
             {
                 _serialPort.Close();
             }
             
         }
 
-        private void btn_conectar_Click(object sender, EventArgs e)
+        private void openPort()
         {
             _serialPort = new SerialPort();
             _serialPort.PortName = comboBox1.SelectedItem.ToString();
             _serialPort.BaudRate = 9600;
             _serialPort.Open();
 
-            _serialPort.Write("connect\n");
-            //_serialPort.Write("0");
-            _serialPort.Close();
+            while (running)
+            {
+                try
+                {
+                    string line = _serialPort.ReadLine();
+                    textBox1.Text = line;
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                }   
+
+            }
+        }
+
+        private void btn_conectar_Click(object sender, EventArgs e)
+        {
+
+            runningPort = new Thread(openPort);
+            Control.CheckForIllegalCrossThreadCalls = false;
+
+            runningPort.Start();
+            running = true;
+
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            running = false;
+            
+
+            if (runningPort != null)
+            {
+                runningPort.Abort();
+            }
+
+            if (_serialPort != null || _serialPort.IsOpen)
+            {
+                _serialPort.Close();
+            }
+            
+            
         }
     }
 }
