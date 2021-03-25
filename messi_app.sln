@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarKiller", "StarKiller\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarKillerBase", "StarKillerBase\StarKillerBase.csproj", "{1D260047-39A0-4F7E-B482-38619DBC0DCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControl", "CustomControl\CustomControl.csproj", "{20808BB3-2B82-4670-8423-2CC877809AB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D260047-39A0-4F7E-B482-38619DBC0DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20808BB3-2B82-4670-8423-2CC877809AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20808BB3-2B82-4670-8423-2CC877809AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20808BB3-2B82-4670-8423-2CC877809AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20808BB3-2B82-4670-8423-2CC877809AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
