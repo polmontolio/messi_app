@@ -15,7 +15,7 @@ namespace CustomControl
         public string rutaImg = "../img/Balisses/";
         string CodeBeacon = "";
         string CodeSpaceship = "";
-
+        bool blacklist = false;
         private string _targeta;
         public string Codigos
         {
@@ -37,8 +37,6 @@ namespace CustomControl
         {       
            FillCustomControl();
         }
-
-        
         private void FillCustomControl()
         {
             int idnau = 5;
@@ -49,7 +47,8 @@ namespace CustomControl
             //DATOS DE LA RUTA
             DataSet ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.idRoute = r.idRoute;");
             //DATOS DE LA NAVE
-            DataSet ds_spacheship = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon + "' and a.idRoute = r.idRoute;");
+            DataSet ds_spacheship = this.database.portarPerConsultar("select * from ShipTypes st, RouteTraffic rt where st.codeBeacon = '" + this.CodeSpaceship + "' and a.idRoute = r.idRoute;");
+
 
             switch (idnau)
             {
@@ -69,9 +68,11 @@ namespace CustomControl
                     //pbox_spaceship.Image = (Image.FromFile(rutaImg + ""));
                     break;
             }
+        }
 
-           
-
+        private bool BlacklistCheck()
+        {
+            return true;
         }
     }
 }
