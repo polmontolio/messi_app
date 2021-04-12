@@ -123,10 +123,10 @@ namespace StarKillerBase
                 case "SKD":
                     //this.Invoke((MethodInvoker)(() =>
                     //{
-                        line = message.Split('|');
-                        tiempo = line[1];
-                        valor = line[2];
-                        crt_temp.Series[0].Points.AddXY(double.Parse(tiempo), double.Parse(valor) );
+                    line = message.Split('|');
+                    tiempo = line[1];
+                    valor = line[2];
+                    crt_temp.Series[0].Points.AddXY(double.Parse(tiempo), double.Parse(valor));
                     //}));
                     break;
             }

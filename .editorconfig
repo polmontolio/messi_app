@@ -1,7 +1,7 @@
 ﻿[*.cs]
 
 # Default severity for all analyzer diagnostics
-dotnet_analyzer_diagnostic.severity = error
+# dotnet_analyzer_diagnostic.severity = error
 
 # Default severity for analyzer diagnostics with category 'Style'
-dotnet_analyzer_diagnostic.category-Style.severity = suggestion
+# dotnet_analyzer_diagnostic.category-Style.severity = suggestion
