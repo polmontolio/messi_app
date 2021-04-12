@@ -15,14 +15,18 @@ namespace CustomControl
     {
         public string rutaImg = "../img/Balisses/";
         string CodeBeacon = "";
+        string CodeSpaceship = "";
 
         private string _targeta;
-        public string MyProperty
+        public string Codigos
         {
             get { return _targeta; }
-            set { _targeta = value; }
+            set { _targeta = value; 
+                string[] datos = _targeta.Split('|');
+                CodeBeacon = datos[0];
+                CodeSpaceship = datos[1];
+            }
         }
-
 
         private Database.SqlDatabase database = new Database.SqlDatabase("DarkCore");
         public SpaceShipCard()
@@ -45,8 +49,6 @@ namespace CustomControl
 
             //DATOS DE LA RUTA
             DataSet ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.idRoute = r.idRoute;");
-           
-
             //DATOS DE LA NAVE
             DataSet ds_spacheship = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon + "' and a.idRoute = r.idRoute;");
 
