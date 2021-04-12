@@ -36,10 +36,10 @@
             this.pbox_road = new System.Windows.Forms.PictureBox();
             this.pbox_desc = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_desc = new System.Windows.Forms.Label();
-            this.lbl_road = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_BeaconDesc = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_RoadDesc = new System.Windows.Forms.Label();
             panel3 = new System.Windows.Forms.Panel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_auth)).BeginInit();
@@ -47,8 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbox_road)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_desc)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -136,41 +136,41 @@
             this.panel1.Size = new System.Drawing.Size(746, 120);
             this.panel1.TabIndex = 3;
             // 
-            // lbl_desc
+            // panel4
             // 
-            this.lbl_desc.AutoSize = true;
-            this.lbl_desc.Location = new System.Drawing.Point(3, 16);
-            this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
-            this.lbl_desc.TabIndex = 3;
-            this.lbl_desc.Text = "label2";
+            this.panel4.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel4.Controls.Add(this.lbl_BeaconDesc);
+            this.panel4.Location = new System.Drawing.Point(55, 67);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(682, 47);
+            this.panel4.TabIndex = 5;
             // 
-            // lbl_road
+            // lbl_BeaconDesc
             // 
-            this.lbl_road.AutoSize = true;
-            this.lbl_road.Location = new System.Drawing.Point(3, 12);
-            this.lbl_road.Name = "lbl_road";
-            this.lbl_road.Size = new System.Drawing.Size(51, 20);
-            this.lbl_road.TabIndex = 2;
-            this.lbl_road.Text = "label1";
+            this.lbl_BeaconDesc.AutoSize = true;
+            this.lbl_BeaconDesc.Location = new System.Drawing.Point(3, 16);
+            this.lbl_BeaconDesc.Name = "lbl_BeaconDesc";
+            this.lbl_BeaconDesc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_BeaconDesc.TabIndex = 3;
+            this.lbl_BeaconDesc.Text = "label2";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel2.Controls.Add(this.lbl_road);
+            this.panel2.Controls.Add(this.lbl_RoadDesc);
             this.panel2.Location = new System.Drawing.Point(56, 7);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(681, 47);
             this.panel2.TabIndex = 4;
             // 
-            // panel4
+            // lbl_RoadDesc
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel4.Controls.Add(this.lbl_desc);
-            this.panel4.Location = new System.Drawing.Point(55, 67);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(682, 47);
-            this.panel4.TabIndex = 5;
+            this.lbl_RoadDesc.AutoSize = true;
+            this.lbl_RoadDesc.Location = new System.Drawing.Point(3, 12);
+            this.lbl_RoadDesc.Name = "lbl_RoadDesc";
+            this.lbl_RoadDesc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_RoadDesc.TabIndex = 2;
+            this.lbl_RoadDesc.Text = "label1";
             // 
             // SpaceShipCard
             // 
@@ -189,10 +189,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbox_road)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_desc)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,8 +202,8 @@
         private System.Windows.Forms.PictureBox pbox_road;
         private System.Windows.Forms.PictureBox pbox_desc;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_desc;
-        private System.Windows.Forms.Label lbl_road;
+        private System.Windows.Forms.Label lbl_BeaconDesc;
+        private System.Windows.Forms.Label lbl_RoadDesc;
         private System.Windows.Forms.Label lbl_shipDescription;
         private System.Windows.Forms.Label lbl_spaceship;
         private System.Windows.Forms.PictureBox pbox_auth;

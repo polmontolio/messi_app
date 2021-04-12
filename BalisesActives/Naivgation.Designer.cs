@@ -34,7 +34,7 @@
             // spaceShipCard1
             // 
             this.spaceShipCard1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spaceShipCard1.Location = new System.Drawing.Point(12, 72);
+            this.spaceShipCard1.Location = new System.Drawing.Point(460, 326);
             this.spaceShipCard1.Name = "spaceShipCard1";
             this.spaceShipCard1.Size = new System.Drawing.Size(748, 242);
             this.spaceShipCard1.TabIndex = 0;
@@ -43,7 +43,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1263, 666);
             this.Controls.Add(this.spaceShipCard1);
             this.Name = "Naivgation";
             this.Text = "Naivgation";
