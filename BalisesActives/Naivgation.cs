@@ -22,13 +22,10 @@ namespace BalisesActives
         private void Naivgation_Load(object sender, EventArgs e)
         {
 
-           // pictureBox1.Image = (Image.FromFile(rutaImg + "ledW.png"));
+            // pictureBox1.Image = (Image.FromFile(rutaImg + "ledW.png"));
+            Console.WriteLine("width: " + pictureBox2.Size.Width.ToString() + " height: " + pictureBox2.Size.Height.ToString());
         }
 
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
 
     }
 
