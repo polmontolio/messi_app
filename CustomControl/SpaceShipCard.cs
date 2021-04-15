@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CustomControl
@@ -39,7 +34,6 @@ namespace CustomControl
         }
         private void FillCustomControl()
         {
-            int idnau = 5;
             //IMAGENES FIJAS
             pbox_road.Image = (Image.FromFile(rutaImg + "roadW.png"));
             pbox_desc.Image = (Image.FromFile(rutaImg + "ledW.png"));
@@ -53,42 +47,39 @@ namespace CustomControl
             /////////DATOS DE LA NAVE
             blacklist = BlacklistCheck(CodeSpaceship);
             DataSet ds_spacheship;
+            DataSet ds_spaceship_blacklist;
+            string tagid = CodeSpaceship.Substring(0, 1);
+            ds_spacheship = this.database.portarPerConsultar("select * from ShipTypes st where st.TagId = '" + tagid);
             //LLENAMOS CUSTOM CONTROL
             if (!blacklist)
             {
-                string tagid = CodeSpaceship.Substring(0, 1);
-                ds_spacheship = this.database.portarPerConsultar("select * from ShipTypes st where st.TagId = '" + tagid);
                 pbox_auth.BackColor = Color.Green;
                 pbox_auth.Image = Image.FromFile(rutaImg + "check-mark.png");
                 lbl_spaceship.Text = ds_spacheship.Tables[0].Rows[0]["DescTypeShip"].ToString();
-                lbl_shipDescription.Text = "SpaceShip Information not available.";
-                
+                lbl_shipDescription.Text = "SpaceShip Information not available.";         
             }
             else
             {
-                ds_spacheship = this.database.portarPerConsultar("select * from BlackList where ShipTransporder = '" + CodeSpaceship + "'");
+                ds_spaceship_blacklist = this.database.portarPerConsultar("select * from BlackList where ShipTransporder = '" + CodeSpaceship + "'");
                 pbox_auth.BackColor = Color.Red;
                 pbox_auth.Image = Image.FromFile(rutaImg + "alert.png");
-                lbl_spaceship.Text = ds_spacheship.Tables[0].Rows[0]["DescShip"].ToString(); 
-                lbl_shipDescription.Text = ds_spacheship.Tables[0].Rows[0]["Remarks"].ToString();
+                lbl_spaceship.Text = ds_spaceship_blacklist.Tables[0].Rows[0]["DescShip"].ToString(); 
+                lbl_shipDescription.Text = ds_spaceship_blacklist.Tables[0].Rows[0]["Remarks"].ToString();
             }
 
-            switch (idnau)
+            switch (ds_spacheship.Tables[0].Rows[0]["idTypeShip"])
             {
                 case 1:
                 case 5:
                 case 6:
-                    Console.WriteLine(6);
-                    //pbox_spaceship.Image = (Image.FromFile(rutaImg + ""));
+                    pbox_spaceship.Image = (Image.FromFile(rutaImg + "PersonalShipW.png"));
                     break;
                 case 3:
                 case 4:
-                    Console.WriteLine(4);
-                    //pbox_spaceship.Image = (Image.FromFile(rutaImg + ""));
+                    pbox_spaceship.Image = (Image.FromFile(rutaImg + "star-wars.png"));
                     break;
                 case 2:
-                    Console.WriteLine(2);
-                    //pbox_spaceship.Image = (Image.FromFile(rutaImg + ""));
+                    pbox_spaceship.Image = (Image.FromFile(rutaImg + "cargoW.png"));
                     break;
             }
         }
@@ -97,14 +88,7 @@ namespace CustomControl
         {
             DataSet ds = this.database.portarPerConsultar("select * from BlackList where ShipTransporder = "+ CodeSpaceship);
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return ds.Tables[0].Rows.Count > 0;
         }
     }
 }
