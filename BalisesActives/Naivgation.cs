@@ -71,12 +71,20 @@ namespace BalisesActives
         {
             if (counter >= 2)
             {
-                panel1.Controls.Clear();
+                foreach (Control item in panel1.Controls)
+                {
+                    if (item.Name == "pnl_" + (counter - 2).ToString())
+                    {
+                        panel1.Controls.Remove(item);
+                        break;
+                    }
+                }
 
             }
+
             Panel pnl = new Panel();
             pnl.BackColor = Color.Red;
-            pnl.Name = "pnl_1";
+            pnl.Name = "pnl_" + counter.ToString();
             pnl.Size = new Size(25, 25);
             int numH = getWordNumber(cadena.Substring(0, 1).ToUpper());
             int numW = int.Parse(cadena.Substring(1, cadena.Length - 1)) - 1;
