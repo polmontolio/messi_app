@@ -11,6 +11,8 @@ namespace CustomControl
         string CodeBeacon = "";
         string CodeSpaceship = "";
         bool blacklist = false;
+        DataSet ds_spacheship;
+
         private string _targeta;
         public string Codigos
         {
@@ -38,7 +40,6 @@ namespace CustomControl
             pbox_road.Image = (Image.FromFile(rutaImg + "roadW.png"));
             pbox_desc.Image = (Image.FromFile(rutaImg + "ledW.png"));
 
-            Console.WriteLine(CodeBeacon + " --- "+ CodeSpaceship);
 
             //////////DATOS DE LA RUTA
             DataSet ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.IdRoute = r.idRoute");
@@ -48,7 +49,7 @@ namespace CustomControl
 
             /////////DATOS DE LA NAVE
             blacklist = BlacklistCheck(CodeSpaceship);
-            DataSet ds_spacheship;
+           
             DataSet ds_spaceship_blacklist;
             string tagid = CodeSpaceship.Substring(0, 1);
             ds_spacheship = this.database.portarPerConsultar("select * from ShipTypes st where st.TagId = '" + tagid + "'");
@@ -83,6 +84,15 @@ namespace CustomControl
                 case 2:
                     pbox_spaceship.Image = (Image.FromFile(rutaImg + "cargoW.png"));
                     break;
+            }
+    }
+        private string _sector;
+        public string Sector
+        {
+            get { return _sector; }
+            set
+            {
+                _sector = ds_spacheship.Tables[0].Rows[0]["Sector"].ToString(); ;
             }
         }
 
