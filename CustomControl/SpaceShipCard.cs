@@ -38,8 +38,10 @@ namespace CustomControl
             pbox_road.Image = (Image.FromFile(rutaImg + "roadW.png"));
             pbox_desc.Image = (Image.FromFile(rutaImg + "ledW.png"));
 
+            Console.WriteLine(CodeBeacon + " --- "+ CodeSpaceship);
+
             //////////DATOS DE LA RUTA
-            DataSet ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.idRoute = r.idRoute");
+            DataSet ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.IdRoute = r.idRoute");
             //llenamos campos
             lbl_RoadDesc.Text = ds_routeinfo.Tables[0].Rows[0]["descRoute"].ToString();
             lbl_BeaconDesc.Text = ds_routeinfo.Tables[0].Rows[0]["descBeacon"].ToString(); 
@@ -49,7 +51,7 @@ namespace CustomControl
             DataSet ds_spacheship;
             DataSet ds_spaceship_blacklist;
             string tagid = CodeSpaceship.Substring(0, 1);
-            ds_spacheship = this.database.portarPerConsultar("select * from ShipTypes st where st.TagId = '" + tagid);
+            ds_spacheship = this.database.portarPerConsultar("select * from ShipTypes st where st.TagId = '" + tagid + "'");
             //LLENAMOS CUSTOM CONTROL
             if (!blacklist)
             {
@@ -60,7 +62,7 @@ namespace CustomControl
             }
             else
             {
-                ds_spaceship_blacklist = this.database.portarPerConsultar("select * from BlackList where ShipTransporder = '" + CodeSpaceship + "'");
+                ds_spaceship_blacklist = this.database.portarPerConsultar("select * from BlackList where ShipTransponder = '" + CodeSpaceship + "'");
                 pbox_auth.BackColor = Color.Red;
                 pbox_auth.Image = Image.FromFile(rutaImg + "alert.png");
                 lbl_spaceship.Text = ds_spaceship_blacklist.Tables[0].Rows[0]["DescShip"].ToString(); 
@@ -86,7 +88,7 @@ namespace CustomControl
 
         private bool BlacklistCheck(string transporder)
         {
-            DataSet ds = this.database.portarPerConsultar("select * from BlackList where ShipTransporder = "+ CodeSpaceship);
+            DataSet ds = this.database.portarPerConsultar("select * from BlackList where ShipTransponder = '" + CodeSpaceship + "'");
 
             return ds.Tables[0].Rows.Count > 0;
         }

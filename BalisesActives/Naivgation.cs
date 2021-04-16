@@ -35,13 +35,30 @@ namespace BalisesActives
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
+            //
+            CreateSpaceship("PEQU|C92FBF99", "D5");
+            CreateSpaceship("PEQU|A77FB76", "L19");
+
+
+        }
+
+        private void CreateSpaceship(String codeCard, String sector)
+        {
+            CustomControl.SpaceShipCard spaceCard = new CustomControl.SpaceShipCard();
+            spaceCard.Codigos = codeCard;
+
+            CreateSign(sector);
+            tableLayoutPanel1.Controls.Add(spaceCard);
+        }
+
+        private void CreateSign(String cadena)
+        {
+            //panel1.Controls.Clear();
             Panel pnl = new Panel();
             pnl.BackColor = Color.Red;
             pnl.Name = "pnl_1";
             pnl.Size = new Size(30, 30);
-            string cadena = textBox1.Text;
-            int numH = getWordNumber(cadena.Substring(0,1).ToUpper());
+            int numH = getWordNumber(cadena.Substring(0, 1).ToUpper());
             int numW = int.Parse(cadena.Substring(1, cadena.Length - 1)) - 1;
             pnl.Location = new Point((int)(unitH * numH) + 1, (int)(unitW * numW) - 3);
             panel1.Controls.Add(pnl);
