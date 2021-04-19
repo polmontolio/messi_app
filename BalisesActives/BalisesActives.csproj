@@ -93,6 +93,10 @@
       <Project>{20808bb3-2b82-4670-8423-2cc877809ab7}</Project>
       <Name>CustomControl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SqlDatabase\Database.csproj">
+      <Project>{93be3911-7852-4917-81d6-63e6e0f35a6c}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

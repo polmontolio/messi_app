@@ -9,9 +9,13 @@ namespace CustomControl
     {
         public string rutaImg = "../img/Balisses/";
         string CodeBeacon = "";
-        string CodeSpaceship = "";
-        bool blacklist = false;
+        public string CodeSpaceship = "";
+        public string idBeacon = "";
+        public string sector = "";
+        public int idTypeShip;
+        public bool blacklist = false;
         DataSet ds_spacheship;
+        DataSet ds_routeinfo;
 
         private string _targeta;
         public string Codigos
@@ -24,6 +28,8 @@ namespace CustomControl
             }
         }
 
+
+
         private Database.SqlDatabase database = new Database.SqlDatabase("DarkCore");
         public SpaceShipCard()
         {
@@ -34,6 +40,7 @@ namespace CustomControl
         {       
            FillCustomControl();
         }
+
         private void FillCustomControl()
         {
             //IMAGENES FIJAS
@@ -42,10 +49,12 @@ namespace CustomControl
 
 
             //////////DATOS DE LA RUTA
-            DataSet ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.IdRoute = r.idRoute");
+            ds_routeinfo = this.database.portarPerConsultar("select * from Routes r, ActiveBeacons a where a.codeBeacon = '" + this.CodeBeacon +"' and a.IdRoute = r.idRoute");
             //llenamos campos
             lbl_RoadDesc.Text = ds_routeinfo.Tables[0].Rows[0]["descRoute"].ToString();
             lbl_BeaconDesc.Text = ds_routeinfo.Tables[0].Rows[0]["descBeacon"].ToString(); 
+            idBeacon = ds_routeinfo.Tables[0].Rows[0]["idActiveBeacon"].ToString();
+            sector = ds_routeinfo.Tables[0].Rows[0]["Sector"].ToString();
 
             /////////DATOS DE LA NAVE
             blacklist = BlacklistCheck(CodeSpaceship);
@@ -70,7 +79,9 @@ namespace CustomControl
                 lbl_shipDescription.Text = ds_spaceship_blacklist.Tables[0].Rows[0]["Remarks"].ToString();
             }
 
-            switch (ds_spacheship.Tables[0].Rows[0]["idTypeShip"])
+            idTypeShip = int.Parse(ds_spacheship.Tables[0].Rows[0]["idTypeShip"].ToString());
+
+            switch (idTypeShip)
             {
                 case 1:
                 case 5:
@@ -86,15 +97,7 @@ namespace CustomControl
                     break;
             }
     }
-        private string _sector;
-        public string Sector
-        {
-            get { return _sector; }
-            set
-            {
-                _sector = ds_spacheship.Tables[0].Rows[0]["Sector"].ToString(); ;
-            }
-        }
+
 
         private bool BlacklistCheck(string transporder)
         {

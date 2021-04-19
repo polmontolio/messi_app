@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BalisesActives
 {
     public partial class Naivgation : Form
@@ -22,12 +23,16 @@ namespace BalisesActives
         private double widthPic;
         private double unitH;
         private double unitW;
+        private DateTime date;
 
         public string rutaImg = "../img/Bali/";
+        private Database.SqlDatabase database = new Database.SqlDatabase("DarkCore");
         private int counter = 0;
         private void Naivgation_Load(object sender, EventArgs e)
         {
-            
+            date = DateTime.Now;
+            GetTrafficTable();
+
             heightPic = panel1.Size.Height;
             widthPic = panel1.Size.Width;
             unitH = heightPic / 21;
@@ -36,38 +41,77 @@ namespace BalisesActives
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //
-            CreateSpaceship("PEQU|C92FBF99", "D5");
-            CreateSpaceship("PEQU|A77FB76", "L19");
+            CreateSpaceship("PEQU|C92FBF99");
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateSpaceship("PEQU|92FBF9", "K19");
+            CreateSpaceship("RIKA|A77FB76");
         }
 
-        private void CreateSpaceship(String codeCard, String sector)
+
+        private void GetTrafficTable()
+        {
+
+            string query = "select st.DescTypeShip, rt.ShipTransponder, rt.AuthorizedAccess, rt.TrafficDate, ab.descBeacon, ro.descRoute  " +
+                "from RouteTraffic rt, ActiveBeacons ab, Routes ro, ShipTypes st where convert(date, rt.TrafficDate,101) = '" + date.ToString("MM-dd-yyyy") + "' " +
+                "and rt.idBeacon = ab.idActiveBeacon and rt.idTypeShip = st.idTypeShip and ab.IdRoute = ro.idRoute; ";
+
+            DataSet dataset = this.database.portarPerConsultar(query);
+            dataGridView1.DataSource = dataset.Tables[0];
+            dataGridView1.Columns[0].HeaderText = "TypeShip";
+            dataGridView1.Columns[1].HeaderText = "Transponder";
+            dataGridView1.Columns[1].HeaderText = "Access";
+            dataGridView1.Columns[3].HeaderText = "Date";
+            dataGridView1.Columns[4].HeaderText = "Beacon";
+            dataGridView1.Columns[5].HeaderText = "Route";
+        }
+
+        private void InsertTrafficTable(CustomControl.SpaceShipCard card)
+        {
+            String idBeacon = card.idBeacon;
+            String CodeSpaceship = card.CodeSpaceship;
+            int idTypeShip = card.idTypeShip;
+            int authorized = card.blacklist ? 0 : 1;
+            date = DateTime.Now;
+
+
+            string query = "INSERT INTO RouteTraffic(idBeacon, ShipTransponder, TrafficDate, idTypeShip, AuthorizedAccess) " +
+                "VALUES("+ idBeacon + ",'" + CodeSpaceship +  "', '" + date.ToString("yyyy-MM-dd HH:mm:ss:fff") + "', " +  idTypeShip.ToString() + ", "  + authorized.ToString() +  ")";
+
+
+            Console.WriteLine(query);
+
+            database.executa(query);
+            GetTrafficTable();
+        }
+
+        private void CreateSpaceship(String codeCard)
         {
             
             if(counter >= 2)
             {
                 Control Control = tableLayoutPanel1.GetControlFromPosition(0, 0);
                 tableLayoutPanel1.Controls.Remove(Control);
-
             }
 
             counter++;
             CustomControl.SpaceShipCard spaceCard = new CustomControl.SpaceShipCard();
             spaceCard.Codigos = codeCard;
             spaceCard.Name = "spaceCard" + counter.ToString();
-
-            CreateSign(sector);
+            
             tableLayoutPanel1.Controls.Add(spaceCard);
+
+            String sector = spaceCard.sector;
+            bool authorized = spaceCard.blacklist;
+            CreateSign(sector, authorized);
+
+            InsertTrafficTable(spaceCard);
 
         }
 
-        private void CreateSign(String cadena)
+        private void CreateSign(String cadena, bool authorize)
         {
             if (counter >= 2)
             {
@@ -83,7 +127,7 @@ namespace BalisesActives
             }
 
             Panel pnl = new Panel();
-            pnl.BackColor = Color.Red;
+            pnl.BackColor = authorize ? Color.Red : Color.Green;
             pnl.Name = "pnl_" + counter.ToString();
             pnl.Size = new Size(25, 25);
             int numH = getWordNumber(cadena.Substring(0, 1).ToUpper());
