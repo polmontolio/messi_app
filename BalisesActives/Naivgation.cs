@@ -5,7 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +22,9 @@ namespace BalisesActives
             InitializeComponent();
         }
 
+        bool connected = false;
+        UdpClient server;
+        Thread t_connect;
         private double heightPic;
         private double widthPic;
         private double unitH;
@@ -37,6 +43,12 @@ namespace BalisesActives
             widthPic = panel1.Size.Width;
             unitH = heightPic / 21;
             unitW = widthPic / 23;
+
+            connected = true;
+            
+            t_connect = new Thread(serverHilo);
+            t_connect.Start();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -143,7 +155,48 @@ namespace BalisesActives
             return numero;
         }
 
+        private void serverHilo()
+        {
+            if (server == null)
+            {
+                server = new UdpClient(9191);
+            }
 
+            while (connected)
+            {
+                Control.CheckForIllegalCrossThreadCalls = false;
+                IPEndPoint IeP = new IPEndPoint(IPAddress.Any, 0);
+                Byte[] BytesIn = server.Receive(ref IeP);
+                string returnData = Encoding.ASCII.GetString(BytesIn);
+
+                textBox1.Text = returnData;
+            }
+        }
+
+        private void Naivgation_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (server != null)
+            {
+                connected = false;
+            }
+
+            if (t_connect != null)
+            {
+                t_connect.Abort();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //string[] line;
+            //string codeBeacon, codeSpaceship;
+
+            //line = textBox1.Text.Split('|');
+            //codeBeacon = line[0];
+            //codeSpaceship = line[1];
+
+            CreateSpaceship(textBox1.Text);
+
+        }
     }
-
 }
