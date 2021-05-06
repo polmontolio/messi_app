@@ -36,6 +36,7 @@ namespace BalisesActives
         private int counter = 0;
         private void Naivgation_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             date = DateTime.Now;
             GetTrafficTable();
 
@@ -93,7 +94,7 @@ namespace BalisesActives
                 "VALUES("+ idBeacon + ",'" + CodeSpaceship +  "', '" + date.ToString("yyyy-MM-dd HH:mm:ss:fff") + "', " +  idTypeShip.ToString() + ", "  + authorized.ToString() +  ")";
 
 
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
 
             database.executa(query);
             GetTrafficTable();
@@ -164,12 +165,13 @@ namespace BalisesActives
 
             while (connected)
             {
-                Control.CheckForIllegalCrossThreadCalls = false;
+                
                 IPEndPoint IeP = new IPEndPoint(IPAddress.Any, 0);
                 Byte[] BytesIn = server.Receive(ref IeP);
                 string returnData = Encoding.ASCII.GetString(BytesIn);
 
-                textBox1.Text = returnData;
+                this.Invoke((MethodInvoker)delegate () { textBox1.Text = returnData; });
+                
             }
         }
 
@@ -178,13 +180,18 @@ namespace BalisesActives
             if (server != null)
             {
                 connected = false;
+                server.Close();
+                server.Dispose();
+                server = null;
             }
 
             if (t_connect != null)
             {
                 t_connect.Abort();
+                t_connect = null;
             }
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -195,7 +202,8 @@ namespace BalisesActives
             //codeBeacon = line[0];
             //codeSpaceship = line[1];
 
-            CreateSpaceship(textBox1.Text);
+            this.Invoke((MethodInvoker)delegate () { CreateSpaceship(textBox1.Text);});
+            
 
         }
     }
