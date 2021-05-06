@@ -7,6 +7,7 @@ using System.Net;
 using System.IO;
 using System.Drawing;
 using DataManagement;
+using System.IO.Ports;
 
 namespace StarKillerBase
 {
@@ -17,6 +18,7 @@ namespace StarKillerBase
             InitializeComponent();
         }
 
+        
         StringData StringData = new StringData();
         int inicio = 1;
         int final = 300;
@@ -26,6 +28,7 @@ namespace StarKillerBase
         private void Server_Load(object sender, EventArgs e)
         {
             ChartDesign();
+            
         }
 
         bool connected = false;
@@ -60,6 +63,8 @@ namespace StarKillerBase
             }
 
         }
+
+
 
         private void serverHilo()
         {
@@ -106,7 +111,7 @@ namespace StarKillerBase
             crt_temp.ChartAreas[0].AxisX.Minimum = 0;
             crt_temp.ChartAreas[0].AxisX.Maximum = 50;
             crt_temp.ChartAreas[0].AxisY.Minimum = 0;
-            crt_temp.ChartAreas[0].AxisY.Maximum = 40;
+            crt_temp.ChartAreas[0].AxisY.Maximum = 120;
         }
 
         private void RecievedMsg(string message)

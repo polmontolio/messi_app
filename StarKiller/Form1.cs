@@ -7,6 +7,7 @@ using System.Net;
 using System.IO;
 using DataManagement;
 using System.Drawing;
+using System.IO.Ports;
 
 namespace StarKiller
 {
@@ -20,6 +21,8 @@ namespace StarKiller
         bool connected = false;
         UdpClient server;
         Thread t_connect;
+        string[] ports;
+        static SerialPort _serialPort;
         StringData StringData = new StringData();
         double contador, resultado;
         double temperatura = 20;
@@ -35,7 +38,9 @@ namespace StarKiller
             t_connect.Start();
 
             btn_Connect.Enabled = false;
-            
+            openPort();
+
+
         }
 
         private void btn_Disconnect_Click(object sender, EventArgs e)
@@ -56,6 +61,11 @@ namespace StarKiller
             {
                 timer.Enabled = false;
                 timer.Stop();
+            }
+
+            if (_serialPort != null || _serialPort.IsOpen)
+            {
+                _serialPort.Close();
             }
 
         }
@@ -140,7 +150,16 @@ namespace StarKiller
         private void Form1_Load(object sender, EventArgs e)
         {
             //Control.CheckForIllegalCrossThreadCalls = false;
-         
+            ports = SerialPort.GetPortNames();
+
+        }
+
+        private void openPort()
+        {
+            _serialPort = new SerialPort();
+            _serialPort.PortName = ports[0];
+            _serialPort.BaudRate = 9600;
+            _serialPort.Open();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -163,14 +182,19 @@ namespace StarKiller
                 timer.Stop();
             }
 
+            if (_serialPort != null || _serialPort.IsOpen)
+            {
+                _serialPort.Close();
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
             Console.WriteLine("RESPON");
-            resultado = Calculo(temperatura);
-            SendingMsg("SKD|" + contador + "|" + resultado, txt_IPSistema.Text, txt_PortSistema.Text);
-            temperatura++;
+            double temperatura = double.Parse(_serialPort.ReadLine());
+            //resultado = Calculo(temperatura);
+            SendingMsg("SKD|" + contador + "|" + temperatura, txt_IPSistema.Text, txt_PortSistema.Text);
+            //temperatura++;
             contador += 0.5;
 
         }
