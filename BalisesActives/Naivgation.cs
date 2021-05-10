@@ -6,6 +6,8 @@ using System.Drawing;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,6 +23,9 @@ namespace BalisesActives
             InitializeComponent();
         }
 
+        bool connected = false;
+        UdpClient server;
+        Thread t_connect;
         private double heightPic;
         private double widthPic;
         private double unitH;
@@ -35,6 +40,7 @@ namespace BalisesActives
         bool running = false;
         private void Naivgation_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             date = DateTime.Now;
             GetTrafficTable();
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -43,6 +49,7 @@ namespace BalisesActives
             widthPic = panel1.Size.Width;
             unitH = heightPic / 21;
             unitW = widthPic / 23;
+<<<<<<< HEAD
             ports = SerialPort.GetPortNames();
             connect();
         }
@@ -85,6 +92,14 @@ namespace BalisesActives
                 }
 
             }
+=======
+
+            connected = true;
+            
+            t_connect = new Thread(serverHilo);
+            t_connect.Start();
+
+>>>>>>> 6c1889f61cf5a772d74bb6b558a148d069a624f2
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -190,6 +205,7 @@ namespace BalisesActives
             return numero;
         }
 
+<<<<<<< HEAD
         private void Naivgation_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (runningPort != null) {
@@ -205,5 +221,57 @@ namespace BalisesActives
             }
         }
     }
+=======
+        private void serverHilo()
+        {
+            if (server == null)
+            {
+                server = new UdpClient(9191);
+            }
 
+            while (connected)
+            {
+                
+                IPEndPoint IeP = new IPEndPoint(IPAddress.Any, 0);
+                Byte[] BytesIn = server.Receive(ref IeP);
+                string returnData = Encoding.ASCII.GetString(BytesIn);
+
+                this.Invoke((MethodInvoker)delegate () { textBox1.Text = returnData; });
+                
+            }
+        }
+>>>>>>> 6c1889f61cf5a772d74bb6b558a148d069a624f2
+
+        private void Naivgation_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (server != null)
+            {
+                connected = false;
+                server.Close();
+                server.Dispose();
+                server = null;
+            }
+
+            if (t_connect != null)
+            {
+                t_connect.Abort();
+                t_connect = null;
+            }
+        }
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //string[] line;
+            //string codeBeacon, codeSpaceship;
+
+            //line = textBox1.Text.Split('|');
+            //codeBeacon = line[0];
+            //codeSpaceship = line[1];
+
+            this.Invoke((MethodInvoker)delegate () { CreateSpaceship(textBox1.Text);});
+            
+
+        }
+    }
 }
