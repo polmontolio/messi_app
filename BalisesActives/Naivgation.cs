@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,19 +26,65 @@ namespace BalisesActives
         private double unitH;
         private double unitW;
         private DateTime date;
-
+        string[] ports;
+        static SerialPort _serialPort;
+        Thread runningPort;
         public string rutaImg = "../img/Bali/";
         private Database.SqlDatabase database = new Database.SqlDatabase("DarkCore");
         private int counter = 0;
+        bool running = false;
         private void Naivgation_Load(object sender, EventArgs e)
         {
             date = DateTime.Now;
             GetTrafficTable();
+            Control.CheckForIllegalCrossThreadCalls = false;
 
             heightPic = panel1.Size.Height;
             widthPic = panel1.Size.Width;
             unitH = heightPic / 21;
             unitW = widthPic / 23;
+            ports = SerialPort.GetPortNames();
+            connect();
+        }
+
+        private void connect()
+        {
+            runningPort = new Thread(openPort);
+
+
+            runningPort.Start();
+            running = true;
+        }
+
+        private void openPort()
+        {
+            _serialPort = new SerialPort();
+            _serialPort.PortName = ports[0];
+            _serialPort.BaudRate = 9600;
+            _serialPort.Open();
+
+            while (running)
+            {
+                try
+                {
+                    string line = _serialPort.ReadLine();
+                    //Console.WriteLine(line);
+                    if (this.InvokeRequired)
+                    {
+                        this.BeginInvoke((MethodInvoker)delegate ()
+                        {
+                            CreateSpaceship(line);
+                        });
+                    }
+
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                }
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +95,7 @@ namespace BalisesActives
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateSpaceship("RIKA|A77FB76");
+            CreateSpaceship("PEQU|63306D02");
         }
 
 
@@ -78,10 +126,10 @@ namespace BalisesActives
 
 
             string query = "INSERT INTO RouteTraffic(idBeacon, ShipTransponder, TrafficDate, idTypeShip, AuthorizedAccess) " +
-                "VALUES("+ idBeacon + ",'" + CodeSpaceship +  "', '" + date.ToString("yyyy-MM-dd HH:mm:ss:fff") + "', " +  idTypeShip.ToString() + ", "  + authorized.ToString() +  ")";
+                "VALUES(" + idBeacon + ",'" + CodeSpaceship + "', '" + date.ToString("yyyy-MM-dd HH:mm:ss:fff") + "', " + idTypeShip.ToString() + ", " + authorized.ToString() + ")";
 
 
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
 
             database.executa(query);
             GetTrafficTable();
@@ -89,8 +137,8 @@ namespace BalisesActives
 
         private void CreateSpaceship(String codeCard)
         {
-            
-            if(counter >= 2)
+
+            if (counter >= 2)
             {
                 Control Control = tableLayoutPanel1.GetControlFromPosition(0, 0);
                 tableLayoutPanel1.Controls.Remove(Control);
@@ -100,7 +148,7 @@ namespace BalisesActives
             CustomControl.SpaceShipCard spaceCard = new CustomControl.SpaceShipCard();
             spaceCard.Codigos = codeCard;
             spaceCard.Name = "spaceCard" + counter.ToString();
-            
+
             tableLayoutPanel1.Controls.Add(spaceCard);
 
             String sector = spaceCard.sector;
@@ -108,7 +156,6 @@ namespace BalisesActives
             CreateSign(sector, authorized);
 
             InsertTrafficTable(spaceCard);
-
         }
 
         private void CreateSign(String cadena, bool authorize)
@@ -143,7 +190,20 @@ namespace BalisesActives
             return numero;
         }
 
+        private void Naivgation_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (runningPort != null) {
+                runningPort.Abort();
+                runningPort = null;
+            }
 
+            if (_serialPort.IsOpen || _serialPort != null)
+            {
+                running = false;
+                _serialPort.Close();
+
+            }
+        }
     }
 
 }
