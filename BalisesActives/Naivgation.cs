@@ -86,6 +86,7 @@ namespace BalisesActives
 
                     Console.WriteLine(e.Message);
                 }
+                
 
             }
 
@@ -197,18 +198,21 @@ namespace BalisesActives
 
         private void Naivgation_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (runningPort != null)
-            {
-                running = false;
-                runningPort.Abort();
-                runningPort = null;
-            }
+            
+                if (runningPort != null)
+                {
+                    running = false;
+                    runningPort = null;
+                }
 
-            if (_serialPort.IsOpen || _serialPort != null)
-            {
-                _serialPort.Close();
+                if (_serialPort.IsOpen || _serialPort != null)
+                {
+                    _serialPort.Close();
+                    _serialPort.Dispose();
 
-            }
+                }
+            
+            
         }
 
     }
