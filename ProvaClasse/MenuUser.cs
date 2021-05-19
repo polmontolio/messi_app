@@ -30,14 +30,33 @@ namespace ProvaClasse
             
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Assembly ensamblat = Assembly.LoadFrom(@"UserForms.dll");
-            Object dllBD;
-            Type tipus;
-            tipus = ensamblat.GetType("UserForms.BaseBlueprint");
-            dllBD = Activator.CreateInstance(tipus);
-            ((Form)dllBD).Show();
+            StarKiller.Form1 form = new StarKiller.Form1();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StarKillerBase.Server form = new StarKillerBase.Server();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BalisesActives.Naivgation form = new BalisesActives.Naivgation();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BalisesPassives.Form1 form = new BalisesPassives.Form1();
+            form.Show();
+            this.Hide();
         }
     }
 }

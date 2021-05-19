@@ -277,6 +277,14 @@
     <None Include="Resources\halconmilenario1.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BalisesActives\BalisesActives.csproj">
+      <Project>{6caacdc3-c96d-4052-b334-5838ec3ee52c}</Project>
+      <Name>BalisesActives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BalisesPassives\BalisesPassives.csproj">
+      <Project>{232784e3-cfb6-485e-9755-60de8df64b79}</Project>
+      <Name>BalisesPassives</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConfigurationApp\ConfigurationApp.csproj">
       <Project>{c5531b7b-93aa-4490-9a87-97adb2f0005d}</Project>
       <Name>ConfigurationApp</Name>
@@ -296,6 +304,14 @@
     <ProjectReference Include="..\SqlDatabase\Database.csproj">
       <Project>{93be3911-7852-4917-81d6-63e6e0f35a6c}</Project>
       <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StarKillerBase\StarKillerBase.csproj">
+      <Project>{1d260047-39a0-4f7e-b482-38619dbc0dce}</Project>
+      <Name>StarKillerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StarKiller\StarKiller.csproj">
+      <Project>{fff3e5f0-98a2-4b30-bc2a-377bcedf9dcf}</Project>
+      <Name>StarKiller</Name>
     </ProjectReference>
     <ProjectReference Include="..\User\User.csproj">
       <Project>{9112e478-eca9-4b50-913b-5613f8b8feeb}</Project>
